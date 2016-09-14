@@ -1,50 +1,66 @@
-.categories {
-	font-family: 'Kanit';
-	font-size: 1.2em;
-	font-style: 500;
+.container {
+  text-align: center;
 }
 
-.works {
-	text-align: center;
+.logo {
+  margin: auto;
+  width: 280px;
+  height: 280px;
+  border-radius : 50%;
+  background-color: black;
+}
+
+.categories {
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+.categories span {
+    font-size: 1.85em;
+    font-weight: 300;
+vertical-align: middle;
+}
+.categories div {
+  /*background-color: #F00;*/
+  min-width: 10%;
+  height: auto;
+  display: inline-block;
+  margin: 25px auto;
+  padding: 0 27px;
+}
+.categories div p {
+    /*background-color: #F0F;*/
+    transition: 0.35s;
+    margin: 0 auto;
+}
+.categories div p:hover {
+    transition: 0.1s;
+    color: rgba(200, 200, 200, 1);
 }
 
 .thumbnail {
-	transition: .5s;
-	width: 100px;
-	height: 100px;
-	background-color: rgb(250,250,250);
-	border-radius: 100%;
-	box-shadow: 0 0 10px -5px rgba(0, 0, 0, 0.2);
-	overflow: hidden;
+    transition: .5s;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(250, 250, 250);
+    border-radius: 100%;
+    box-shadow: 0 0 10px -5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
 }
 .thumbnail:hover {
-	opacity: 1;
+    opacity: 1;
 }
 .thumbnail img {
-	transition: .2s;
-	width: 100px;
-	height: 100px;
-
-	margin: 0 -50%;
+    transition: .2s;
+    width: 100px;
+    height: 100px;
+    margin: 0 -50%;
 }
 .thumbnail:hover {
-	transition: .4s;
-	transform: scale(1.2);
+    transition: .4s;
+    transform: scale(1.2);
 }
 .thumbnail img:hover {
-	transition: .3s;
-	transform: scale(1.15);
-}
-
-.deselected {
-	transition: 0.3s;
-	opacity: 0.3;
-}
-
-.categories div p {
-	transition: 0.35s;
-}
-.categories div p:hover {
-	transition: 0.1s;
-	color: rgba(200,200,200,1);
+    transition: .3s;
+    transform: scale(1.15);
 }
