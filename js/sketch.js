@@ -2,7 +2,6 @@
 var logo = [];
 var rdmLogo;
 var lastRdmLogo = [];
-var v;
 var visible;
 var lightOn;
 var animate;
@@ -21,7 +20,7 @@ function preload() {
 function rollLogo() {
   rdmLogo = logo[floor(random(4.999))];
 
-  for (i = 0 ; i <= 2 ; i++) {
+  for (i = 0 ; i <= 3 ; i++) {
     while (rdmLogo === lastRdmLogo[i]) {
       rdmLogo = logo[floor(random(4.999))];
     }
@@ -29,21 +28,21 @@ function rollLogo() {
 
  lastRdmLogo[0] = lastRdmLogo[1];
  lastRdmLogo[1] = lastRdmLogo[2];
- lastRdmLogo[2] = rdmLogo;
+ lastRdmLogo[2] = lastRdmLogo[3];
+ lastRdmLogo[3] = rdmLogo;
 
  //Penser à faire MIEUX un Array avec l'historique des Logo affichés
  //pour éviter d'avoir les même logos dans un intervalle de deux roll
 }
 
 function setup(){
-  var canvas = createCanvas(300, 400, WEBGL);
+  var canvas = createCanvas(330, 400, WEBGL);
   canvas.parent('logo');
 
   y = 0;
   vel = 0;
   acc = 0.9;
   t = 0;
-  v = 255;
   visible = -1; // -1 = non visible, 0 = visible
   animate = false;
 

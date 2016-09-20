@@ -3,9 +3,9 @@
 }
 
 #logo {
-  margin: auto;
-  width: 300px;
-  height: 400px;
+  margin: auto ;
+  width: 330px;
+  height: 350px;
 }
 
 #logo div {
@@ -42,28 +42,34 @@ vertical-align: middle;
 }
 
 .thumbnail {
+    display: inline-block;
+    margin: 15px 3% 30px 3%;
     transition: .5s;
     width: 100px;
     height: 100px;
-    background-color: rgb(250, 250, 250);
     border-radius: 100%;
     box-shadow: 0 0 10px -5px rgba(0, 0, 0, 0.2);
     overflow: hidden;
+    background-size: 100px 100px;
+    background-position: center;
+    background-color: rgb(250, 250, 250);
 }
+
 .thumbnail:hover {
     opacity: 1;
-}
-.thumbnail img {
-    transition: .2s;
-    width: 100px;
-    height: 100px;
-    margin: 0 -50%;
-}
-.thumbnail:hover {
     transition: .4s;
     transform: scale(1.2);
-}
-.thumbnail img:hover {
+    background-size: 120px 120px;
+    background-position: center;
     transition: .3s;
-    transform: scale(1.15);
 }
+/*** ------ ***REDIMENSIONNER LES -FICHIERS- A 240px, pour optimisation*** ------ ***/
+.irl {background-image: url("../images/thumb_irl.jpg");}
+.perrault {background-image: url("../images/thumb_perrault.jpg");}
+.dm {background-image: url("../images/thumb_dm.jpg");}
+.os {background-image: url("../images/thumb_os.jpg");}
+.lino {background-image: url("../images/thumb_lino.jpg");}
+.ritz {background-image: url("../images/thumb_ritz.jpg");}
+.lh {background-image: url("../images/thumb_lh.jpg");}
+.echolocal {background-image: url("../images/thumb_echolocal.jpg");}
+.this {background-image: url("../images/thumb_this.png");}
