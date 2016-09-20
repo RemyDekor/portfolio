@@ -27,7 +27,7 @@ $(document).ready(function() {
         $('.thumbnail').fadeTo('fast', 0.2);
         $('.works .code').fadeTo(0, 1);
     });
-    $('.logo').click(function() {
+    $('#logo').click(function() {
         $('.thumbnail').fadeTo('fast', 1);
     });
 

@@ -36,7 +36,8 @@ function rollLogo() {
 }
 
 function setup(){
-  createCanvas(windowWidth, 500, WEBGL);
+  var canvas = createCanvas(300, 400, WEBGL);
+  canvas.parent('logo');
 
   y = 0;
   vel = 0;
@@ -72,7 +73,7 @@ function mousePressed() {
   if (t<=60){
     t += 158;
   }else{
-    t *=1.2;
+    t += 20;
   }
 
   rollLogo();
