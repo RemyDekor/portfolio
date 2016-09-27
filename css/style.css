@@ -4,7 +4,7 @@
 
 #logo {
   margin: auto ;
-  width: 330px;
+  width: 320px;
   height: 350px;
 }
 
@@ -63,13 +63,18 @@ vertical-align: middle;
     background-position: center;
     transition: .3s;
 }
+
+.deselect {
+  /*box-shadow: inset 0px 0px 20px 20px rgba(255, 255, 255, 1), inset 0px 0px 40px 40px rgba(255, 255, 255, 0.5);
+  background-color: #FFF;*/
+}
 /*** ------ ***REDIMENSIONNER LES -FICHIERS- A 240px, pour optimisation*** ------ ***/
-.irl {background-image: url("../images/thumb_irl.jpg");}
-.perrault {background-image: url("../images/thumb_perrault.jpg");}
-.dm {background-image: url("../images/thumb_dm.jpg");}
-.os {background-image: url("../images/thumb_os.jpg");}
-.lino {background-image: url("../images/thumb_lino.jpg");}
-.ritz {background-image: url("../images/thumb_ritz.jpg");}
-.lh {background-image: url("../images/thumb_lh.jpg");}
-.echolocal {background-image: url("../images/thumb_echolocal.jpg");}
-.this {background-image: url("../images/thumb_this.png");}
+#irl {background-image: url("../images/thumb_irl.jpg");}
+#perrault {background-image: url("../images/thumb_perrault.jpg");}
+#dm {background-image: url("../images/thumb_dm.jpg");}
+#os {background-image: url("../images/thumb_os.jpg");}
+#lino {background-image: url("../images/thumb_lino.jpg");}
+#ritz {background-image: url("../images/thumb_ritz.jpg");}
+#lh {background-image: url("../images/thumb_lh.jpg");}
+#echolocal {background-image: url("../images/thumb_echolocal.jpg");}
+#this {background-image: url("../images/thumb_this.png");}

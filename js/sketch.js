@@ -36,7 +36,7 @@ function rollLogo() {
 }
 
 function setup(){
-  var canvas = createCanvas(330, 400, WEBGL);
+  var canvas = createCanvas(320, 400, WEBGL);
   canvas.parent('logo');
 
   y = 0;
@@ -79,8 +79,8 @@ function mousePressed() {
 
   rdm_X = round(random(-1.9,1.9));
   rdmX = rdm_X >= 0 ? rdm_X + 0.5 : rdm_X -0.5;
-  rdmY = round(random(-2.4,2.4));
-  rdmZ = round(random(-2.4,2.4));
+  rdmY = random(-2.4,2.4);
+  rdmZ = random(-2.4,2.4);
 }
 
 function displayBox() {
@@ -116,9 +116,9 @@ function roll() {
     //console.log(vel);
     if (y >= 1) {
       y = 0;
-      vel = -vel*0.7 + 1.3;
+      vel = -vel*0.75 + 1.6;
     }
-    if (abs(y) <= 2 && abs(vel) <= 3 && t <=3) {
+    if (abs(y) <= 1 && abs(vel) <= 1 && t <=2) {
       y = 0;
       vel = 0;
       //console.log(t);

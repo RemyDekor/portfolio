@@ -32,4 +32,10 @@ $(document).ready(function() {
     });
 
 
+
+
+    $('.thumbnail').magnificPopup({
+  type: 'ajax'
+  // other options
+});
 });
