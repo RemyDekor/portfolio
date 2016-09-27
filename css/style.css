@@ -1,5 +1,6 @@
 .container {
   text-align: center;
+  max-width: 1060px;
 }
 
 #logo {
@@ -43,7 +44,7 @@ vertical-align: middle;
 
 .thumbnail {
     display: inline-block;
-    margin: 15px 3% 30px 3%;
+    margin: 35px 3.5% 10px 3.5%;
     transition: .5s;
     width: 100px;
     height: 100px;
@@ -81,9 +82,7 @@ vertical-align: middle;
 
 
 
-
-
-
-.popup {
-  background-color: rgba(240,240,240,.8);
+.ppp-bg {
+  background-color: rgba(248, 248, 248, 1);
+  max-width: 980px;
 }
