@@ -78,3 +78,12 @@ vertical-align: middle;
 #lh {background-image: url("../images/thumb_lh.jpg");}
 #echolocal {background-image: url("../images/thumb_echolocal.jpg");}
 #this {background-image: url("../images/thumb_this.png");}
+
+
+
+
+
+
+.popup {
+  background-color: rgba(240,240,240,.8);
+}

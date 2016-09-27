@@ -34,7 +34,7 @@ $(document).ready(function() {
 
 
 
-    $('.thumbnail').magnificPopup({
+    $('.test').magnificPopup({
   type: 'ajax'
   // other options
 });
