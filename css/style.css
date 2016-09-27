@@ -86,3 +86,8 @@ vertical-align: middle;
   background-color: rgba(248, 248, 248, 1);
   max-width: 980px;
 }
+
+.ppp-img {
+  width: 100%;
+  height: auto;
+}
