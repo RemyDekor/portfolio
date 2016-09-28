@@ -11,6 +11,7 @@ var acc;
 var t;
 var canvasListener;
 var buttonListener;
+var cube;
 
 function preload() {
   for(var i = 0 ; i <= 4   ; i++) {
@@ -38,13 +39,13 @@ function rollLogo() {
 }
 
 function setup(){
-  var canvas = createCanvas(320, 400, WEBGL);
+  var canvas = createCanvas(275, 350, WEBGL);
   canvas.parent('logo');
 
   buttonListener = select('#this');
   canvasListener = select('canvas');
-  buttonListener.mouseReleased(myFunction);
-  canvasListener.mouseReleased(myFunction);
+  buttonListener.mousePressed(myFunction);
+  canvasListener.mousePressed(myFunction);
 
 
   y = 0;
@@ -93,12 +94,12 @@ function myFunction() {
 
 function displayBox() {
   push();
-  box(150);
+  box(136);
   pop();
 
   push();
-  translate(0, 0, 75);
-  plane(150, 150);
+  translate(0, 0, 68);
+  plane(136, 136);
 
 
   if (t <= 70) {
@@ -112,7 +113,7 @@ function displayBox() {
   specularMaterial(250,0,0,200);
   texture(rdmLogo);
   ambientLight(255-(t*3.5));
-  plane(150, 150);
+  plane(136, 136);
   pop();
 }
 
