@@ -9,6 +9,8 @@ var y;
 var vel;
 var acc;
 var t;
+var canvasListener;
+var buttonListener;
 
 function preload() {
   for(var i = 0 ; i <= 4   ; i++) {
@@ -39,6 +41,12 @@ function setup(){
   var canvas = createCanvas(320, 400, WEBGL);
   canvas.parent('logo');
 
+  buttonListener = select('#this');
+  canvasListener = select('canvas');
+  buttonListener.mouseReleased(myFunction);
+  canvasListener.mouseReleased(myFunction);
+
+
   y = 0;
   vel = 0;
   acc = 0.9;
@@ -66,7 +74,7 @@ function draw(){
     displayBox();
 }
 
-function mousePressed() {
+function myFunction() {
   animate = true;
   vel = -20;
   if (t<=60){

@@ -1,5 +1,4 @@
 
-
 $(document).ready(function() {
 
   // var categories = ['.illus', '.photo', '.design', '.code'];
@@ -11,6 +10,10 @@ $(document).ready(function() {
   //       console.log('categories[i] est : ' + categories[i]);
   //   });
   // }
+
+  // ---------------- Utiliser un add class selected ou deselected ou autre
+  // ---------------- pour animer les styles en CSS, plutot qu'en jQuery
+
     $('.thumbnail').ready(function() {
         $('.thumbnail .mask').fadeTo('fast', 0);
     });
@@ -48,7 +51,7 @@ $(document).ready(function() {
 
 
 
-    $('.thumbnail').magnificPopup({
+    $('.thumbnail').not('#this').magnificPopup({
   type: 'ajax'
   // other options
 });

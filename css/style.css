@@ -86,7 +86,7 @@ vertical-align: middle;
 #perrault {background-image: url("../images/thumb_perrault.jpg");}
 #dm {background-image: url("../images/thumb_dm.jpg");}
 #os {background-image: url("../images/thumb_os.jpg");}
-#lino {background-image: url("../images/thumb_lino.jpg");}
+#illus {background-image: url("../images/thumb_illus.jpg");}
 #ritz {background-image: url("../images/thumb_ritz.jpg");}
 #lh {background-image: url("../images/thumb_lh.jpg");}
 #echolocal {background-image: url("../images/thumb_echolocal.jpg");}
@@ -94,13 +94,14 @@ vertical-align: middle;
 
 .ppp {
   margin: auto;
-  width: 1010px;
+  width: 90%;
+  max-width: 1000px;
 }
 
 .ppp-container {
   margin: 15px;
   text-align: center;
-  max-width: 980px;
+  max-width: 970px;
   background-color: rgba(250,250,250,1);
 }
 
