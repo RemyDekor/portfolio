@@ -11,24 +11,38 @@ $(document).ready(function() {
   //       console.log('categories[i] est : ' + categories[i]);
   //   });
   // }
+    $('.thumbnail').ready(function() {
+        $('.thumbnail .mask').fadeTo('fast', 0);
+    });
+
     $('.categories .illus').click(function() {
-        $('.thumbnail').fadeTo('fast', 0.2);
-        $('.works .illus').fadeTo(0, 1);
+        $('.categories p').not(this).css('text-shadow','none');
+        $(this).css('text-shadow','0px 0px 9px #000');
+        $('.thumbnail .mask').not('.illus .mask').fadeTo('fast', 1);
+        $('.works .illus .mask').fadeTo('fast', 0);
     });
     $('.categories .photo').click(function() {
-        $('.thumbnail').fadeTo('fast', 0.2);
-        $('.works .photo').fadeTo(0, 1);
+        $('.categories p').not(this).css('text-shadow','none');
+        $(this).css('text-shadow','0px 0px 9px #000');
+        $('.thumbnail .mask').not('.photo .mask').fadeTo('fast', 1);
+        $('.works .photo .mask').fadeTo('fast', 0);
     });
     $('.categories .design').click(function() {
-        $('.thumbnail').fadeTo('fast', 0.2);
-        $('.works .design').fadeTo(0, 1);
+        $('.categories p').not(this).css('text-shadow','none');
+        $(this).css('text-shadow','0px 0px 9px #000');;
+        $('.thumbnail .mask').not('.design .mask').fadeTo('fast', 1);
+        $('.works .design .mask').fadeTo('fast', 0);
     });
     $('.categories .code').click(function() {
-        $('.thumbnail').fadeTo('fast', 0.2);
-        $('.works .code').fadeTo(0, 1);
+        $('.categories p').not(this).css('text-shadow','none');
+        $(this).css('text-shadow','0px 0px 9px #000');
+        $('.thumbnail .mask').not('.code .mask').fadeTo('fast', 1);
+        $('.works .code .mask').fadeTo('fast', 0);
     });
     $('#logo').click(function() {
-        $('.thumbnail').fadeTo('fast', 1);
+        // $('.thumbnail').fadeTo('fast', 1);
+        $('.categories p').css('text-shadow','none');
+        $('.mask').fadeTo('fast', 0);
     });
 
 
