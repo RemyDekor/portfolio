@@ -59,7 +59,7 @@ function setup(){
 }
 
 function draw(){
-  clear();
+  // clear();
   //background(250);
   ambientMaterial(0);
   ambientLight(20);
