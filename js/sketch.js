@@ -61,7 +61,7 @@ function setup(){
 
 function draw(){
   // clear();
-  background(250);
+  background(240);
   ambientMaterial(0);
   ambientLight(20);
   directionalLight(90, 100, 115, -0.8, 1, -0.1);

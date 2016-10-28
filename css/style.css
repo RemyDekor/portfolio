@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(250,250,250);
+  background-color: rgb(240,240,240);
 }
 
 .container {
@@ -12,7 +12,7 @@ body {
   width: 275px;
   height: 298px;
   overflow: hidden;
-  background-color: rgb(250,250,250);
+  background-color: rgb(240,240,240);
 }
 
 #logo div {
@@ -49,7 +49,7 @@ vertical-align: middle;
 
 .thumbnail {
     display: inline-block;
-    margin: 35px 4.6% 10px 4.6%;
+    margin: 35px 4.6% 15px 4.6%;
     transition: .5s;
     width: 115px;
     height: 115px;
@@ -58,7 +58,7 @@ vertical-align: middle;
     overflow: hidden;
     background-size: 115px 115px;
     background-position: center;
-    background-color: rgb(250, 250, 250);
+    background-color: rgb(240, 240, 240);
 }
 .thumbnail:hover {
     opacity: 1;
@@ -72,13 +72,13 @@ vertical-align: middle;
   transition: .3s;
   width: 100%;
   height: 100%;
-  background-color: rgba(240,240,240,.9);
+  background-color: rgba(225,225,225,.93);
 }
 .mask:hover {
   transition: .3s;
   width: 100%;
   height: 100%;
-  background-color: rgba(240,240,240,0);
+  background-color: rgba(230,230,230,0);
 }
 
 
@@ -96,22 +96,23 @@ vertical-align: middle;
 
 .ppp {
   margin: auto;
-  width: 90%;
-  max-width: 990px;
+  width: 94%;
+  max-width: 1030px;
 }
 
 .ppp-container {
   margin: 15px;
   padding: 15px 0px;
   text-align: center;
-  max-width: 960px;
-  background-color: rgba(250,250,250,1);
+  max-width: 1000px;
+  background-color: rgba(240,240,240,1);
 }
 
 .img-container {
-  margin: 15px 0px;
+  margin: 0px;
   width: 100%;
   height: auto;
+  line-height: 0;
 }
 .img-container img{
   max-width: 100%;
