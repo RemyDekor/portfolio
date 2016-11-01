@@ -124,7 +124,10 @@ vertical-align: middle;
   max-height: 750px;
   margin: auto;
 }
-
+/* pour mobile/tablette
+.subutex-video {
+margin: 0 -40% 0 -60%;
+}*/
 
 .ppp h2, .ppp h4 {
   font-family: 'Kanit', sans-serif;
