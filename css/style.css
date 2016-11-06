@@ -107,9 +107,6 @@ vertical-align: middle;
   max-width: 1250px;
   background-color: rgba(240,240,240,1);
 }
-.ppp-container .small {
-  margin: 9px;
-}
 
 .img-container {
   margin: 0px;
@@ -131,6 +128,10 @@ vertical-align: middle;
 .subutex-video {
 margin: 0 -40% 0 -60%;
 }*/
+.small {
+  margin: 2%;
+  width: 47%;
+}
 
 .ppp h2, .ppp h4 {
   font-family: 'Kanit', sans-serif;
