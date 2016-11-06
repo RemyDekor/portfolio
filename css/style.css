@@ -107,8 +107,8 @@ vertical-align: middle;
   max-width: 1250px;
   background-color: rgba(240,240,240,1);
 }
-.ppp-container img {
-  margin: 20px;
+.ppp-container .small {
+  margin: 9px;
 }
 
 .img-container {
