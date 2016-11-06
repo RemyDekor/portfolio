@@ -106,6 +106,7 @@ vertical-align: middle;
   text-align: center;
   max-width: 1250px;
   background-color: rgba(240,240,240,1);
+  overflow: hidden;
 }
 
 .img-container {
@@ -131,6 +132,7 @@ margin: 0 -40% 0 -60%;
 .small {
   margin: 0.6%;
   width: 47%;
+  min-width: 360px;
 }
 
 .ppp h2, .ppp h4 {
