@@ -84,6 +84,7 @@ vertical-align: middle;
 
 /*** ------ ***REDIMENSIONNER LES -FICHIERS- pour optimisation*** ------ ***/
 #subutex {background-image: url("../images/thumb_subutex.jpg");}
+#ngi {background-image: url("../images/thumb_ngi.jpg");}
 #irl {background-image: url("../images/thumb_irl.jpg");}
 #perrault {background-image: url("../images/thumb_perrault.jpg");}
 #dm {background-image: url("../images/thumb_dm.jpg");}
@@ -132,7 +133,6 @@ margin: 0 -40% 0 -60%;
 .small {
   margin: 0.6%;
   width: 47%;
-  min-width: 360px;
 }
 
 .ppp h2, .ppp h4 {
