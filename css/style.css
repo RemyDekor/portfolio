@@ -19,6 +19,16 @@ body {
   border-radius : 50%;
 }
 
+h6 {
+  font-family: 'Kanit', sans-serif;
+  font-size: 1.3em;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  margin-bottom: -0.2rem;
+  position: relative;
+  top: -6px;
+}
+
 .categories {
     font-family: 'Kanit', sans-serif;
     font-size: 1.2em;
@@ -49,7 +59,7 @@ vertical-align: middle;
 
 .thumbnail {
     display: inline-block;
-    margin: 35px 4.6% 15px 4.6%;
+    margin: 35px 4% 15px 4%;
     transition: .5s;
     width: 115px;
     height: 115px;
