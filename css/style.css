@@ -113,7 +113,7 @@ vertical-align: middle;
 
 .ppp-container {
   margin: 15px;
-  padding: 15px 0px;
+  padding: 15px 0 0 0;
   text-align: center;
   max-width: 1250px;
   background-color: rgba(240,240,240,1);
