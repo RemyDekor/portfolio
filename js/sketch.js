@@ -44,10 +44,13 @@ function setup(){
 
   buttonListenerDesktop = select('#thisdesktop');
   buttonListenerTablet = select('#thistablet');
-  canvasListener = select('canvas');
+  // canvasListener = select('canvas');
+  rectListener = select('#rectListener');
+
   buttonListenerDesktop.mousePressed(myFunction);
   buttonListenerTablet.mousePressed(myFunction);
-  canvasListener.mousePressed(myFunction);
+  // canvasListener.mousePressed(myFunction);
+  rectListener.mousePressed(myFunction);
 
 
   y = 0;
@@ -95,6 +98,7 @@ function myFunction() {
 }
 
 function displayBox() {
+
   push();
   box(136);
   pop();
@@ -136,6 +140,8 @@ function roll() {
       t=0;
       animate = false;
     }
+
+    rectListener.style("top", String(85+y)+"px");
 
     rotateX(Math.easeInCubic(t,0,6,160)*rdmX);
     rotateY(Math.easeInCubic(t,0,6,160)*rdmY);
