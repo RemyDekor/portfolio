@@ -42,7 +42,8 @@ function setup(){
   var canvas = createCanvas(275, 350, WEBGL);
   canvas.parent('logo');
 
-  buttonListener = select('#this');
+  buttonListener = select('#thisdesktop');
+  buttonListener = select('#thistablet');
   canvasListener = select('canvas');
   buttonListener.mousePressed(myFunction);
   canvasListener.mousePressed(myFunction);

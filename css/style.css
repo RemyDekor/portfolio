@@ -45,7 +45,7 @@ vertical-align: middle;
   height: auto;
   display: inline-block;
   margin: 25px auto;
-  padding: 0 27px;
+  padding: 0 2.1%;
 }
 .categories div p {
     /*background-color: #F0F;*/
@@ -103,7 +103,7 @@ vertical-align: middle;
 #ritz {background-image: url("../images/thumb_ritz.jpg");}
 #lh {background-image: url("../images/thumb_lh.jpg");}
 #echolocal {background-image: url("../images/thumb_echolocal.jpg");}
-#this {background-image: url("../images/thumb_this.png");}
+.this {background-image: url("../images/thumb_this.png");}
 
 .ppp {
   margin: auto;
@@ -163,6 +163,9 @@ margin: 0 -40% 0 -60%;
   padding: 0px 70px;
 }
 
+.tablet {
+  display: none;
+}
 
 
 
@@ -183,5 +186,11 @@ margin: 0 -40% 0 -60%;
   }
   .ppp p {
     padding: 0px 20px;
+  }
+  .desktop {
+    display: none;
+  }
+  .tablet {
+    display: inline-block;
   }
 }

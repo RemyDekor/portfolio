@@ -60,7 +60,7 @@ $(document).ready(function() {
 
 
 
-    $('.thumbnail').not('#this').magnificPopup({
+    $('.thumbnail').not('.this').magnificPopup({
   type: 'ajax'
   // other options
 });
