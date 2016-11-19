@@ -160,7 +160,7 @@ margin: 0 -40% 0 -60%;
 }
 .ppp p {
   margin: 20px 0 20px 0;
-  padding: 0px 20px;
+  padding: 0px 70px;
 }
 
 
@@ -175,7 +175,13 @@ margin: 0 -40% 0 -60%;
 
 
 @media (max-width: 720px){
+  .ppp-container {
+    margin: 12px 0;
+  }
   .small {
     width: 96%;
+  }
+  .ppp p {
+    padding: 0px 20px;
   }
 }
