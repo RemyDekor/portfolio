@@ -185,6 +185,15 @@ margin: 0 -40% 0 -60%;
   color: #FFE;
 }
 
+.ngipage {
+  background-color: #4ac1ec;
+  background-image: url("../images/ngi/scanner.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+  color: rgb(240,240,240);
+}
+
 
 
 @media (max-width: 720px){
