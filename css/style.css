@@ -193,14 +193,22 @@ margin: 0 -40% 0 -60%;
 }
 
 .ngipage {
+  padding: 0;
+  color: rgb(240,240,240);
   background-color: #4ac1ec;
+}
+.ngipage .scanner {
+  min-height: 330px;
   background-image: url("../images/ngi/scanner.jpg");
-  background-size: contain;
+  background-size:cover;
   background-repeat: no-repeat;
   background-position: center top;
-  color: rgb(240,240,240);
 }
-
+.ngipage p {
+  margin: 20px auto 20px auto;
+  padding: 35px 70px;
+  max-width: 303px;
+}
 
 
 @media (max-width: 720px){
@@ -212,6 +220,10 @@ margin: 0 -40% 0 -60%;
   }
   .ppp p {
     padding: 0px 20px;
+  }
+
+  .ngipage p {
+    padding: 35px 20px;
   }
   /*.desktop {
     display: none;
