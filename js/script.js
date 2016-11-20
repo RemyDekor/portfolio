@@ -50,18 +50,19 @@ $(document).ready(function() {
         $('.thumbnail .mask').not('.code .mask').fadeTo('fast', 1);
         $('.works .code .mask').fadeTo('fast', 0);
     });
-    $('#logo').click(function() {
-        // $('.thumbnail').fadeTo('fast', 1);
-        $('.categories p').css('text-shadow','none');
-        $('.categories p').css('color','#222');
-        $('.mask').fadeTo('fast', 0);
-    });
+
+    // $('#rectListener').click(function() {
+    //     // $('.thumbnail').fadeTo('fast', 1);
+    //     $('.categories p').css('text-shadow','none');
+    //     $('.categories p').css('color','#222');
+    //     $('.mask').fadeTo('fast', 0);
+    // });
 
 
 
 
     $('.thumbnail').not('.this').magnificPopup({
-  type: 'ajax'
-  // other options
-});
+        type: 'ajax'
+        // other options
+    });
 });

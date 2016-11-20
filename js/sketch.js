@@ -95,6 +95,10 @@ function myFunction() {
   rdmX = rdm_X >= 0 ? rdm_X + 0.5 : rdm_X -0.5;
   rdmY = random(-2.4,2.4);
   rdmZ = random(-2.4,2.4);
+
+  $('.categories p').css('text-shadow','none');
+  $('.categories p').css('color','#222');
+  $('.mask').fadeTo('fast', 0);
 }
 
 function displayBox() {
@@ -140,6 +144,8 @@ function roll() {
       t=0;
       animate = false;
     }
+
+
 
     rectListener.style("top", String(85+y)+"px");
 
