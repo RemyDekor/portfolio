@@ -156,7 +156,7 @@ margin: 0 -40% 0 -60%;
 }*/
 .small {
   margin: 0 0.6% 1.2% 0.6%;
-  width: 47%;
+  max-width: 47%;
 }
 
 .ppp h2, .ppp h4 {
@@ -209,6 +209,15 @@ margin: 0 -40% 0 -60%;
   padding: 35px 70px;
   max-width: 326px;
 }
+.dmpage .img-container {
+    padding-bottom: 20px;
+}
+.dmpage .img-container img {
+  max-width: 96%;
+}
+.dmpage img {
+  box-shadow: 0px 3px 7px rgba(0,0,0,0.3);
+}
 
 
 @media (max-width: 720px){
@@ -216,12 +225,15 @@ margin: 0 -40% 0 -60%;
     margin: 12px 0;
   }
   .small {
-    width: 96%;
+    max-width: 96%;
   }
   .ppp p {
     padding: 0px 20px;
   }
 
+  .dmpage .img-container{
+    padding-bottom: 14px;
+  }
   .ngipage p {
     padding: 30px 20px;
   }
