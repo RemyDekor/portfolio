@@ -62,11 +62,8 @@ $(document).ready(function() {
 
 
     $('.thumbnail').not('.this').magnificPopup({
-        type: 'ajax',
+        type: 'ajax'
         // other options
-
-        closeOnBgClick: 'false',
-        enableEscapeKey: 'false'
     });
 
 });
