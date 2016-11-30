@@ -219,19 +219,27 @@ margin: 0 -40% 0 -60%;
 .dmpage img {
   box-shadow: 0px 3px 7px rgba(0,0,0,0.3);
 }
+.inktoberpage {
+  background-color: #fff;
+}
+.inktoberpage .img-container img {
+  margin-bottom: 19px;
+}
 .ppp .irlpage {
   color: #eee;
   background-image: url("../images/irl/wip_bg.png");
   background-repeat: repeat;
+  background-attachment: fixed;
 }
 
 .img-column {
-  margin: 0 0.6% 1.2% 0.6%;
+  margin: 0 0.7% 0.6% 0.7%;
   width: 47%;
   display: inline-block;
   vertical-align: top;
 }
 .img-column .small{
+  margin: 0 0.6% 2% 0.6%;
   max-width: 100%;
 }
 
@@ -253,6 +261,10 @@ margin: 0 -40% 0 -60%;
   .ngipage p {
     padding: 30px 20px;
   }
+  .ppp .irlpage {
+    background-size: 25%;
+  }
+
   /*.desktop {
     display: none;
   }
