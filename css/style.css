@@ -96,6 +96,7 @@ vertical-align: middle;
   transition: .3s;
   width: 100%;
   height: 100%;
+  border-radius: 100%;
   background-color: rgba(225,225,225,.93);
 }
 .mask:hover {
@@ -107,16 +108,16 @@ vertical-align: middle;
 
 
 /*** ------ ***REDIMENSIONNER LES -FICHIERS- pour optimisation*** ------ ***/
-#subutex {background-image: url("../images/thumb_subutex.jpg");}
-#ngi {background-image: url("../images/thumb_ngi.jpg");}
-#irl {background-image: url("../images/thumb_irl.jpg");}
-#perrault {background-image: url("../images/thumb_perrault.jpg");}
-#dm {background-image: url("../images/thumb_dm.jpg");}
-#os {background-image: url("../images/thumb_os.jpg");}
+#subutex {background-image: url("../images/thumb_subutex.png");}
+#ngi {background-image: url("../images/thumb_ngi.png");}
+#irl {background-image: url("../images/thumb_irl.png");}
+#perrault {background-image: url("../images/thumb_perrault.png");}
+#dm {background-image: url("../images/thumb_dm.png");}
+#os {background-image: url("../images/thumb_os.png");}
 #ink {background-image: url("../images/thumb_ink.png");}
-#ritz {background-image: url("../images/thumb_ritz.jpg");}
-#lh {background-image: url("../images/thumb_lh.jpg");}
-#echolocal {background-image: url("../images/thumb_echolocal.jpg");}
+#ritz {background-image: url("../images/thumb_ritz.png");}
+#lh {background-image: url("../images/thumb_lh.png");}
+#echolocal {background-image: url("../images/thumb_echolocal.png");}
 .this {background-image: url("../images/thumb_this.png");}
 
 .ppp {
