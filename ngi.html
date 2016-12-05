@@ -42,7 +42,7 @@
 <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <div class="ppp">
-  <div class="ppp-container ngipage">
+  <div class="ppp-container" id="ngipage">
     <div id="scanner">
       <h2>NGI</h2>
       <h4>Conception d'un logotype</h4>
@@ -60,12 +60,16 @@
 </div>
 
 <script>
+  var ngipage = document.getElementById('ngipage');
+  var scannerBg = document.getElementById('scanner');
+
+  requestAnimationFrame(ngipage.run.bind(ngipage));
   // Create cross browser requestAnimationFrame method:
-  window.requestAnimationFrame = window.requestAnimationFrame
-   || window.mozRequestAnimationFrame
-   || window.webkitRequestAnimationFrame
-   || window.msRequestAnimationFrame
-   || function(f){setTimeout(f, 1000/60)}
+  // window.requestAnimationFrame = window.requestAnimationFrame
+  //  || window.mozRequestAnimationFrame
+  //  || window.webkitRequestAnimationFrame
+  //  || window.msRequestAnimationFrame
+  //  || function(f){setTimeout(f, 1000/60)}
 
   var scannerBg = document.getElementById('scanner')
 

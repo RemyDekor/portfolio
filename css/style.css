@@ -194,19 +194,19 @@ margin: 0 -40% 0 -60%;
   color: #FFF;
 }
 
-.ngipage {
+#ngipage {
   padding: 0;
   color: rgb(240,240,240);
   background-color: #4ac1ec;
 }
-.ngipage #scanner {
+#ngipage #scanner {
   min-height: 348px;
   background-image: url("../images/ngi/scanner.jpg");
   background-size:cover;
   background-repeat: no-repeat;
   background-position: 50% 0%;
 }
-.ngipage p {
+#ngipage p {
   margin: 25px auto 25px auto;
   padding: 35px 70px;
   max-width: 326px;
