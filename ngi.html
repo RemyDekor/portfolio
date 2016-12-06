@@ -68,7 +68,7 @@
    || function(f){setTimeout(f, 1000/60)}
 
   var scannerBg = document.getElementById('scanner');
-  var popup = document.getElementsByClassName('mfp-content');
+  var popup = document.getElementsByClassName('mfp-bg');
 
   var scrollheight = document.body.scrollHeight // height of entire document
   var windowheight = window.innerHeight // height of browser window
@@ -88,6 +88,7 @@
    var scrolltop = window.pageYOffset // get number of pixels document has scrolled vertically
    var scrollamount = (scrolltop / (scrollheight-windowheight)) * 100 // get amount scrolled (in %)
   }, false)
+  console.log(popup);
 </script>
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
