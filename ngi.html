@@ -80,15 +80,15 @@
    console.log(scrolltop);
   }
 
-  popup.addEventListener('scroll', function(){ // on page scroll
-   requestAnimationFrame(parallaxscanner) // call parallaxscanner() on next available screen paint
+  window.addEventListener('scroll', function(){ // on page scroll
+   requestAnimationFrame(parallaxscanner)
+   console.log(popup); // call parallaxscanner() on next available screen paint
   }, false)
 
   window.addEventListener('resize', function(){ // on window resize
    var scrolltop = window.pageYOffset // get number of pixels document has scrolled vertically
    var scrollamount = (scrolltop / (scrollheight-windowheight)) * 100 // get amount scrolled (in %)
   }, false)
-  console.log(popup);
 </script>
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
