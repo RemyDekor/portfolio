@@ -67,7 +67,8 @@
    || window.msRequestAnimationFrame
    || function(f){setTimeout(f, 1000/60)}
 
-  var scannerBg = document.getElementById('scanner')
+  var scannerBg = document.getElementById('scanner');
+  var popup = document.getElementsByClassName('mfp-content');
 
   var scrollheight = document.body.scrollHeight // height of entire document
   var windowheight = window.innerHeight // height of browser window
@@ -79,7 +80,7 @@
    console.log(scrolltop);
   }
 
-  scannerBg.addEventListener('scroll', function(){ // on page scroll
+  popup.addEventListener('scroll', function(){ // on page scroll
    requestAnimationFrame(parallaxscanner) // call parallaxscanner() on next available screen paint
   }, false)
 
