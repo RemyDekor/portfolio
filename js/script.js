@@ -62,7 +62,7 @@ $(document).ready(function() {
 
 
     $('.thumbnail').not('.this').magnificPopup({
-        type: 'ajax'
+        type: 'ajax',
 
 
         // Delay in milliseconds before popup is removed
