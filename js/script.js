@@ -66,7 +66,7 @@ $(document).ready(function() {
 
 
         // Delay in milliseconds before popup is removed
-        removalDelay: 300,
+        removalDelay: 500,
         // Class that is added to popup wrapper and background
         // make it unique to apply your CSS animations just to this exact popup
         mainClass: 'mfp-fade'
