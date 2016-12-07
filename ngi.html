@@ -68,8 +68,6 @@
    || function(f){setTimeout(f, 1000/60)}
 
   var scannerBg = document.getElementById('scanner');
-  var popupArray =  document.querySelectorAll('ppp');
-  popupArray = Array.prototype.slice.call(popupArray);
 
   var scrollheight = document.body.scrollHeight; // height of entire document
   var windowheight = window.innerHeight; // height of browser window
@@ -81,18 +79,11 @@
    console.log(scrolltop);
   }
 
-  function testfunction() {
-    console.log('test');
-  }
 
   window.addEventListener('scroll', function(){ // on page scroll
    requestAnimationFrame(parallaxscanner); // call parallaxscanner() on next available screen paint
   }, false)
 
-  popupArray.forEach(function(popupArray) {
-  window.addEventListener("scroll", testfunction);
-
-  });
 
   window.addEventListener('resize', function(){ // on window resize
    var scrolltop = window.pageYOffset // get number of pixels document has scrolled vertically
