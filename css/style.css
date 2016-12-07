@@ -42,6 +42,23 @@ h6 {
   top: -6px;
 }
 
+.contacts a {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #000;
+    display: inline-block;
+    margin: 10px 10px 4px 10px;
+}
+#CV {
+    font-family: 'Kanit', sans-serif;
+    line-height: 1.8em;
+    font-size: 1em;
+    font-weight: 500;
+    color: rgb(240,240,240);
+    text-decoration: none;
+}
+
 .categories {
     font-family: 'Kanit', sans-serif;
     font-size: 1.2em;
@@ -50,7 +67,7 @@ h6 {
 .categories span {
     font-size: 1.85em;
     font-weight: 300;
-vertical-align: middle;
+    vertical-align: middle;
 }
 .categories div {
   /*background-color: #F00;*/
@@ -245,6 +262,7 @@ margin: 0 -40% 0 -60%;
 }
 
 
+
 @media (max-width: 720px){
   .ppp-container {
     margin: 12px 0;
@@ -254,6 +272,10 @@ margin: 0 -40% 0 -60%;
   }
   .ppp p {
     padding: 0px 20px;
+  }
+  .categories div {
+    margin: 0px auto;
+    padding: 0 2%;
   }
 
   .dmpage .img-container{
@@ -266,12 +288,9 @@ margin: 0 -40% 0 -60%;
     background-size: 25%;
   }
 
-  /*.desktop {
+  .hiddenOnMobile {
     display: none;
   }
-  .tablet {
-    display: inline-block;
-  }*/
 }
 
 @media (max-width: 870px){
@@ -279,6 +298,12 @@ margin: 0 -40% 0 -60%;
     display: inline-block;
   }
   #thisdesktop {
+    display: none;
+  }
+}
+
+@media (min-width: 721px) {
+  .hiddenOnDesktop {
     display: none;
   }
 }
