@@ -63,21 +63,16 @@ $(document).ready(function() {
 
     $('.thumbnail').not('.this').magnificPopup({
         type: 'ajax'
+
+
+        // Delay in milliseconds before popup is removed
+        removalDelay: 300,
+        // Class that is added to popup wrapper and background
+        // make it unique to apply your CSS animations just to this exact popup
+        mainClass: 'mfp-fade'
+
+
         // other options
     });
 
-});
-
-
-
-// Inline popups
-$('#inline-popups').magnificPopup({
-  delegate: 'a',
-  removalDelay: 500, //delay removal by X to allow out-animation
-  callbacks: {
-    beforeOpen: function() {
-       this.st.mainClass = this.st.el.attr('data-effect');
-    }
-  },
-  midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
 });
