@@ -266,7 +266,7 @@ margin: 0 -40% 0 -60%;
 
 @media (max-width: 720px){
   html{
-    background-color: rgb(103,103,103);
+    background-color: rgb(57,57,57);
   }
   .ppp-container {
     margin: 14px 0;
