@@ -263,7 +263,7 @@ margin: 0 -40% 0 -60%;
 }
 
 
-@@media handheld {
+@media handheld {
   html{
     background-color: rgb(57,57,57);
   }
