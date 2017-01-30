@@ -263,11 +263,14 @@ margin: 0 -40% 0 -60%;
 }
 
 
-
-@media (max-width: 720px){
+@@media handheld {
   html{
     background-color: rgb(57,57,57);
   }
+}
+
+
+@media (max-width: 720px){
   .ppp-container {
     margin: 15px 0;
   }
