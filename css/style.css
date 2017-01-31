@@ -1,8 +1,3 @@
-/*html {
-  background-color: rgb(57, 57, 57);
-  overflow: visible;
-}*/
-
 body {
   background-color: rgb(240,240,240);
   font-family: "Slabo 27px", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -19,7 +14,7 @@ a {
  #rectListener {
   height: 180px;
   width: 180px;
-  background-color: rgba(255,0,0,0);
+  background-color: rgba(255,0,0,1);
   position: static;
   top: 85px;
   left: 50%;
