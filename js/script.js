@@ -1,13 +1,11 @@
 
 $(document).ready(function() {
 
-  if ($('body').height() < $(window).height()) {
+if ($('body').height() < $(window).height()) {
     $(window).resize(function() {
       $('body').height($(window).height());
-  }
-
-
-});
+    }
+}
 
 $(window).trigger('resize');
 
