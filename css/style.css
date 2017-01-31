@@ -350,7 +350,7 @@ margin: 0 -40% 0 -60%;
 }
 /* overlay animate in */
 .mfp-fade.mfp-bg.mfp-ready {
-  /*opacity: 0.8;     Commented-OUT in order to try to fix a BG issue with mobile/tablet */
+  opacity: 0.8;
 }
 /* overlay animate out */
 .mfp-fade.mfp-bg.mfp-removing {
