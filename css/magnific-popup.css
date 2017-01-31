@@ -48,12 +48,21 @@
   margin: 0 auto;
   text-align: left;
   z-index: 1045;
-  /*TRYNG TO FIX SCROLLING BG ISSUE ON MOBILE*/
-  max-height: 100%;
+  /*FIX THAT HAS BEEN MOVED TO A MEDIA QUERY (down here) BECAUSE WAS TERRIBLE ON MOBILE (android)*/
+  /*max-height: 100%;
   overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;*/
   /* ---- */
 }
+/*FIXING SCROLLING BD ISSUE ON TABLET, BUT IS INSIDE A MEDIA QUERY BECAUSE IT IS HORRIBLE ON MOBILE (android)*/
+@media (max-width: 516px){
+  .mfp-content {
+    max-height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+/* ---- */
 
 .mfp-inline-holder .mfp-content,
 .mfp-ajax-holder .mfp-content {
