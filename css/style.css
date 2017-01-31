@@ -19,7 +19,7 @@ a {
  #rectListener {
   height: 180px;
   width: 180px;
-  background-color: rgba(255,0,0, 1);
+  background-color: rgba(255,0,0,0);
   position: absolute;
   top: 85px;
   left: 50%;
