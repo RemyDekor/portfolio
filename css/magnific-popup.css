@@ -51,6 +51,8 @@
   /*TRYNG TO FIX SCROLLING BG ISSUE ON MOBILE*/
   max-height: 100%;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  /* ---- */
 }
 
 .mfp-inline-holder .mfp-content,
