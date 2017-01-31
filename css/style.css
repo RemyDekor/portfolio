@@ -20,7 +20,7 @@ a {
   height: 180px;
   width: 180px;
   background-color: rgba(255,0,0, 1);
-  position: static;
+  position: absolute;
   top: 85px;
   left: 50%;
   transform: translate(-50%, 0);
