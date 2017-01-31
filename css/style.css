@@ -255,7 +255,6 @@ margin: 0 -40% 0 -60%;
   background-repeat: repeat;
   background-attachment: fixed;
   -webkit-backface-visibility: hidden; /*supposed to fix the problem with "fixed" on tablet*/
-
 }
 
 .img-column {

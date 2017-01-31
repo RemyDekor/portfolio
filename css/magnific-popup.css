@@ -7,9 +7,9 @@
   z-index: 1042;
   overflow: hidden;
   position: fixed;
+  background: #0b0b0b;
   -webkit-backface-visibility: hidden; /*supposed to fix the problem with "fixed" on tablet*/
 
-  background: #0b0b0b;
   opacity: 0.6; }
 
 .mfp-wrap {
