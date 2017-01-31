@@ -20,7 +20,7 @@ a {
   height: 180px;
   width: 180px;
   background-color: rgba(255,0,0,0);
-  position: fixed;
+  position: static;
   top: 85px;
   left: 50%;
   transform: translate(-50%, 0);
@@ -254,6 +254,8 @@ margin: 0 -40% 0 -60%;
   background-image: url("../images/irl/wip_bg.png");
   background-repeat: repeat;
   background-attachment: fixed;
+  -webkit-backface-visibility: hidden; /*supposed to fix the problem with "fixed" on tablet*/
+
 }
 
 .img-column {
