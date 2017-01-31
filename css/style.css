@@ -350,7 +350,7 @@ margin: 0 -40% 0 -60%;
 }
 /* overlay animate in */
 .mfp-fade.mfp-bg.mfp-ready {
-  opacity: 0.8;
+  /*opacity: 0.8;     Commented-OUT in order to try to fix a BG issue with mobile/tablet */
 }
 /* overlay animate out */
 .mfp-fade.mfp-bg.mfp-removing {
@@ -365,7 +365,7 @@ margin: 0 -40% 0 -60%;
   -moz-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-/* content animate it */
+/* content animate in */
 .mfp-fade.mfp-wrap.mfp-ready .mfp-content {
   opacity: 1;
 }

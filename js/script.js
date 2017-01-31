@@ -2,7 +2,7 @@
 $(document).ready(function() {
 
   $(window).resize(function() {
-    $('body').height($(window).height() + 15);
+    $('body').height($(window).height());
 
 });
 
@@ -70,15 +70,11 @@ $(window).trigger('resize');
 
     $('.thumbnail').not('.this').magnificPopup({
         type: 'ajax',
-
-
         // Delay in milliseconds before popup is removed
         removalDelay: 500,
         // Class that is added to popup wrapper and background
         // make it unique to apply your CSS animations just to this exact popup
         mainClass: 'mfp-fade'
-
-
         // other options
     });
 
