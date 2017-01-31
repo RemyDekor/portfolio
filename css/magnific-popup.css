@@ -47,7 +47,11 @@
   vertical-align: middle;
   margin: 0 auto;
   text-align: left;
-  z-index: 1045; }
+  z-index: 1045;
+  /*TRYNG TO FIX SCROLLING BG ISSUE ON MOBILE*/
+  max-height: 100%;
+  overflow-y: scroll;
+}
 
 .mfp-inline-holder .mfp-content,
 .mfp-ajax-holder .mfp-content {
