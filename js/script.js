@@ -1,13 +1,14 @@
 
 $(document).ready(function() {
 
-if ($('body').height() < $(window).height()) {
-    $(window).resize(function() {
+  $(window).resize(function() {
+    if ($('body').height() < $(window).height()) {
       $('body').height($(window).height());
     }
-}
 
-$(window).trigger('resize');
+  });
+
+  $(window).trigger('resize');
 
   // var categories = ['.illus', '.photo', '.design', '.code'];
   //
