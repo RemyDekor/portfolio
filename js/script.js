@@ -1,6 +1,13 @@
 
 $(document).ready(function() {
 
+  $(window).resize(function() {
+    $('body').height($(window).height());
+
+});
+
+$(window).trigger('resize');
+
   // var categories = ['.illus', '.photo', '.design', '.code'];
   //
   // for (var i = 0 ; i < 4 ; i++) {
