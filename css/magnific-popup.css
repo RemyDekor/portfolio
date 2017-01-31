@@ -55,7 +55,7 @@
   /* ---- */
 }
 /*FIXING SCROLLING BD ISSUE ON TABLET, BUT IS INSIDE A MEDIA QUERY BECAUSE IT IS HORRIBLE ON MOBILE (android)*/
-@media (max-width: 516px){
+@media (min-width: 516px){
   .mfp-content {
     max-height: 100%;
     overflow-y: scroll;
