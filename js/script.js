@@ -2,7 +2,7 @@
 $(document).ready(function() {
 
   $(window).resize(function() {
-    $('body').height($(window).height());
+    $('body').height($(window).height() + 15);
 
 });
 
