@@ -10,15 +10,15 @@ $(document).ready(function() {
       console.log('1rst function is triggered.')
     }
     else if ($(window).height() < $('body').height()) {
-      $('body').height($('container').height());
+      $('body').height($('.container').height());
 
       console.log('2nd function is triggered.');
     }
 
-    console.log($('container').height());
+    console.log($('.container').height());
 
-    if ($('body').height() < $('container').height()) {
-      $('body').height($('container').height());
+    if ($('body').height() < $('.container').height()) {
+      $('body').height($('.container').height());
       console.log('3rd function is triggered.')
     }
 
