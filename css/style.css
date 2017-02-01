@@ -117,7 +117,7 @@ h6 {
     background-position: center;
     transition: .3s;
 }
-.thumbnail.active, .thumbnail:selection {
+.thumbnail.active, .thumbnail:focus {
     outline: none;
 }
 
