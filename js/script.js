@@ -15,7 +15,7 @@ $(document).ready(function() {
       console.log('2nd function is triggered.');
     }
 
-    console.log('container').height();
+    console.log($('container').height());
 
     if ($('body').height() < $('container').height()) {
       $('body').height($('container').height());
