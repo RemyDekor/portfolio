@@ -11,6 +11,10 @@ $(document).ready(function() {
       $('body').height($('container').height());
     }
 
+    if ($('body').height() < $('container').height() {
+      $('body').height($('container').height());
+    })
+
   });
 
   $(window).trigger('resize');
