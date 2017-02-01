@@ -6,14 +6,19 @@ $(document).ready(function() {
   $(window).resize(function() {
     if ($(window).height() > $('body').height()) {
       $('body').height($(window).height());
+
+      console.log('1rst function is triggered.')
     }
     else if ($(window).height() < $('body').height()) {
       $('body').height($('container').height());
+
+      console.log('2nd function is triggered.')
     }
 
     if ($('body').height() < $('container').height()) {
       $('body').height($('container').height());
-      console.log('this function is triggered.')
+
+      console.log('3rd function is triggered.')
     }
 
   });
