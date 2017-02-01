@@ -119,8 +119,10 @@ h6 {
 }
 .thumbnail:active, .thumbnail:focus, .thumbnail.active {
   outline: 0;
--webkit-box-shadow: none;
-        box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -moz-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .mask {
