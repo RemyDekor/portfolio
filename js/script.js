@@ -12,10 +12,10 @@ $(document).ready(function() {
     else if ($(window).height() < $('body').height()) {
       $('body').height($('container').height());
 
-      console.log('2nd function is triggered.')
+      console.log('2nd function is triggered.');
     }
 
-    console.log('container').height());
+    console.log('container').height();
 
     if ($('body').height() < $('container').height()) {
       $('body').height($('container').height());
