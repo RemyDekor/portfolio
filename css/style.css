@@ -107,6 +107,7 @@ h6 {
     background-size: 115px 115px;
     background-position: center;
     background-color: rgb(240, 240, 240);
+    outline: none;
 }
 .thumbnail:hover {
     opacity: 1;
@@ -116,6 +117,9 @@ h6 {
     background-position: center;
     transition: .3s;
 }
+/*.thumbnail:selected {
+    outline: none;
+}*/
 .mask {
   transition: .3s;
   width: 100%;
