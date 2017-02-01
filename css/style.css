@@ -281,13 +281,17 @@ margin: 0 -40% 0 -60%;
   }
   .categories div {
     margin: 0px auto;
-    /**/
+    padding: 0 2%;
+  }
+
+  /**/
+  .categories {
     margin-top: 15px;
     margin-bottom: 15px;
     line-height: 1.9em;
-    /**/
-    padding: 0 2%;
   }
+  /**/
+
 
   .dmpage .img-container{
     padding-bottom: 14px;
