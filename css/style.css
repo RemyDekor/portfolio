@@ -69,6 +69,7 @@ h6 {
     font-family: 'Kanit', sans-serif;
     font-size: 1.2em;
     font-weight: 400;
+    margin-top: -5px;
 }
 .categories span {
     font-size: 1.85em;
@@ -96,7 +97,7 @@ h6 {
 
 .thumbnail {
     display: inline-block;
-    margin: 35px 4% 15px 4%;
+    margin: 16px 3.8% 18px 3.8%;
     transition: .5s;
     width: 115px;
     height: 115px;

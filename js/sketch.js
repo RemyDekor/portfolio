@@ -39,7 +39,7 @@ function rollLogo() {
 }
 
 function setup(){
-  var canvas = createCanvas(275, 350, WEBGL);
+  var canvas = createCanvas(275, 340, WEBGL);
   canvas.parent('logo');
 
   buttonListenerDesktop = select('#thisdesktop');
