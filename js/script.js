@@ -13,6 +13,7 @@ $(document).ready(function() {
 
     if ($('body').height() < $('container').height()) {
       $('body').height($('container').height());
+      console.log('this function is triggered.')
     }
 
   });
