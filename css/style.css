@@ -1,5 +1,5 @@
 html {
-  background-color: rgb(57, 57, 57); /* IS USED TO POORLY FIX THE SCROLLING + POPUP BG ISSUE ON MOBILE*/
+  /*background-color: rgb(57, 57, 57);  IS USED TO POORLY FIX THE SCROLLING + POPUP BG ISSUE ON MOBILE*/
   overflow: visible;
 }
 

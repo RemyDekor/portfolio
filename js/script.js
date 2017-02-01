@@ -3,16 +3,19 @@ $(document).ready(function() {
 
 
  /* vvvvvvvvvv TROUVER MEILLEURE SOLUTION vvvvvvvvv */
-  $(window).resize(function() {
-    if ($(window).height() > $('body').height()) {
-      $('body').height($(window).height());
-    }
-    else if ($(window).height() < $('body').height()) {
-      $('body').height($('.container').height());
-    }
-  });
+  // $(window).resize(function() {
+  //   if ($(window).height() > $('body').height()) {
+  //     $('body').height($(window).height());
+  //   }
+  //   else if ($(window).height() < $('body').height()) {
+  //     $('body').height($('.container').height());
+  //   }
+  // });
+  //
+  // $(window).trigger('resize');
 
-  $(window).trigger('resize');
+
+
 
   // var categories = ['.illus', '.photo', '.design', '.code'];
   //
