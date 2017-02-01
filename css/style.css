@@ -117,9 +117,10 @@ h6 {
     background-position: center;
     transition: .3s;
 }
-/*.thumbnail:selected {
+.thumbnail:selected, .thumbnail.active, thumbnail.selection {
     outline: none;
-}*/
+}
+
 .mask {
   transition: .3s;
   width: 100%;
