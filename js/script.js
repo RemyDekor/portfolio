@@ -4,7 +4,7 @@ $(document).ready(function() {
 
  /* vvvvvvvvvv TROUVER MEILLEURE SOLUTION vvvvvvvvv */
   $(window).resize(function() {
-    if ($('body').height() < $(window).height()) {
+    if ($('container').height() < $(window).height()) {
       $('body').height($(window).height());
     }
     if ($(window).height() < $('body').height()) {
