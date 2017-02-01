@@ -2,7 +2,7 @@
 $(document).ready(function() {
 
   $(window).resize(function() {
-    if ($('body').height() < $(window).height()) {
+    if ($('body').height() < $(window).height() && $(window).height() < $(window).width()) {
       $('body').height($(window).height());
     }
 
