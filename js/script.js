@@ -4,7 +4,7 @@
 $(document).ready(function() {
 
 
-  $('body').on('click', '.ppp-container', function (){
+  $('body').on('scroll', '.ppp-container', function (){
         alert('click!');
     });
 
