@@ -60,7 +60,18 @@ function setup(){
   visible = -1; // -1 = non visible, 0 = visible
   animate = false;
 
+
   rollLogo();
+
+  /*CODE TO MAKE THE CUBE FALL FROM THE SKY AT OPENING*/
+    y = -285;
+    t = 190;
+    myFunction();
+    rdmX = -2;
+    rdmY = -2;
+    rdmZ = 1.5;
+
+  /*****************************************************/
 
 }
 
@@ -84,7 +95,7 @@ function myFunction() {
   animate = true;
   vel = -20;
   if (t<=60){
-    t += 158;
+    t += 150;
   }else{
     t += 20;
   }
