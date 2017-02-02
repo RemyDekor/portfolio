@@ -4,11 +4,6 @@
 $(document).ready(function() {
 
 
-  // $('body').on('click', '.ppp-container', function (){
-  //       //window.scrollTo(0,1);
-  //
-  //   });
-
  /* vvvvvvvvvv TROUVER MEILLEURE SOLUTION vvvvvvvvv */
   // $(window).resize(function() {
   //   if ($(window).height() > $('body').height()) {
