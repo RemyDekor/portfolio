@@ -24,6 +24,7 @@ a {
   top: 85px;
   left: 50%;
   transform: translate(-50%, 0);
+  outline: none;
   -webkit-tap-highlight-color: transparent;
  }
 
