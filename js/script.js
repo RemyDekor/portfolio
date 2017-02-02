@@ -5,13 +5,8 @@ $(document).ready(function() {
 
 
   $('body').on('click', '.ppp-container', function (){
-        alert('click!');
+        window.scrollTo(0,1);
     });
-
-  // $('.mfp-content').scroll(function() {
-  //    window.scrollTo(0,1);
-  //    alert("THIS IS TRIGGERED");
-  //  });
 
  /* vvvvvvvvvv TROUVER MEILLEURE SOLUTION vvvvvvvvv */
   // $(window).resize(function() {
