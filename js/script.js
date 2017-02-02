@@ -1,13 +1,19 @@
 
 
 
-
 $(document).ready(function() {
 
-   $('.mfp-content').scroll(function() {
+
+
+  $('.mfp-content').on('click', function() {
      window.scrollTo(0,1);
      alert("THIS IS TRIGGERED");
    });
+
+  // $('.mfp-content').scroll(function() {
+  //    window.scrollTo(0,1);
+  //    alert("THIS IS TRIGGERED");
+  //  });
 
  /* vvvvvvvvvv TROUVER MEILLEURE SOLUTION vvvvvvvvv */
   // $(window).resize(function() {
