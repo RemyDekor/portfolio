@@ -8,29 +8,57 @@ $(document).ready(function() {
       });
 
     $('.categories .illus').on('click', function() {
-        $(this).toggleClass('activ');
-        $('.categories p').not(this).removeClass('activ');
+      if ($(this).hasClass('activ')) {
         $('.thumbnail').not('.illus').toggleClass('hidden');
         $('.works .illus').removeClass('hidden');
+      }else{
+        $('.thumbnail .illus').not('.nb').removeClass('hidden');
+        $('.thumbnail').not('.illus').addClass('hidden');
+      }
+      $(this).toggleClass('activ');
+      $('.categories p').not(this).removeClass('activ');
+      $('.works .illus').removeClass('hidden');
     });
+
     $('.categories .photo').on('click', function() {
-        $(this).toggleClass('activ');
-        $('.categories p').not(this).removeClass('activ');
+      if ($(this).hasClass('activ')) {
         $('.thumbnail').not('.photo').toggleClass('hidden');
         $('.works .photo').removeClass('hidden');
+      }else{
+        $('.thumbnail .photo').not('.nb').removeClass('hidden');
+        $('.thumbnail').not('.photo').addClass('hidden');
+      }
+      $(this).toggleClass('activ');
+      $('.categories p').not(this).removeClass('activ');
+      $('.works .photo').removeClass('hidden');
     });
+
     $('.categories .design').on('click', function() {
-        $(this).toggleClass('activ');
-        $('.categories p').not(this).removeClass('activ');
+      if ($(this).hasClass('activ')) {
         $('.thumbnail').not('.design').toggleClass('hidden');
         $('.works .design').removeClass('hidden');
+      }else{
+        $('.thumbnail .design').not('.nb').removeClass('hidden');
+        $('.thumbnail').not('.design').addClass('hidden');
+      }
+      $(this).toggleClass('activ');
+      $('.categories p').not(this).removeClass('activ');
+      $('.works .design').removeClass('hidden');
     });
+
     $('.categories .code').on('click', function() {
-        $(this).toggleClass('activ');
-        $('.categories p').not(this).removeClass('activ');
+      if ($(this).hasClass('activ')) {
         $('.thumbnail').not('.code').toggleClass('hidden');
         $('.works .code').removeClass('hidden');
+      }else{
+        $('.thumbnail .code').not('.nb').removeClass('hidden');
+        $('.thumbnail').not('.code').addClass('hidden');
+      }
+      $(this).toggleClass('activ');
+      $('.categories p').not(this).removeClass('activ');
+      $('.works .code').removeClass('hidden');
     });
+    
     function resetThumbnailsDisplay() {
       $('.thumbnail').removeClass('hidden');
       $('.categories p').removeClass('activ');
