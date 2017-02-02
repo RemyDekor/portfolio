@@ -9,6 +9,15 @@ $(document).ready(function() {
      window.scrollTo(0,1);
      alert("THIS IS TRIGGERED");
    });
+   $('.ppp').on('click', function() {
+      window.scrollTo(0,1);
+      alert("THIS IS TRIGGERED");
+    });
+
+    $('.mfp-content').on('click', function() {
+       window.scrollTo(0,1);
+       alert("THIS IS TRIGGERED");
+     });
 
   // $('.mfp-content').scroll(function() {
   //    window.scrollTo(0,1);
