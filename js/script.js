@@ -96,8 +96,9 @@ $(document).ready(function() {
         removalDelay: 500,
         // Class that is added to popup wrapper and background
         // make it unique to apply your CSS animations just to this exact popup
-        mainClass: 'mfp-fade'
+        mainClass: 'mfp-fade',
         // other options
+        fixedContentPos: true
     });
 
 });
