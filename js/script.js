@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 
   $('body').on('click', '.ppp-container', function (){
-        window.scrollTo(0,1);
+        $('body').scrollTo(0,1);
     });
 
  /* vvvvvvvvvv TROUVER MEILLEURE SOLUTION vvvvvvvvv */
