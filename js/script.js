@@ -1,15 +1,13 @@
-function hideAddressBar(){
-  if(document.documentElement.scrollHeight<window.outerHeight/window.devicePixelRatio)
-    document.documentElement.style.height=(window.outerHeight/window.devicePixelRatio)+'px';
-  setTimeout(window.scrollTo(1,1),0);
-}
-window.addEventListener("load",function(){hideAddressBar();});
-window.addEventListener("orientationchange",function(){hideAddressBar();});
+
 
 
 
 $(document).ready(function() {
 
+  if(navigator.userAgent.match(/Android/i)){
+      window.scrollTo(0,1);
+      console.log('test');
+   }
 
  /* vvvvvvvvvv TROUVER MEILLEURE SOLUTION vvvvvvvvv */
   // $(window).resize(function() {
