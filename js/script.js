@@ -6,7 +6,7 @@ $(document).ready(function() {
 
    $('.mfp-content').scroll(function() {
      window.scrollTo(0,1);
-     console.log("THIS IS TRIGGERED")
+     alert("THIS IS TRIGGERED");
    });
 
  /* vvvvvvvvvv TROUVER MEILLEURE SOLUTION vvvvvvvvv */
