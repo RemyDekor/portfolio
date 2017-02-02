@@ -1,44 +1,53 @@
 $(document).ready(function() {
 
-    $('.categories .illus').click(function() {
+      $('#rectListener').on('click', function() {
+          console.log($(this));
+          resetThumbnailsDisplay();
+      });
+      $('.this').not('.nb').on('click', function() {
+          console.log($(this));
+          resetThumbnailsDisplay();
+      });
+
+
+      // $('.categories p').on('click', function() {
+      //   if ($(this).hasClass('activ')) {
+      //     console.log($(this));
+      //     resetThumbnailsDisplay();
+      //   }
+      // });
+      // ^^^^^^^^^--------THIS WORKS BUT THE OTHER FUNCTIONS BELOW TRIGGER RIGHT AFTER,
+      //  but it's NOT because of the fact resetThumbnailsDisplay() is removing .activ class (unwanted callbacks?)
+
+    $('.categories .illus').on('click', function() {
         $(this).toggleClass('activ');
         $('.categories p').not(this).removeClass('activ');
-        $('.thumbnail').not('.illus').addClass('hidden');
+        $('.thumbnail').not('.illus').toggleClass('hidden');
         $('.works .illus').removeClass('hidden');
     });
-    $('.categories .photo').click(function() {
-        $(this).toggleClass('activ');
+    $('.categories .photo').on('click', function() {
+        $(this).addClass('activ');
         $('.categories p').not(this).removeClass('activ');
-        $('.thumbnail').not('.photo').addClass('hidden');
+        $('.thumbnail').not('.photo').toggleClass('hidden');
         $('.works .photo').removeClass('hidden');
     });
-    $('.categories .design').click(function() {
+    $('.categories .design').on('click', function() {
         $(this).toggleClass('activ');
         $('.categories p').not(this).removeClass('activ');
-        $('.thumbnail').not('.design').addClass('hidden');
+        $('.thumbnail').not('.design').toggleClass('hidden');
         $('.works .design').removeClass('hidden');
     });
-    $('.categories .code').click(function() {
+    $('.categories .code').on('click', function() {
         $(this).toggleClass('activ');
         $('.categories p').not(this).removeClass('activ');
-        $('.thumbnail').not('.code').addClass('hidden');
+        $('.thumbnail').not('.code').toggleClass('hidden');
         $('.works .code').removeClass('hidden');
     });
     function resetThumbnailsDisplay() {
-      $('.categories p').removeClass('activ');
       $('.thumbnail').removeClass('hidden');
-      alert('this runs');
+      $('.categories p').removeClass('activ');
+      // alert('this runs');
     }
-
-    $('#rectListener').on('click', function() {
-        resetThumbnailsDisplay();
-    });
-    $('.this').not('.nb').on('click', function() {
-        resetThumbnailsDisplay();
-    });
-    $('.categories').on('click', '.activ', function() {
-        resetThumbnailsDisplay();
-    });
 
 
     /*GOLD COLOR

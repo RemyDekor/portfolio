@@ -113,7 +113,7 @@ h6 {
   outline: none;
   -webkit-tap-highlight-color: transparent;
 }
-.projectButton:activ, .thumbnail:focus, .thumbnail.activ {
+.projectButton:active, .thumbnail:focus, .thumbnail.active {
   outline: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
