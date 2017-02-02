@@ -327,9 +327,9 @@ margin: 0 -40% 0 -60%;
   #thisdesktop {
     display: none;
   }
-  .hiddenOnTablet {
+  /*.hiddenOnTablet {
     display: none;
-  }
+  }*/
 }
 
 @media (min-width: 721px) {
