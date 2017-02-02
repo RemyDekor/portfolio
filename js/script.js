@@ -4,7 +4,7 @@
 
 $(document).ready(function() {
 
-   $('.mfp-wrap').scroll(function() {
+   $('.mfp-content').scroll(function() {
      window.scrollTo(0,1);
      console.log("THIS IS TRIGGERED")
    });
