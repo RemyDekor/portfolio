@@ -4,10 +4,10 @@
 $(document).ready(function() {
 
 
-  $('.container').on('click', '.ppp-container', function (){
+  $('body').on('click', '.ppp-container', function (){
         alert('click!');
     });
-    
+
   // $('.mfp-content').scroll(function() {
   //    window.scrollTo(0,1);
   //    alert("THIS IS TRIGGERED");
