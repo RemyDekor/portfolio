@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 
 
-  $('.mfp-content').on('click', function() {
+  $('.ppp-container').on('click', function() {
      window.scrollTo(0,1);
      alert("THIS IS TRIGGERED");
    });
