@@ -1,11 +1,9 @@
 $(document).ready(function() {
 
       $('#rectListener').on('click', function() {
-          console.log($(this));
           resetThumbnailsDisplay();
       });
       $('.this').not('.nb').on('click', function() {
-          console.log($(this));
           resetThumbnailsDisplay();
       });
 
@@ -46,7 +44,6 @@ $(document).ready(function() {
     function resetThumbnailsDisplay() {
       $('.thumbnail').removeClass('hidden');
       $('.categories p').removeClass('activ');
-      // alert('this runs');
     }
 
 
