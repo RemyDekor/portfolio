@@ -4,26 +4,10 @@
 $(document).ready(function() {
 
 
-
-  $('.ppp-container').on('click', function() {
-     window.scrollTo(0,1);
-     alert("THIS IS TRIGGERED");
-   });
-   $('.ppp').on('click', function() {
-      window.scrollTo(0,1);
-      alert("THIS IS TRIGGERED");
+  $('.container').on('click', '.ppp-container', function (){
+        alert('click!');
     });
-
-    $('.mfp-content').on('click', function() {
-       window.scrollTo(0,1);
-       alert("THIS IS TRIGGERED");
-     });
-
-     $('.categories').on('click', function() {
-        window.scrollTo(0,1);
-        alert("THIS IS TRIGGERED");
-      });
-
+    
   // $('.mfp-content').scroll(function() {
   //    window.scrollTo(0,1);
   //    alert("THIS IS TRIGGERED");
