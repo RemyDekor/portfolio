@@ -14,7 +14,7 @@ $(document).ready(function() {
         $('.works .illus').removeClass('hidden');
     });
     $('.categories .photo').on('click', function() {
-        $(this).addClass('activ');
+        $(this).toggleClass('activ');
         $('.categories p').not(this).removeClass('activ');
         $('.thumbnail').not('.photo').toggleClass('hidden');
         $('.works .photo').removeClass('hidden');
