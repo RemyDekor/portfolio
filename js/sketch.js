@@ -79,7 +79,7 @@ function draw(){
   // clear();
   background(240);
   ambientMaterial(0);
-  ambientLight(20);
+  ambientLight(21,16,15);
   directionalLight(90, 100, 115, -0.8, 1, -0.1);
   directionalLight(115, 100, 90, 0.5, 0.5, -0.1);
 
