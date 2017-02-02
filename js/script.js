@@ -1,83 +1,51 @@
-
-
-
 $(document).ready(function() {
 
-
- /* vvvvvvvvvv TROUVER MEILLEURE SOLUTION vvvvvvvvv */
-  // $(window).resize(function() {
-  //   if ($(window).height() > $('body').height()) {
-  //     $('body').height($(window).height());
-  //   }
-  //   else if ($(window).height() < $('body').height()) {
-  //     $('body').height($('.container').height());
-  //   }
-  // });
-  //
-  // $(window).trigger('resize');
-
-
-
-
-  // var categories = ['.illus', '.photo', '.design', '.code'];
-  //
-  // for (var i = 0 ; i < 4 ; i++) {
-  //   $('.categories ' + categories[i]).click(function() {
-  //   /*    $('.thumbnail').fadeTo('fast', 0.2);
-  //       $('.works ' + categories[i]).fadeTo(0, 1);  */
-  //       console.log('categories[i] est : ' + categories[i]);
-  //   });
-  // }
-
-  // ------------ Utiliser un add class selected ou deselected ou autre
-  // ------------ pour animer les styles en CSS, plutot qu'en jQuery
-
-    $('.thumbnail').ready(function() {
-        $('.thumbnail .mask').fadeTo('fast', 0);
-    });
-
     $('.categories .illus').click(function() {
-        $('.categories p').not(this).css('text-shadow','none');
-        $('.categories p').not(this).css('color','#222');
-        $(this).css('text-shadow','0px 0px 9px #000, 0px 2px 4px #000');
-        $(this).css('color','#fff');
-        $('.thumbnail .mask').not('.illus .mask').fadeTo('fast', 1);
-        $('.works .illus .mask').fadeTo('fast', 0);
+        $(this).toggleClass('activ');
+        $('.categories p').not(this).removeClass('activ');
+        $('.thumbnail').not('.illus').addClass('hidden');
+        $('.works .illus').removeClass('hidden');
     });
     $('.categories .photo').click(function() {
-        $('.categories p').not(this).css('text-shadow','none');
-        $('.categories p').not(this).css('color','#222');
-        $(this).css('text-shadow','0px 0px 9px #000, 0px 2px 4px #000');
-        $(this).css('color','#fff');
-        $('.thumbnail .mask').not('.photo .mask').fadeTo('fast', 1);
-        $('.works .photo .mask').fadeTo('fast', 0);
+        $(this).toggleClass('activ');
+        $('.categories p').not(this).removeClass('activ');
+        $('.thumbnail').not('.photo').addClass('hidden');
+        $('.works .photo').removeClass('hidden');
     });
     $('.categories .design').click(function() {
-        $('.categories p').not(this).css('text-shadow','none');
-        $('.categories p').not(this).css('color','#222');
-        $(this).css('text-shadow','0px 0px 9px #000, 0px 2px 4px #000');
-        $(this).css('color','#fff');
-        $('.thumbnail .mask').not('.design .mask').fadeTo('fast', 1);
-        $('.works .design .mask').fadeTo('fast', 0);
+        $(this).toggleClass('activ');
+        $('.categories p').not(this).removeClass('activ');
+        $('.thumbnail').not('.design').addClass('hidden');
+        $('.works .design').removeClass('hidden');
     });
     $('.categories .code').click(function() {
-        $('.categories p').not(this).css('text-shadow','none');
-        $('.categories p').not(this).css('color','#222');
-        $(this).css('text-shadow','0px 0px 9px #000, 0px 2px 4px #000');
-        $(this).css('color','#fff');
-        $('.thumbnail .mask').not('.code .mask').fadeTo('fast', 1);
-        $('.works .code .mask').fadeTo('fast', 0);
+        $(this).toggleClass('activ');
+        $('.categories p').not(this).removeClass('activ');
+        $('.thumbnail').not('.code').addClass('hidden');
+        $('.works .code').removeClass('hidden');
+    });
+    function resetThumbnailsDisplay() {
+      $('.categories p').removeClass('activ');
+      $('.thumbnail').removeClass('hidden');
+      alert('this runs');
+    }
+
+    $('#rectListener').on('click', function() {
+        resetThumbnailsDisplay();
+    });
+    $('.this').not('.nb').on('click', function() {
+        resetThumbnailsDisplay();
+    });
+    $('.categories').on('click', '.activ', function() {
+        resetThumbnailsDisplay();
     });
 
-    // $('#rectListener').click(function() {
-    //     // $('.thumbnail').fadeTo('fast', 1);
-    //     $('.categories p').css('text-shadow','none');
-    //     $('.categories p').css('color','#222');
-    //     $('.mask').fadeTo('fast', 0);
-    // });
 
-
-
+    /*GOLD COLOR
+    rgb(198,150,20)
+    rgb(235,209,90)
+    rgb(255,255,255)
+    */
 
     $('.thumbnail').not('.this').magnificPopup({
         type: 'ajax',
