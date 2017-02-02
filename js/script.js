@@ -7,16 +7,6 @@ $(document).ready(function() {
           resetThumbnailsDisplay();
       });
 
-
-      // $('.categories p').on('click', function() {
-      //   if ($(this).hasClass('activ')) {
-      //     console.log($(this));
-      //     resetThumbnailsDisplay();
-      //   }
-      // });
-      // ^^^^^^^^^--------THIS WORKS BUT THE OTHER FUNCTIONS BELOW TRIGGER RIGHT AFTER,
-      //  but it's NOT because of the fact resetThumbnailsDisplay() is removing .activ class (unwanted callbacks?)
-
     $('.categories .illus').on('click', function() {
         $(this).toggleClass('activ');
         $('.categories p').not(this).removeClass('activ');
