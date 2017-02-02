@@ -4,10 +4,10 @@
 
 $(document).ready(function() {
 
-  if(navigator.userAgent.match(/Android/i)){
-      window.scrollTo(0,1);
-      console.log('test');
-   }
+   $('.mfp-wrap').scroll(function() {
+     window.scrollTo(0,1);
+     console.log("THIS IS TRIGGERED")
+   });
 
  /* vvvvvvvvvv TROUVER MEILLEURE SOLUTION vvvvvvvvv */
   // $(window).resize(function() {
