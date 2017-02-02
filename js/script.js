@@ -4,9 +4,10 @@
 $(document).ready(function() {
 
 
-  $('body').on('click', '.ppp-container', function (){
-        $('body').scrollTo(0,1);
-    });
+  // $('body').on('click', '.ppp-container', function (){
+  //       //window.scrollTo(0,1);
+  //
+  //   });
 
  /* vvvvvvvvvv TROUVER MEILLEURE SOLUTION vvvvvvvvv */
   // $(window).resize(function() {
