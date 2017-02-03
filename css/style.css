@@ -87,7 +87,7 @@ h6 {
   padding: 0 2.1%;
   color: #222;
 }
-.categories div p {
+.categories div p, .categories div p::selection, .categories div p:active {
     /*background-color: #F0F;*/
     transition: 0.35s;
     margin: 0 auto;
