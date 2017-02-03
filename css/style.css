@@ -85,12 +85,14 @@ h6 {
   display: inline-block;
   margin: 25px auto;
   padding: 0 2.1%;
+  color: #222;
 }
 .categories div p {
     /*background-color: #F0F;*/
     transition: 0.35s;
     margin: 0 auto;
     cursor: pointer;
+    color: #222;
 }
 .categories div p:hover {
     transition: 0.1s;
