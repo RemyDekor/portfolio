@@ -58,7 +58,7 @@ $(document).ready(function() {
       $('.categories p').not(this).removeClass('activ');
       $('.works .code').removeClass('hidden');
     });
-    
+
     function resetThumbnailsDisplay() {
       $('.thumbnail').removeClass('hidden');
       $('.categories p').removeClass('activ');
