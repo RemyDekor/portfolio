@@ -103,6 +103,8 @@ h6 {
 .categories div p:hover {
     transition: 0.1s;
     color: rgba(225, 225, 225, 1);
+
+    cursor: pointer;
 }
 
 .activ {
