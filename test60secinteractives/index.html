@@ -40,7 +40,7 @@
 
 						container = document.getElementById( 'container' );
 
-						camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 1100);
+						camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, -500, 1100 );
 
 						controls = new THREE.DeviceOrientationControls( camera );
 
