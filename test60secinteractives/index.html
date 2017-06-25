@@ -52,19 +52,21 @@
 
 						scene = new THREE.Scene();
 
-                        var loader = new THREE.ObjectLoader();
-                        loader.load( 'plane.json' );
-
 						var geometry = new THREE.SphereGeometry( 500, 128, 64 );
 						geometry.scale( - 1, 1, 1 );
-
 						var material = new THREE.MeshBasicMaterial( {
 							// map: new THREE.TextureLoader().load( 'Test_01.jpg' )
                             map: new THREE.TextureLoader().load( 'pan-test-jh_test_4096.jpg' )
 						} );
-
 						var mesh = new THREE.Mesh( geometry, material );
 						scene.add( mesh );
+
+                        var loader = new THREE.ObjectLoader();
+                        loader.load( 'plane.json', function(geometry) {
+                            var material =  new THREE.MeshBasicMaterial();
+                            var mesh = new THREE.Mesh(geometry, material);
+                            mesh.position.z = 5;
+                         } );
 
 						var geometry = new THREE.BoxGeometry( 100, 100, 100, 4, 4, 4 );
 						var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, side: THREE.BackSide, wireframe: true } );
