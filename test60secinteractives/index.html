@@ -53,7 +53,7 @@
 						scene = new THREE.Scene();
 
 						var geometry = new THREE.SphereGeometry( 500, 128, 64 );
-
+						geometry.scale( - 1, 1, 1 );
 						var material = new THREE.MeshBasicMaterial( {
 							// map: new THREE.TextureLoader().load( 'Test_01.jpg' )
                             map: new THREE.TextureLoader().load( 'pan-test-jh_test_4096.jpg' )
@@ -62,9 +62,8 @@
 						scene.add( mesh );
 
                         var loader = new THREE.JSONLoader();
-                        loader.load( 'plane.json', function( geometry ) {
-                            geometry.scale( 0.1, 0.1, 0.1);
-                            var material = new THREE.MeshBasicMaterial( { color: 0xff3355, side: THREE.BackSide, wireframe: true } );
+                        loader.load( 'plane.js', function( geometry ) {
+                            var material = new THREE.MeshBasicMaterial( { color: 0xff3355, wireframe: true } );
                             var mesh = new THREE.Mesh( geometry, material );
                             mesh.position.z = 0;
                             scene.add( mesh );
