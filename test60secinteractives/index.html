@@ -52,7 +52,10 @@
 
 						scene = new THREE.Scene();
 
-						var geometry = new THREE.SphereGeometry( 500, 256, 128 );
+                        var loader = new THREE.JSONLoader();
+                        loader.load( 'plane.json' );
+
+						var geometry = new THREE.SphereGeometry( 500, 128, 64 );
 						geometry.scale( - 1, 1, 1 );
 
 						var material = new THREE.MeshBasicMaterial( {
