@@ -62,10 +62,11 @@
 						scene.add( mesh );
 
                         var loader = new THREE.ObjectLoader();
-                        loader.load( 'plane.json', function(geometry) {
+                        loader.load( 'plane.json', function( geometry ) {
                             var material =  new THREE.MeshBasicMaterial();
-                            var mesh = new THREE.Mesh(geometry, material);
+                            var mesh = new THREE.Mesh( geometry, material );
                             mesh.position.z = 5;
+                            scene.add( mes h);
                          } );
 
 						var geometry = new THREE.BoxGeometry( 100, 100, 100, 4, 4, 4 );
