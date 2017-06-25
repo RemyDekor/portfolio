@@ -61,7 +61,7 @@
 						var mesh = new THREE.Mesh( geometry, material );
 						scene.add( mesh );
 
-                        var loader = new THREE.JSONLoader();
+                        var loader = new THREE.ObjectLoader();
                         loader.load( 'plane.js', function( geometry ) {
                             var material = new THREE.MeshBasicMaterial( { color: 0xff3355, side: THREE.BackSide, wireframe: true } );
                             var mesh = new THREE.Mesh( geometry, material );
