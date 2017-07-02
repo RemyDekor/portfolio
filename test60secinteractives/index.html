@@ -66,6 +66,7 @@
                             var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, side: THREE.BackSide, wireframe: true } );
                             var mesh = new THREE.Mesh( geometry, material );
                             mesh.position.z = 0;
+                            mesh.scale.set(0.2,0.2,0.2);
                             scene.add( mesh );
                          } );
 
