@@ -62,21 +62,12 @@
 						// scene.add( mesh );
 
                         var loader = new THREE.JSONLoader();
-<<<<<<< HEAD
                         loader.load( 'ToyPlane.json', function( geometry, materials ) {
                             // var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, side: THREE.BackSide, wireframe: true } );
                             // var material = materials[ 0 ];
                             var mesh = new THREE.Mesh( geometry, materials );
                             mesh.position.z = -50;
                             mesh.scale.set(1000,1000,1000);
-=======
-                        loader.load( 'monkey.json', function( geometry, materials ) {
-                            // var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, side: THREE.BackSide, wireframe: true } );
-                            // var material = materials[ 0 ];
-                            var mesh = new THREE.Mesh( geometry, materials );
-                            mesh.position.z = -100;
-                            mesh.scale.set(100,100,100);
->>>>>>> 02baf21d376d0f544042eae53f7f40dba5b071ec
                             scene.add( mesh );
                          } );
 
