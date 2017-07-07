@@ -30,16 +30,6 @@
 						var container, camera, scene, renderer, controls, geometry, mesh, dirLight, hemiLight;
             var t = 0;
 
-						var animate = function(){
-
-							window.requestAnimationFrame( animate );
-
-							controls.update();
-              update();
-							renderer.render(scene, camera);
-
-						};
-
 						container = document.getElementById( 'container' );
 
 						// camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 1000);
@@ -146,6 +136,16 @@
               plane.rotation.y += .01;
 
             }
+            
+            var animate = function(){
+
+							window.requestAnimationFrame( animate );
+
+							controls.update();
+              update();
+							renderer.render(scene, camera);
+
+						};
 
 						animate();
 
