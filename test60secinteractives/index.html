@@ -66,7 +66,7 @@
                 // var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, side: THREE.BackSide, wireframe: true } );
                 // var material = materials[ 0 ];
                 var mesh = new THREE.Mesh( geometry, materials );
-                mesh.position.z = -50;
+                //mesh.position.z = -50;
                 mesh.scale.set(10,10,10);
 
                 mesh.castShadow = true;
@@ -75,14 +75,14 @@
                 scene.add( mesh );
              } );
 
-						var geometry = new THREE.BoxGeometry( 100, 100, 100, 4, 4, 4 );
-						var material = new THREE.MeshBasicMaterial( { alpha: 0.2, color: 0xff00ff, side: THREE.BackSide, wireframe: true } );
+						var geometry = new THREE.BoxGeometry( 100, 100, 100, 3, 3, 3 );
+						var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, side: THREE.BackSide, wireframe: true } );
 						var mesh = new THREE.Mesh( geometry, material );
 						scene.add( mesh );
 
             // LIGHTS
 
-    				var ambientLight = new THREE.AmbientLight( 0xbcbccc );
+    				var ambientLight = new THREE.AmbientLight( 0xaaaacc );
     				scene.add( ambientLight );
 
     				//
