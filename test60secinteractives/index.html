@@ -76,7 +76,7 @@
              } );
 
 						var geometry = new THREE.BoxGeometry( 100, 100, 100, 4, 4, 4 );
-						var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, side: THREE.BackSide, wireframe: true } );
+						var material = new THREE.MeshBasicMaterial( { alpha: 0.2, color: 0xff00ff, side: THREE.BackSide, wireframe: true } );
 						var mesh = new THREE.Mesh( geometry, material );
 						scene.add( mesh );
 
