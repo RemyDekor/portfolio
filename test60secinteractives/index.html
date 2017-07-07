@@ -35,6 +35,7 @@
 							window.requestAnimationFrame( animate );
 
 							controls.update();
+              update();
 							renderer.render(scene, camera);
 
 						};
@@ -66,15 +67,15 @@
             loader.load( 'ToyPlaneJoined.json', function( geometry, materials ) {
                 // var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, side: THREE.BackSide, wireframe: true } );
                 // var material = materials[ 0 ];
-                var mesh = new THREE.Mesh( geometry, materials );
-                mesh.scale.set(10,10,10);
+                var plane = new THREE.Mesh( geometry, materials );
+                plane.scale.set(10,10,10);
 
-                //mesh.position.z = -50;
+                //plane.position.z = -50;
 
-                mesh.castShadow = true;
-                mesh.receiveShadow = true;
+                plane.castShadow = true;
+                plane.receiveShadow = true;
 
-                scene.add( mesh );
+                scene.add( plane );
              } );
 
 						var geometry = new THREE.BoxGeometry( 100, 100, 100, 3, 3, 3 );
@@ -134,11 +135,17 @@
 
 						window.addEventListener('resize', function() {
 
-						camera.aspect = window.innerWidth / window.innerHeight;
-						camera.updateProjectionMatrix();
-						renderer.setSize( window.innerWidth, window.innerHeight );
+  						camera.aspect = window.innerWidth / window.innerHeight;
+  						camera.updateProjectionMatrix();
+  						renderer.setSize( window.innerWidth, window.innerHeight );
 
 						}, false);
+
+            var update = function() {
+
+              plane.rotation.y += .01;
+
+            }
 
 						animate();
 
