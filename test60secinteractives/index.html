@@ -30,6 +30,15 @@
 						var container, camera, scene, renderer, controls, geometry, mesh, dirLight, hemiLight;
             var t = 0;
 
+						var animate = function(){
+
+							window.requestAnimationFrame( animate );
+
+							controls.update();
+							renderer.render(scene, camera);
+
+						};
+
 						container = document.getElementById( 'container' );
 
 						// camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 1000);
@@ -57,15 +66,15 @@
             loader.load( 'ToyPlaneJoined.json', function( geometry, materials ) {
                 // var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, side: THREE.BackSide, wireframe: true } );
                 // var material = materials[ 0 ];
-                var plane = new THREE.Mesh( geometry, materials );
-                plane.scale.set(10,10,10);
+                var mesh = new THREE.Mesh( geometry, materials );
+                mesh.scale.set(10,10,10);
 
-                //plane.position.z = -50;
+                //mesh.position.z = -50;
 
-                plane.castShadow = true;
-                plane.receiveShadow = true;
+                mesh.castShadow = true;
+                mesh.receiveShadow = true;
 
-                scene.add( plane );
+                scene.add( mesh );
              } );
 
 						var geometry = new THREE.BoxGeometry( 100, 100, 100, 3, 3, 3 );
@@ -131,23 +140,7 @@
 
 						}, false);
 
-            var update = function() {
-
-              plane.rotation.y += .01;
-
-            }
-            
-            var animate = function(){
-
-							window.requestAnimationFrame( animate );
-
-							controls.update();
-              update();
-							renderer.render(scene, camera);
-
-						};
-
-						animate();
+						window.requestAnimationFrame( animate );
 
 				  }, false);
 
