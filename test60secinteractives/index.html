@@ -28,6 +28,7 @@
 				  window.addEventListener('load', function() {
 
 						var container, camera, scene, renderer, controls, geometry, mesh, dirLight, hemiLight;
+            var t = 0;
 
 						var animate = function(){
 
@@ -66,8 +67,11 @@
                 // var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, side: THREE.BackSide, wireframe: true } );
                 // var material = materials[ 0 ];
                 var mesh = new THREE.Mesh( geometry, materials );
-                //mesh.position.z = -50;
                 mesh.scale.set(10,10,10);
+
+                t++;
+                //mesh.position.z = -50;
+                mesh.rotation.x = t/2000;
 
                 mesh.castShadow = true;
                 mesh.receiveShadow = true;
