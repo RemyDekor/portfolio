@@ -68,7 +68,10 @@
                 var mesh = new THREE.Mesh( geometry, materials );
                 mesh.position.z = -50;
                 mesh.scale.set(10,10,10);
+
+                mesh.castShadow = true;
                 mesh.receiveShadow = true;
+
                 scene.add( mesh );
              } );
 
