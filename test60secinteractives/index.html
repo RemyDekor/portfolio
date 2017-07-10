@@ -147,7 +147,9 @@
 
               stats.begin();
 
-							window.requestAnimationFrame( animate );
+              setTimeout( function() {
+                  requestAnimationFrame( animate );
+              }, 1000 / 20 );
 
               if (plane != null) {
                 plane.rotation.x   += 0.01;
@@ -159,11 +161,7 @@
 
 						};
 
-            setTimeout( function() {
-
-                window.requestAnimationFrame( animate );
-
-            }, 1000 / 20 );
+						window.requestAnimationFrame( animate );
 
 				  }, false);
 
