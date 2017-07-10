@@ -147,9 +147,7 @@
 
               stats.begin();
 
-              setTimeout( function() {
-                  requestAnimationFrame( animate );
-              }, 1000 / 20 );
+							window.requestAnimationFrame( animate );
 
               if (plane != null) {
                 plane.rotation.x   += 0.01;
