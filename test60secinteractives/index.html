@@ -159,7 +159,11 @@
 
 						};
 
-						window.requestAnimationFrame( animate );
+            setTimeout( function() {
+
+                window.requestAnimationFrame( animate );
+
+            }, 1000 / 30 );
 
 				  }, false);
 
