@@ -26,6 +26,10 @@
 			(function() {
 				  "use strict";
 
+          var stats = new Stats();
+          stats.showPanel( 1 ); // 0: fps, 1: ms, 2: mb, 3+: custom
+          document.body.appendChild( stats.dom );
+
 				  window.addEventListener('load', function() {
 
 						var container, camera, scene, renderer, controls, geometry, mesh, dirLight, hemiLight;
@@ -138,6 +142,8 @@
 
             var animate = function(){
 
+              stats.begin();
+
 							window.requestAnimationFrame( animate );
 
               if (plane != null) {
@@ -145,6 +151,8 @@
               }
 							controls.update();
 							renderer.render(scene, camera);
+
+              stats.end();
 
 						};
 
