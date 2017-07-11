@@ -77,7 +77,22 @@
                 plane.receiveShadow = true;
 
                 scene.add( plane );
-             } );0
+             } );
+
+             var helice;
+             loader.load( 'Helice.json', function( geometry, materials ) {
+                 // var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, side: THREE.BackSide, wireframe: true } );
+                 // var material = materials[ 0 ];
+                 helice = new THREE.Mesh( geometry, materials );
+                 helice.scale.set(10,10,10);
+
+                 //mesh.position.z = -50;
+
+                 helice.castShadow = true;
+                 helice.receiveShadow = true;
+
+                 scene.add( helice );
+              } );
 
 						var geometry = new THREE.BoxGeometry( 100, 100, 100, 3, 3, 3 );
 						var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, side: THREE.BackSide, wireframe: true } );
@@ -151,6 +166,9 @@
 
               if (plane != null) {
                 plane.rotation.x   += 0.01;
+              }
+              if (helice != null) {
+                helice.rotation.x   += 0.05;
               }
 							controls.update();
 							renderer.render(scene, camera);
