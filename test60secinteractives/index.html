@@ -72,6 +72,8 @@
 			// var mesh = new THREE.Mesh( geometry, material );
 			// scene.add( mesh );
 
+            var planeGroup = new THREE.Object3D();
+
             var plane;
             var loader = new THREE.JSONLoader();
             loader.load( 'PlaneLowPolyTest.json', function( geometry, materials ) {
@@ -85,7 +87,7 @@
                 plane.castShadow = true;
                 plane.receiveShadow = true;
 
-                scene.add( plane );
+                planeGroup.add( plane );
              } );
 
              var helice;
@@ -100,8 +102,10 @@
                  helice.castShadow = true;
                  helice.receiveShadow = true;
 
-                 scene.add( helice );
+                 planeGroup.add( helice );
               } );
+
+              scene.add( planeGroup );
 
 						var geometry = new THREE.BoxGeometry( 100, 100, 100, 3, 3, 3 );
 						var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, side: THREE.BackSide, wireframe: true } );
@@ -174,10 +178,9 @@
 							window.requestAnimationFrame( animate );
 
               if (plane != null && helice != null) {
-                plane.rotation.x   += 0.01;
-                plane.rotation.y   += 0.002;
+                planeGroup.rotation.x   += 0.01;
+                planeGroup.rotation.y   += 0.002;
                 helice.rotation.x   += 1.5;
-                helice.rotation.y   += 0.002;
               }
 							controls.update();
 							renderer.render(scene, camera);
