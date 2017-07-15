@@ -92,7 +92,7 @@
 
              var helice;
              loader.load( 'Helice.json', function( geometry, materials ) {
-                 // var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, side: THREE.BackSide, wireframe: true } );
+                 //side: THREE.BackSide
                  // var material = materials[ 0 ];
                  helice = new THREE.Mesh( geometry, materials );
                  helice.scale.set(10,10,10);
@@ -104,8 +104,9 @@
 
                  planeGroup.add( helice );
 
-                 var geometry = new THREE.CircleBufferGeometry( 5, 32 );
-                 var circle = new THREE.Mesh( geometry, materials );
+                 geometry = new THREE.CircleBufferGeometry( 5, 32 );
+                 material = new THREE.MeshBasicMaterial( { color: materials.color, side: THREE.BackSide, wireframe: false } );
+                 var circle = new THREE.Mesh( geometry, material );
 
                  circle.scale.set(20,20,20);
                  circle.position.z = -100;
