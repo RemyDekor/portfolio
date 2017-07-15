@@ -182,7 +182,10 @@
                     helice.rotation.x   += 1.5;
                 }
                 controls.update();
-                renderer.render(scene, camera);
+
+                setInterval(funtcion() {
+                    renderer.render(scene, camera);
+                }, 1000/25);
 
                 stats.end();
 
