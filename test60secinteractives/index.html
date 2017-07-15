@@ -53,7 +53,7 @@
             controls = new THREE.DeviceOrientationControls( camera );
 
             scene = new THREE.Scene();
-            var geometry = new THREE.SphereBufferGeometry( 500, 64, 64 );
+            var geometry = new THREE.SphereBufferGeometry( 500, 128, 64 );
             geometry.scale( - 1, 1, 1 );
             var material = new THREE.MeshBasicMaterial( {
                   // map: new THREE.TextureLoader().load( 'Test_01.jpg' )
@@ -71,7 +71,6 @@
                 // var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, side: THREE.BackSide, wireframe: true } );
                 // var material = materials[ 0 ];
                 plane = new THREE.Mesh( geometry, materials );
-                plane.scale.set(10,10,10);
 
                 //mesh.position.z = -50;
 
@@ -86,8 +85,7 @@
                 //side: THREE.BackSide
                 // var material = materials[ 0 ];
                 helice = new THREE.Mesh( geometry, materials );
-                helice.scale.set(10,10,10);
-
+                
                 //mesh.position.z = -50;
 
                 helice.castShadow = true;
@@ -95,7 +93,7 @@
 
                 planeGroup.add( helice );
 
-                geometry = new THREE.CircleBufferGeometry( 18, 16 );
+                geometry = new THREE.CircleBufferGeometry( 1.8, 16 );
                 material = new THREE.MeshBasicMaterial( { color: 0x008855, transparent: true, opacity: 0.2, side: THREE.DoubleSide, wireframe: false } );
                 var circle = new THREE.Mesh( geometry, material );
 
@@ -104,7 +102,7 @@
 
                 planeGroup.add( circle );
             } );
-
+            planeGroup.scale.set(10,10,10);
             scene.add( planeGroup );
 
             var geometry = new THREE.BoxGeometry( 100, 100, 100, 3, 3, 3 );
