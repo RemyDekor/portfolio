@@ -107,6 +107,8 @@
                  var geometry = new THREE.CircleBufferGeometry( 5, 32 );
                  var circle = new THREE.Mesh( geometry, material );
 
+                 circle.scale.set(100,100,100);
+
                  planeGroup.add( circle );
 
               } );
