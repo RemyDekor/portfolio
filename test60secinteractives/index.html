@@ -174,7 +174,11 @@
 
                 stats.begin();
 
-                window.requestAnimationFrame( animate );
+                setTimeout( function() {
+
+                    requestAnimationFrame( animate );
+
+                }, 1000 / 30 );
 
                 if (plane != null && helice != null) {
                     planeGroup.rotation.x   += 0.01;
@@ -182,7 +186,7 @@
                     helice.rotation.x   += 1.5;
                 }
                 controls.update();
-                
+
                 renderer.render(scene, camera);
 
                 stats.end();
