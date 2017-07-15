@@ -105,7 +105,7 @@
             planeGroup.scale.set(9.5,9.5,9.5);
             scene.add( planeGroup );
 
-            var geometry = new THREE.BoxGeometry( 100, 100, 100, 3, 3, 3 );
+            var geometry = new THREE.BoxBufferGeometry( 100, 100, 100, 3, 3, 3 );
             var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, side: THREE.BackSide, wireframe: true } );
             var mesh = new THREE.Mesh( geometry, material );
             scene.add( mesh );
