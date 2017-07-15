@@ -50,27 +50,27 @@
             rapportHL = window.innerHeight/window.innerWidth;
             camera = new THREE.OrthographicCamera( -cameraWidth, cameraWidth, cameraWidth*rapportHL, -cameraWidth*rapportHL     , -500, 1500 );
 
-						controls = new THREE.DeviceOrientationControls( camera );
+			controls = new THREE.DeviceOrientationControls( camera );
 
-						scene = new THREE.Scene();
-						// var geometry = new THREE.SphereGeometry( 500, 128, 64 );
-						// geometry.scale( - 1, 1, 1 );
-						// var material = new THREE.MeshBasicMaterial( {
-						// 	// map: new THREE.TextureLoader().load( 'Test_01.jpg' )
-                        //     map: new THREE.TextureLoader().load( 'pan-test-jh_test.png' )
-						// } );
-						// var mesh = new THREE.Mesh( geometry, material );
-						// scene.add( mesh );
+			scene = new THREE.Scene();
+			var geometry = new THREE.SphereGeometry( 500, 128, 64 );
+			geometry.scale( - 1, 1, 1 );
+			var material = new THREE.MeshBasicMaterial( {
+				// map: new THREE.TextureLoader().load( 'Test_01.jpg' )
+                map: new THREE.TextureLoader().load( 'pan-test-jh_test.png' )
+			} );
+			var mesh = new THREE.Mesh( geometry, material );
+			scene.add( mesh );
 
-						// var geometry = new THREE.BoxGeometry( 100, 100, 100, 4, 4, 4 );
-                        // var geometry = new THREE.SphereGeometry( 500, 128, 64 );
-						// geometry.scale( - 1, 1, 1 );
-						// var material = new THREE.MeshBasicMaterial( {
-						// 	// map: new THREE.TextureLoader().load( 'Test_01.jpg' )
-                        //     map: new THREE.TextureLoader().load( 'pan-test-jh_test.png' )
-						// } );
-						// var mesh = new THREE.Mesh( geometry, material );
-						// scene.add( mesh );
+			// var geometry = new THREE.BoxGeometry( 100, 100, 100, 4, 4, 4 );
+            // var geometry = new THREE.SphereGeometry( 500, 128, 64 );
+			// geometry.scale( - 1, 1, 1 );
+			// var material = new THREE.MeshBasicMaterial( {
+			// 	// map: new THREE.TextureLoader().load( 'Test_01.jpg' )
+            //     map: new THREE.TextureLoader().load( 'pan-test-jh_test.png' )
+			// } );
+			// var mesh = new THREE.Mesh( geometry, material );
+			// scene.add( mesh );
 
             var plane;
             var loader = new THREE.JSONLoader();
@@ -177,7 +177,7 @@
                 plane.rotation.x   += 0.01;
               }
               if (helice != null) {
-                helice.rotation.x   += 2;
+                helice.rotation.x   += 1.5;
               }
 							controls.update();
 							renderer.render(scene, camera);
