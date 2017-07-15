@@ -173,12 +173,11 @@
 
 							window.requestAnimationFrame( animate );
 
-              if (plane != null) {
+              if (plane != null && helice != null) {
                 plane.rotation.x   += 0.01;
                 plane.rotation.y   += 0.002;
-              }
-              if (helice != null) {
                 helice.rotation.x   += 1.5;
+                plane.rotation.y   += 0.002;
               }
 							controls.update();
 							renderer.render(scene, camera);
