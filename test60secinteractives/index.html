@@ -60,8 +60,8 @@
                   // map: new THREE.TextureLoader().load( 'Test_01.jpg' )
                   map: textLandscape
             } );
-            textLandscape.magFilter = THREE.NearestFilter;
-            textLandscape.minFilter = THREE.NearestFilter;
+            textLandscape.magFilter = THREE.LinearFilter;
+            textLandscape.minFilter = THREE.LinearFilter;
 
             var mesh = new THREE.Mesh( geometry, material );
             scene.add( mesh );
