@@ -103,7 +103,15 @@
                  helice.receiveShadow = true;
 
                  planeGroup.add( helice );
+
+                 var geometry = new THREE.CircleBufferGeometry( 5, 32 );
+                 var circle = new THREE.Mesh( geometry, material );
+
+                 planeGroup.add( circle );
+
               } );
+
+
 
               scene.add( planeGroup );
 
