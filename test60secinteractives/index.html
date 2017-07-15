@@ -62,25 +62,15 @@
 						// var mesh = new THREE.Mesh( geometry, material );
 						// scene.add( mesh );
 
-                        var loader = new THREE.JSONLoader();
-                        loader.load( 'monkey.json', function( geometry, materials ) {
-                            // var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, side: THREE.BackSide, wireframe: true } );
-                            // var material = materials[ 0 ];
-                            var mesh = new THREE.Mesh( geometry, materials );
-                            mesh.position.z = -50;
-                            mesh.scale.set(1000,1000,1000);
-                            scene.add( mesh );
-                         } );
-
-						var geometry = new THREE.BoxGeometry( 100, 100, 100, 4, 4, 4 );
-                        var geometry = new THREE.SphereGeometry( 500, 128, 64 );
-						geometry.scale( - 1, 1, 1 );
-						var material = new THREE.MeshBasicMaterial( {
-							// map: new THREE.TextureLoader().load( 'Test_01.jpg' )
-                  map: new THREE.TextureLoader().load( 'pan-test-jh_test.png' )
-						} );
-						var mesh = new THREE.Mesh( geometry, material );
-						scene.add( mesh );
+						// var geometry = new THREE.BoxGeometry( 100, 100, 100, 4, 4, 4 );
+                        // var geometry = new THREE.SphereGeometry( 500, 128, 64 );
+						// geometry.scale( - 1, 1, 1 );
+						// var material = new THREE.MeshBasicMaterial( {
+						// 	// map: new THREE.TextureLoader().load( 'Test_01.jpg' )
+                        //     map: new THREE.TextureLoader().load( 'pan-test-jh_test.png' )
+						// } );
+						// var mesh = new THREE.Mesh( geometry, material );
+						// scene.add( mesh );
 
             var plane;
             var loader = new THREE.JSONLoader();
