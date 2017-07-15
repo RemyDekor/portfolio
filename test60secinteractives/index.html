@@ -104,11 +104,10 @@
 
                  planeGroup.add( helice );
 
-                 geometry = new THREE.CircleBufferGeometry( 5, 32 );
+                 geometry = new THREE.CircleBufferGeometry( 15, 16 );
                  material = new THREE.MeshBasicMaterial( { color: 0x550055, transparent: true, opacity: 0.5, side: THREE.DoubleSide, wireframe: false } );
                  var circle = new THREE.Mesh( geometry, material );
 
-                 circle.scale.set(20,20,20);
                  circle.position.x = +37;
                  circle.rotation.y = Math.PI/2;
 
