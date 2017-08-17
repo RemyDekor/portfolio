@@ -58,35 +58,38 @@
 
             var geometry = new THREE.SphereBufferGeometry( 500, 128, 64 );
             geometry.scale( - 1.0, 1.0, 1.0 );
-            var textLandscape = new THREE.TextureLoader().load( 'AlphaProche.jpg' );
+            var nearLandscape = new THREE.TextureLoader().load( 'AlphaProche.jpg' );
             textLandscape.magFilter = THREE.LinearFilter;
             textLandscape.minFilter = THREE.LinearFilter;
             var material = new THREE.MeshBasicMaterial( {
                   // map: new THREE.TextureLoader().load( 'Test_01.jpg' )
                   color: 0xff00ff,
-                  map: textLandscape
+                  map: nearLandscape,
+                  alphaMap: nearLandscape
             } );
 
             var geometry = new THREE.SphereBufferGeometry( 500, 128, 64 );
             geometry.scale( - 1.2, 1.2, 1.2 );
-            var textLandscape = new THREE.TextureLoader().load( 'AlphaMoyen.jpg' );
+            var middleLandscape = new THREE.TextureLoader().load( 'AlphaMoyen.jpg' );
             textLandscape.magFilter = THREE.LinearFilter;
             textLandscape.minFilter = THREE.LinearFilter;
             var material = new THREE.MeshBasicMaterial( {
                   // map: new THREE.TextureLoader().load( 'Test_01.jpg' )
                   color: 0xff00ff,
-                  map: textLandscape
+                  map: middleLandscape,
+                  alphaMap: middleLandscape
             } );
 
             var geometry = new THREE.SphereBufferGeometry( 500, 128, 64 );
             geometry.scale( - 1.5, 1.5, 1.5 );
-            var textLandscape = new THREE.TextureLoader().load( 'AlphaLoin.jpg' );
+            var farLandscape = new THREE.TextureLoader().load( 'AlphaLoin.jpg' );
             textLandscape.magFilter = THREE.LinearFilter;
             textLandscape.minFilter = THREE.LinearFilter;
             var material = new THREE.MeshBasicMaterial( {
                   // map: new THREE.TextureLoader().load( 'Test_01.jpg' )
                   color: 0xff00ff,
-                  map: textLandscape
+                  map: farLandscape,
+                  alphaMap: farLandscape
             } );
 
 
