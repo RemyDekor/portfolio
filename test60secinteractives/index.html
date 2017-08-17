@@ -58,40 +58,14 @@
 
             var geometry = new THREE.SphereBufferGeometry( 500, 128, 64 );
             geometry.scale( - 1.0, 1.0, 1.0 );
-            var nearLandscape = new THREE.TextureLoader().load( 'AlphaProche.jpg' );
-            nearLandscape.magFilter = THREE.LinearFilter;
-            nearLandscape.minFilter = THREE.LinearFilter;
+            var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans.jpg' );
+            colorsForLayersLandscape.magFilter = THREE.LinearFilter;
+            colorsForLayersLandscape.minFilter = THREE.LinearFilter;
             var material = new THREE.MeshBasicMaterial( {
                   // map: new THREE.TextureLoader().load( 'Test_01.jpg' )
                   color: 0xff00ff,
-                  map: nearLandscape,
-                  alphaMap: nearLandscape
+                  map: colorsForLayersLandscape,
             } );
-
-            var geometry = new THREE.SphereBufferGeometry( 500, 128, 64 );
-            geometry.scale( - 1.2, 1.2, 1.2 );
-            var middleLandscape = new THREE.TextureLoader().load( 'AlphaMoyen.jpg' );
-            middleLandscape.magFilter = THREE.LinearFilter;
-            middleLandscape.minFilter = THREE.LinearFilter;
-            var material = new THREE.MeshBasicMaterial( {
-                  // map: new THREE.TextureLoader().load( 'Test_01.jpg' )
-                  color: 0xff00ff,
-                  map: middleLandscape,
-                  alphaMap: middleLandscape
-            } );
-
-            var geometry = new THREE.SphereBufferGeometry( 500, 128, 64 );
-            geometry.scale( - 1.5, 1.5, 1.5 );
-            var farLandscape = new THREE.TextureLoader().load( 'AlphaLoin.jpg' );
-            middleLandscape.magFilter = THREE.LinearFilter;
-            middleLandscape.minFilter = THREE.LinearFilter;
-            var material = new THREE.MeshBasicMaterial( {
-                  // map: new THREE.TextureLoader().load( 'Test_01.jpg' )
-                  color: 0xff00ff,
-                  map: farLandscape,
-                  alphaMap: farLandscape
-            } );
-
 
             var mesh = new THREE.Mesh( geometry, material );
             scene.add( mesh );
