@@ -57,12 +57,13 @@
             scene = new THREE.Scene();
             var geometry = new THREE.SphereBufferGeometry( 500, 128, 64 );
             geometry.scale( - 1, 1, 1 );
-            var textLandscape = new THREE.TextureLoader().load( 'Maquette3D_WIP.jpg' );
+            var textLandscape = new THREE.TextureLoader().load( 'AlphaLoin.jpg' );
             textLandscape.magFilter = THREE.LinearFilter;
             textLandscape.minFilter = THREE.LinearFilter;
             var material = new THREE.MeshBasicMaterial( {
                   // map: new THREE.TextureLoader().load( 'Test_01.jpg' )
-                  map: textLandscape
+                  color: 0xff00ff,
+                  alphaMap: textLandscape
             } );
 
 
