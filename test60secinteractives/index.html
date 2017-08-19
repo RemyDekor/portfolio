@@ -86,6 +86,11 @@
                 plane.receiveShadow = true;
 
                 planeGroup.add( plane );
+
+                mixer.clipAction( geometry.animations[ 0 ], plane )
+								     .setDuration( 1 )			// one second
+								     .startAt( - Math.random() )	// random phase (already running)
+                     .play();					// let's go
             } );
 
             var helice;
@@ -110,10 +115,7 @@
 
                 planeGroup.add( circle );
 
-                mixer.clipAction( geometry.animations[ 0 ], mesh )
-								     .setDuration( 1 )			// one second
-								     .startAt( - Math.random() )	// random phase (already running)
-                     .play();					// let's go
+
             } );
             planeGroup.scale.set(9, 9, 9);
             scene.add( planeGroup );
