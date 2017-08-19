@@ -73,24 +73,41 @@
 
             var planeGroup = new THREE.Object3D();
 
+            // var plane;
+            // var loader = new THREE.JSONLoader();
+            // loader.load( 'PlaneLowPoly_Scene.json', function( geometry, materials ) {
+            //     // var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, side: THREE.BackSide, wireframe: true } );
+            //     // var material = materials[ 0 ];
+            //     plane = new THREE.Mesh( geometry, materials );
+            //
+            //     //mesh.position.z = -50;
+            //
+            //     plane.castShadow = true;
+            //     plane.receiveShadow = true;
+            //
+            //     planeGroup.add( plane );
+            //
+            //     mixer.clipAction( geometry.animations[ 0 ], plane )
+						// 		     .setDuration( 1 )			// one second
+						// 		     .startAt( - Math.random() )	// random phase (already running)
+            //          .play();					// let's go
+            // } );
+
             var plane;
             var loader = new THREE.JSONLoader();
-            loader.load( 'PlaneLowPoly_AnimateTest.json', function( geometry, materials ) {
+            loader.load( 'PlaneLowPoly_Scene.json', function( planeObj ) {
                 // var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, side: THREE.BackSide, wireframe: true } );
                 // var material = materials[ 0 ];
-                plane = new THREE.Mesh( geometry, materials );
+                var wingbottom = planeObj.getObjectByName("WingBottom");
+                var wingtop = planeObj.getObjectByName("Wingtop");
 
                 //mesh.position.z = -50;
 
-                plane.castShadow = true;
-                plane.receiveShadow = true;
+                planeObj.castShadow = true;
+                planeObj.receiveShadow = true;
 
-                planeGroup.add( plane );
-
-                mixer.clipAction( geometry.animations[ 0 ], plane )
-								     .setDuration( 1 )			// one second
-								     .startAt( - Math.random() )	// random phase (already running)
-                     .play();					// let's go
+                planeGroup.add( wingbottom );
+                planeGroup.add( wingtop );
             } );
 
             var helice;
