@@ -74,7 +74,7 @@
             var planeGroup = new THREE.Object3D();
 
             var plane;
-            var loader = new THREE.ObjectLoader();
+            var loader = new THREE.JSONLoader();
             loader.load( 'PlaneLowPoly_AnimateTest.json', function( geometry, materials ) {
                 // var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, side: THREE.BackSide, wireframe: true } );
                 // var material = materials[ 0 ];
@@ -89,7 +89,6 @@
             } );
 
             var helice;
-            loader = new THREE.JSONLoader();
             loader.load( 'Helice.json', function( geometry, materials ) {
                 //side: THREE.BackSide
                 // var material = materials[ 0 ];
@@ -110,6 +109,11 @@
                 circle.rotation.y = Math.PI/2;
 
                 planeGroup.add( circle );
+
+                mixer.clipAction( geometry.animations[ 0 ], mesh )
+								     .setDuration( 1 )			// one second
+								     .startAt( - Math.random() )	// random phase (already running)
+                     .play();					// let's go
             } );
             planeGroup.scale.set(9, 9, 9);
             scene.add( planeGroup );
