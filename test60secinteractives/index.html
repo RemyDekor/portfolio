@@ -212,7 +212,7 @@
                 stats.begin();
 
                 window.requestAnimationFrame( animate );
-
+                camera.position.z = -500;
                 controls.update();
 
 
@@ -222,7 +222,6 @@
                     planeGroup.rotation.y   += 0.002;
                     helice.rotation.x   += 1.5;
                 }
-                camera.position.z = -500; 
 
                 renderer.render(scene, camera);
 
