@@ -164,11 +164,11 @@
 
 
             } );
-            planeGroup.scale.set(9, 9, 9);
+            // planeGroup.scale.set(9, 9, 9);
             scene.add( planeGroup );
 
             var geometry = new THREE.BoxBufferGeometry( 100, 100, 100, 3, 3, 3 );
-            var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, transparent: true, opacity: 0.05, side: THREE.BackSide, wireframe: true } );
+            var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, transparent: true, opacity: 0.10, side: THREE.BackSide, wireframe: true } );
             var mesh = new THREE.Mesh( geometry, material );
             scene.add( mesh );
 
