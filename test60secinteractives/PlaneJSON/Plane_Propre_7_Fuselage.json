@@ -21,13 +21,13 @@
         "depthTest":true,
         "wireframe":false,
         "DbgColor":15658734,
-        "specularCoef":50,
+        "specularCoef":10,
         "opacity":1,
         "DbgName":"Fuselage",
         "depthWrite":true,
         "visible":true,
         "shading":"phong",
-        "colorDiffuse":[0.791583,0.791583,0.791583],
+        "colorDiffuse":[0.72,0.72,0.72],
         "doubleSided":false
     }],
     "uvs":[]
