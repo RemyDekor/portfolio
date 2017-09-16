@@ -50,7 +50,8 @@
             cameraWidth += window.innerWidth;
             cameraWidth /= 3;
             rapportHL = window.innerHeight/window.innerWidth;
-            camera = new THREE.OrthographicCamera( -cameraWidth, cameraWidth, cameraWidth*rapportHL, -cameraWidth*rapportHL     , -500, 1500 );
+            // camera = new THREE.OrthographicCamera( -cameraWidth, cameraWidth, cameraWidth*rapportHL, -cameraWidth*rapportHL     , -500, 1500 );
+            camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 1000);
 
             controls = new THREE.DeviceOrientationControls( camera );
 
