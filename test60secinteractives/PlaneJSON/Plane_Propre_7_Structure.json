@@ -25,7 +25,7 @@
         "depthWrite":true,
         "visible":true,
         "shading":"lambert",
-        "colorDiffuse":[0.0299273,0.0299273,0.0299273],
+        "colorDiffuse":[0.683976,0.683976,0.683976],
         "doubleSided":false
     }],
     "uvs":[]
