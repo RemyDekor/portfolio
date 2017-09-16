@@ -75,24 +75,29 @@
 
             var planeGroup = new THREE.Object3D();
 
-            var plane;
+
             var loader = new THREE.JSONLoader();
+
+            var plane;
             loader.load( 'PlaneJSON/Plane_Propre_7_Fuselage.json', function( geometry, materials ) {
                 // var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, side: THREE.BackSide, wireframe: true } );
                 // var material = materials[ 0 ];
                 plane = new THREE.Mesh( geometry, materials );
 
-                //mesh.position.z = -50;
-
                 plane.castShadow = true;
                 plane.receiveShadow = true;
 
                 planeGroup.add( plane );
+            } );
 
-                mixer.clipAction( geometry.animations[ 0 ], plane )
-								     .setDuration( 1 )			// one second
-								     .startAt( - Math.random() )	// random phase (already running)
-                     .play();					// let's go
+            var perso;
+            loader.load( 'PlaneJSON/Plane_Propre_7_Perso.json', function( geometry, materials ) {
+                perso = new THREE.Mesh( geometry, materials );
+
+                perso.castShadow = true;
+                perso.receiveShadow = true;
+
+                planeGroup.add( perso );
             } );
 
             // var plane;
