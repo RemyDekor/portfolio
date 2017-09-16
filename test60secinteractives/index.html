@@ -110,6 +110,16 @@
                 planeGroup.add( roues );
             } );
 
+            var structure;
+            loader.load( 'PlaneJSON/Plane_Propre_7_Roues.json', function( geometry, materials ) {
+                structure = new THREE.Mesh( geometry, materials );
+
+                structure.castShadow = true;
+                structure.receiveShadow = true;
+
+                planeGroup.add( structure );
+            } );
+
             // var plane;
             // var loader = new THREE.JSONLoader();
             // loader.load( 'PlaneLowPoly_Scene.json', function( planeObj ) {
