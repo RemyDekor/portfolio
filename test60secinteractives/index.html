@@ -53,7 +53,6 @@
             // camera = new THREE.OrthographicCamera( -cameraWidth, cameraWidth, cameraWidth*rapportHL, -cameraWidth*rapportHL     , -500, 1500 );
             camera = new THREE.PerspectiveCamera(48, window.innerWidth / window.innerHeight, 1, 1000);
 
-
             controls = new THREE.DeviceOrientationControls( camera );
 
             scene = new THREE.Scene();
@@ -223,6 +222,7 @@
                     planeGroup.rotation.y   += 0.002;
                     helice.rotation.x   += 1.5;
                 }
+                camera.position.z = -100; 
 
                 renderer.render(scene, camera);
 
