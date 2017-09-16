@@ -51,9 +51,13 @@
             cameraWidth /= 3;
             rapportHL = window.innerHeight/window.innerWidth;
             // camera = new THREE.OrthographicCamera( -cameraWidth, cameraWidth, cameraWidth*rapportHL, -cameraWidth*rapportHL     , -500, 1500 );
+            var cameraGroup = new THREE.Object3D(); // Create an empty 3D object to help rotate the camera around a displaced axis
+
             camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 1000);
 
-            controls = new THREE.DeviceOrientationControls( camera );
+            cameraGroup.add(camera);
+
+            controls = new THREE.DeviceOrientationControls( cameraGroup );
 
             scene = new THREE.Scene();
 
@@ -213,13 +217,15 @@
 
                 window.requestAnimationFrame( animate );
 
+                controls.update();
+
+
+
                 if (plane != null && helice != null) {
                     planeGroup.rotation.x   += 0.01;
                     planeGroup.rotation.y   += 0.002;
                     helice.rotation.x   += 1.5;
                 }
-
-                controls.update();
 
                 renderer.render(scene, camera);
 
