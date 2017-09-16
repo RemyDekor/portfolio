@@ -212,8 +212,10 @@
                 stats.begin();
 
                 window.requestAnimationFrame( animate );
-                camera.position.z = -500;
                 controls.update();
+
+                var direction = camera.getWorldDirection();
+                camera.position.add( direction.multiplyScalar(-500) );
 
 
 
