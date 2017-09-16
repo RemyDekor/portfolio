@@ -54,8 +54,7 @@
             camera = new THREE.PerspectiveCamera(48, window.innerWidth / window.innerHeight, 1, 1000);
 
             controls = new THREE.DeviceOrientationControls( camera );
-            var direction = camera.getWorldDirection();
-            camera.position.add( direction.multiplyScalar(-500) );
+
 
             scene = new THREE.Scene();
 
@@ -216,6 +215,10 @@
                 window.requestAnimationFrame( animate );
                 controls.update();
 
+
+                var direction = camera.getWorldDirection();
+                camera.position.set(0,0,0);
+                camera.position.add( direction.multiplyScalar(-500) );
 
 
 
