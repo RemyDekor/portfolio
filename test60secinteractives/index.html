@@ -120,26 +120,6 @@
                 planeGroup.add( structure );
             } );
 
-            // var plane;
-            // var loader = new THREE.JSONLoader();
-            // loader.load( 'PlaneLowPoly_Scene.json', function( planeObj ) {
-            //     // var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, side: THREE.BackSide, wireframe: true } );
-            //     // var material = materials[ 0 ];
-            //     var wingbottom = planeObj.getObjectByName("WingBottom");
-            //     var wingtop = planeObj.getObjectByName("Wingtop");
-            //
-            //
-            //     //mesh.position.z = -50;
-            //
-            //     planeObj.castShadow = true;
-            //     planeObj.receiveShadow = true;
-            //
-            //     planeGroup.add( wingbottom );
-            //     planeGroup.add( wingtop );
-            //
-            //
-            // } );
-
             var helice;
             loader.load( 'PlaneJSON/Plane_Propre_7_Helice.json', function( geometry, materials ) {
                 //side: THREE.BackSide
@@ -164,13 +144,13 @@
 
 
             } );
-            // planeGroup.scale.set(9, 9, 9);
+            planeGroup.scale.set(8.5, 8.5, 8.5);
             scene.add( planeGroup );
 
-            var geometry = new THREE.BoxBufferGeometry( 100, 100, 100, 3, 3, 3 );
-            var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, transparent: true, opacity: 0.07, side: THREE.BackSide, wireframe: true } );
-            var mesh = new THREE.Mesh( geometry, material );
-            scene.add( mesh );
+            // var geometry = new THREE.BoxBufferGeometry( 100, 100, 100, 3, 3, 3 );
+            // var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, transparent: true, opacity: 0.07, side: THREE.BackSide, wireframe: true } );
+            // var mesh = new THREE.Mesh( geometry, material );
+            // scene.add( mesh );
 
             // LIGHTS
 
