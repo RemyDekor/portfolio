@@ -26,14 +26,16 @@
     (function() {
         "use strict";
 
-        var stats = new Stats();
-        stats.showPanel( 0 ); // 0: fps, 1: ms, 2: mb, 3+: custom
-        // var xPanel = stats.addPanel( new Stats.Panel( 'x', '#ff8', '#221' ) );
-        // var yPanel = stats.addPanel( new Stats.Panel( 'y', '#f8f', '#212' ) );
-        // stats.showPanel( 3 );
-        document.body.appendChild( stats.dom );
+        // var stats = new Stats();
+        // stats.showPanel( 0 ); // 0: fps, 1: ms, 2: mb, 3+: custom
+        //
+        // // var xPanel = stats.addPanel( new Stats.Panel( 'x', '#ff8', '#221' ) );
+        // // var yPanel = stats.addPanel( new Stats.Panel( 'y', '#f8f', '#212' ) );
+        // // stats.showPanel( 3 );
+        //
+        // document.body.appendChild( stats.dom );
 
-    	window.addEventListener('load', function() {
+        window.addEventListener('load', function() {
 
             var container, camera, scene, renderer, controls, geometry, mesh, dirLight, hemiLight;
             var t = 0;
@@ -215,7 +217,7 @@
 
             var animate = function(){
 
-                stats.begin();
+                // stats.begin();
 
                 window.requestAnimationFrame( animate );
                 controls.update();
@@ -236,7 +238,7 @@
 
                 renderer.render(scene, camera);
 
-                stats.end();
+                // stats.end();
 
             };
 
