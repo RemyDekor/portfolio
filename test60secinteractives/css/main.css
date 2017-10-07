@@ -1,10 +1,10 @@
 #looping {
-  background-color: #00F;
-  width: 50vw;
-  height: 50vh;
+  background-color: rgba(20,20,20,0.2);
+  width: 100vw;
+  height: 100vh;
   position: absolute;
-  top: 25vh;
-  left: 25vw;
+  top: 0;
+  left: 0;
   background-image: url("../Looping.gif");
   background-size: contain;
   /*opacity: 0.5;*/
