@@ -6,7 +6,9 @@
   top: 25vh;
   left: 25vw;
   opacity: 0.5;
-  animation: animLooping 3s infinite;
+  animation-name: animLooping;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
 }
 
 @keyframes animLooping {
