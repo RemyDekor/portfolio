@@ -5,7 +5,7 @@
   position: absolute;
   top: 25vh;
   left: 25vw;
-  opacity: 0.5;
+  /*opacity: 0.5;*/
   animation-name: animLooping;
   animation-duration: 3s;
   animation-iteration-count: infinite;
