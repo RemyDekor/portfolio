@@ -5,6 +5,7 @@
   position: absolute;
   top: 25vh;
   left: 25vw;
+  opacity: 0.5;
   animation: animLooping 3s infinite;
 }
 
