@@ -5,7 +5,7 @@
   position: absolute;
   top: 25vh;
   left: 25vw;
-  animation: animLooping 5s infinite;
+  animation: animLooping 3s infinite;
 }
 
 @keyframes animLooping {
