@@ -11,14 +11,14 @@
 
 @keyframes anim_looping {
   0% {
-      opacity: 0;
+      background-color: #00F;
     }
 
   50% {
-      opacity: 0.9;
+      background-color: #0FF;
     }
 
   100% {
-      opacity: 0;
+      background-color: #0F0;
     }
 }
