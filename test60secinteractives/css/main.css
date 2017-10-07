@@ -6,6 +6,7 @@
   top: 25vh;
   left: 25vw;
   background-image: url("Looping.gif");
+  background-size: contain;
   /*opacity: 0.5;*/
   animation-name: animLooping;
   animation-duration: 3s;
