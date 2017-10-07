@@ -5,6 +5,7 @@
   position: absolute;
   top: 25vh;
   left: 25vw;
+  background-image: url("Looping.gif");
   /*opacity: 0.5;*/
   animation-name: animLooping;
   animation-duration: 3s;
@@ -12,6 +13,7 @@
 }
 
 @keyframes animLooping {
-  from { opacity: 0; }
-    to { opacity: 1; }
+  0% { opacity: 0.0; }
+  50% { opacity: 0.9; }
+  100% { opacity: 0.0; }
 }
