@@ -1,1 +1,24 @@
-style="background-color:#00F; width:50vw; height:50vh; position:absolute; top: 25vh; left:25vw;
+#looping{
+  background-color: #00F;
+  width: 50vw;
+  height: 50vh;
+  position: absolute;
+  top: 25vh;
+  left: 25vw;
+  animation-name: anim_looping;
+  animation-duration: 2s;
+}
+
+@anim_looping {
+  0% {
+      opacity: 0.;
+    }
+
+  50% {
+      opacity: 0.9;
+    }
+
+  100% {
+      opacity: 0.;
+    }
+}
