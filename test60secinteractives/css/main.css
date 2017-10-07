@@ -5,10 +5,10 @@
   position: absolute;
   top: 25vh;
   left: 25vw;
-  animation: animLooping 5s infinite;
+  /*animation: animLooping 5s infinite;*/
 }
 
-@keyframes animLooping {
+/*@keyframes animLooping {
   0% {
       background-color: #00F;
     }
@@ -20,4 +20,4 @@
   100% {
       background-color: #0F0;
     }
-}
+}*/
