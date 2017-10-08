@@ -1,5 +1,5 @@
 #looping {
-  background-color: rgba(20,20,250,0.5);
+  background-color: rgba(20,20,250,0.1);
   width: 100vw;
   height: 100vh;
   position: absolute;
@@ -7,16 +7,6 @@
   left: 0;
   background-image: url("../Looping.gif");
   background-size: contain;
+  background-repeat: no-repeat;
   /*opacity: 0.5;*/
-  animation-name: animLooping;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease;
-  animat
-}
-
-@keyframes animLooping {
-  0% { opacity: 0.0; }
-  50% { opacity: 0.9; }
-  100% { opacity: 0.0; }
 }
