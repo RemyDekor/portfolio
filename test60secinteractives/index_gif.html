@@ -18,7 +18,14 @@
   test
 
   <div id="container" style="z-index: -9999;"></div>
-  <div id="looping"></div>
+
+  <div id="looping">
+    <rect x="10" y="10" width="20" height="20">
+      <animate attributeName="opacity"
+               values="0;1;0" dur="1s"
+               repeatCount="indefinite"/>
+    </rect>
+  </div>
 
 
   <script src="js/three.min.js"></script>
