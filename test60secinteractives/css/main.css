@@ -7,11 +7,13 @@
   left: 0;
   background-image: url("../Looping.gif");
   background-size: contain;
+  background-repeat: no-repeat;
   /*opacity: 0.5;*/
   animation-name: animLooping;
   animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: ease;
+
   -webkit-animation-name: animLooping;
   -webkit-animation-duration: 3s;
   -webkit-animation-iteration-count: infinite;
