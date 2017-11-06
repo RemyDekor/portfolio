@@ -70,9 +70,9 @@
 
 
           <a-sky id="menusky" src="#menu" transparent=true opacity=1 visible=true>
-              <a-animation attribute="rotation" fill="forwards" direction="normal" easing="linear" dur="90000" from="0 0 0" to="0 360 0" repeat="indefinite" >
+              <a-animation attribute="rotation" fill="forwards" direction="normal" easing="cubic" dur="90000" from="0 0 0" to="0 360 0" repeat="indefinite" >
                   <a-animation attribute ="dur"
-                               easing = "linear"
+                               easing = "cubic"
                                dur = "1000"
                                from="90000"
                                to="60000"
@@ -83,9 +83,9 @@
               </a-animation>
           </a-sky>
           <a-sky id="morningsky" src="#morning" transparent=true opacity=0 visible=true>
-              <a-animation attribute="rotation" fill="forwards" direction="normal" easing="linear" dur="90000" from="0 0 0" to="0 360 0" repeat="indefinite">
+              <a-animation attribute="rotation" fill="forwards" direction="normal" easing="cubic" dur="90000" from="0 0 0" to="0 360 0" repeat="indefinite">
                   <a-animation attribute ="dur"
-                               easing = "linear"
+                               easing = "cubic"
                                dur = "1000"
                                from="90000"
                                to="60000"
@@ -96,9 +96,9 @@
               </a-animation>
           </a-sky>
           <a-sky id="middaysky" src="#midday" transparent=true opacity=0 visible=true>
-              <a-animation attribute="rotation" fill="forwards" direction="reverse" easing="linear" dur="90000" from="0 0 0" to="0 360 0" repeat="indefinite">
+              <a-animation attribute="rotation" fill="forwards" direction="reverse" easing="cubic" dur="90000" from="0 0 0" to="0 360 0" repeat="indefinite">
                   <a-animation attribute ="dur"
-                               easing = "linear"
+                               easing = "cubic"
                                dur = "1000"
                                from="90000"
                                to="60000"
@@ -109,9 +109,9 @@
               </a-animation>
           </a-sky>
           <a-sky id="stormsky" src="#storm" transparent=true opacity=0 visible=true>
-              <a-animation attribute="rotation" fill="forwards" direction="reverse" easing="linear" dur="90000" from="0 0 0" to="0 360 0" repeat="indefinite">
+              <a-animation attribute="rotation" fill="forwards" direction="reverse" easing="cubic" dur="90000" from="0 0 0" to="0 360 0" repeat="indefinite">
                   <a-animation attribute ="dur"
-                               easing = "linear"
+                               easing = "cubic"
                                dur = "1000"
                                from="90000"
                                to="60000"
@@ -122,9 +122,9 @@
               </a-animation>
           </a-sky>
           <a-sky id="sunsetsky" src="#sunset" transparent=true opacity=0 visible=true>
-              <a-animation attribute="rotation" fill="forwards" direction="reverse" easing="linear" dur="90000" from="0 0 0" to="0 360 0" repeat="indefinite">
+              <a-animation attribute="rotation" fill="forwards" direction="reverse" easing="cubic" dur="90000" from="0 0 0" to="0 360 0" repeat="indefinite">
                   <a-animation attribute ="dur"
-                               easing = "linear"
+                               easing = "cubic"
                                dur = "1000"
                                from="90000"
                                to="60000"
@@ -135,9 +135,9 @@
               </a-animation>
           </a-sky>
           <a-sky id="nightsky" src="#night" transparent=true opacity=0 visible=true>
-              <a-animation attribute="rotation" fill="forwards" direction="reverse" easing="linear" dur="90000" from="0 0 0" to="0 360 0" repeat="indefinite">
+              <a-animation attribute="rotation" fill="forwards" direction="reverse" easing="cubic" dur="90000" from="0 0 0" to="0 360 0" repeat="indefinite">
                   <a-animation attribute ="dur"
-                               easing = "linear"
+                               easing = "cubic"
                                dur = "1000"
                                from="90000"
                                to="60000"
@@ -149,7 +149,7 @@
           </a-sky>
 
 
-          
+
 
 
 
@@ -164,7 +164,7 @@
                        <a-animation  begin="theend"
                                attribute="text.opacity"
                                dur="15000"
-                               easing="linear"
+                               easing="cubic"
                                fill="forwards"
                                to="0"
                                repeat="0">
@@ -181,7 +181,7 @@
                       <a-animation attribute="position"
                                     begin="active"
                                     dur="3000"
-                                    easing="linear"
+                                    easing="cubic"
                                     fill="forwards"
                                     to="-5 0 -1"
                                     repeat="0">
@@ -196,7 +196,7 @@
                        <a-animation attribute="position"
                                     begin="active"
                                     dur="3000"
-                                    easing="linear"
+                                    easing="cubic"
                                     fill="forwards"
                                     to="-40 0 -5"
                                     repeat="0">
@@ -227,7 +227,7 @@
                   <a-entity id="helice" obj-model="obj: #helice;  mtl: #helice-mtl">
                       <a-animation attribute="rotation"
                                    dur="50"
-                                   easing="linear"
+                                   easing="cubic"
                                    fill="forwards"
                                    to="360 0 0"
                                    repeat="indefinite">
@@ -240,7 +240,7 @@
                                attribute="position"
                                begin="active"
                                dur="10000"
-                               easing="linear"
+                               easing="cubic"
                                fill="forwards"
                                to="0.15 0.5 -2"
                                direction="alternate"
@@ -261,7 +261,7 @@
                                begin="theend"
                                attribute="rotation"
                                dur="5000"
-                               easing="linear"
+                               easing="cubic"
                                fill="forwards"
                                from="0 180 270"
                                to="-90 180 270"
@@ -271,7 +271,7 @@
                                begin="theend"
                                attribute="position"
                                dur="20000"
-                               easing="linear"
+                               easing="cubic"
                                fill="forwards"
                                to="0 0 -100"
                                repeat="0">
@@ -306,7 +306,7 @@
                                begin="theend"
                                attribute="material.opacity"
                                dur="15000"
-                               easing="linear"
+                               easing="cubic"
                                fill="forwards"
                                to="1"
                                repeat="0">
@@ -315,7 +315,7 @@
                                begin="theend"
                                attribute="text.opacity"
                                dur="15000"
-                               easing="linear"
+                               easing="cubic"
                                fill="forwards"
                                to="1"
                                repeat="0">
