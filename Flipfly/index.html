@@ -36,8 +36,8 @@
                fmod
                visible = "false"
                main>
-          
-          
+
+
           <a-assets timeout="30000">
               <a-asset-item id="plane" src="assets/models/PlaneLowPoly.obj"></a-asset-item>
 
@@ -66,9 +66,9 @@
               <img id='ground' src="assets/models/materialtable.jpg"/>
               <img id='clouds' src="assets/backgrounds/transition_nuage.png"/>
           </a-assets>
-          
-          
-          
+
+
+
           <a-sky id="menusky" src="#menu" transparent=true opacity=1 visible=true>
               <a-animation attribute="rotation" fill="forwards" direction="normal" easing="linear" dur="90000" from="0 0 0" to="0 360 0" repeat="indefinite" >
                   <a-animation attribute ="dur"
@@ -148,14 +148,14 @@
               </a-animation>
           </a-sky>
 
-          
-          
-          
-          
-          
+
+
+
+
+
           <a-camera id="camera" look-controls>
-              
-              
+
+
              <a-entity id ="textfield"
                        text="value: HELLO ; width:1.5; shader: msdf; font:assets/fonts/kaushanscript/KaushanScript-Regular.json; align:right ; anchor:left; transparent:true;"
                        position="0.3 0.8 -1"
@@ -167,15 +167,15 @@
                                fill="forwards"
                                to="0"
                                repeat="0">
-                        </a-animation>                 
+                        </a-animation>
              </a-entity>
-              
-              
+
+
               <a-plane id="groundp"
-                       src = "#ground" 
-                       rotation="0 60 0" 
-                       position="-1 0 -1" 
-                       width="5" 
+                       src = "#ground"
+                       rotation="0 60 0"
+                       position="-1 0 -1"
+                       width="5"
                        height="10">
                       <a-animation attribute="position"
                                     begin="active"
@@ -187,10 +187,10 @@
                       </a-animation>
               </a-plane>
               <a-plane id = "skyp"
-                       src = "#skytuto" 
-                       rotation="0 0 -90" 
-                       position="0 0 -5" 
-                       width="50" 
+                       src = "#skytuto"
+                       rotation="0 0 -90"
+                       position="0 0 -5"
+                       width="50"
                        height="50">
                        <a-animation attribute="position"
                                     begin="active"
@@ -219,7 +219,7 @@
                         </a-animation>
               </a-plane>
 
-              
+
               <a-entity id="plane" scale="0.175 0.175 0.175" position="-0.15 0.5 -2" rotation="0 -30 270" facecamera="0 0 270">
                   <!-- Ajouter animation oscillation en hauteur-->
                   <a-entity id="main-plane" obj-model="obj: #main-plane;  mtl: #main-plane-mtl"></a-entity>
@@ -324,6 +324,9 @@
 
           <a-entity id="camera-entity" camera look-controls>
           </a-entity>
+
+          <a-entity light="type: hemisphere; color: #FF0; groundColor: #0FF; intensity: 2">
+          </a-entity>
       </a-scene>
       <script type="text/javascript" src="libraries/fmod/fmodstudio.js"></script>
       <script type="text/javascript" src="scripts/musicpreload.js"></script>
@@ -334,13 +337,13 @@
           var assetsloaded = true;
           var touched = false;
           var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-          
+
           function hideIphone(){
               var x = document.getElementById("popupiphone");
               x.style.display = 'none';
           }
-          
-          
+
+
           window.addEventListener('musicloaded', function (){
               musicloaded = true;
               document.querySelector("#loadingstate").value = "";
@@ -368,7 +371,7 @@
           function about(){
               alert("this content is not available yet");
           }
-          
+
           function gofullscreen(){
                             var lockedOrientation = 'portrait';
                            var orientKey = 'orientation';
@@ -393,10 +396,10 @@
                            } else {
                               promise = screen.lockOrientation(lockedOrientation);
                            }
-                           }              
+                           }
 
           }
-          
+
           function startgame(){
               console.log("touched window and music loaded " + musicloaded + " and assetsloaded " + assetsloaded);
               if(musicloaded && assetsloaded){
@@ -411,7 +414,7 @@
                           //TODO SET A LOT OF DIVS INVISIBLE
                            document.body.style.backgroundImage = "none";
                            document.body.style.backgroundColor = "black";
-                           
+
                            //allow for document to be reloaded fullscreen
                            window.addEventListener('touchend', gofullscreen);
                        }
