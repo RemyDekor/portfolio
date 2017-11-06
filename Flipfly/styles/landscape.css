@@ -1,0 +1,95 @@
+body{
+  background-image: url("fond1.jpg");
+  background-size:cover;
+  background-position : center;
+  font-family: 'Signika Negative', sans-serif;
+}
+
+.loadinfo{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.topcenter{
+  position: fixed;
+  width:100vw;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.topright{
+  position: fixed;
+  width:100vw;
+  top: 5vh;
+  right: 5vw;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+#aboutbutton{
+    background-size: contain;
+    width:7.5vw;
+    height: 7.5vw;
+    background-repeat : no-repeat;
+    background-image: url("About.png");
+    background-color : transparent;
+    border : none;
+    background-position : center;
+}
+
+#launchbutton{
+    background-size: contain;
+    width:31vw;
+    height: 13vw;
+    background-repeat : no-repeat;
+    background-image: url("lancer.png");
+    background-color : transparent;
+    border : none;
+    background-position : center;
+}
+
+
+#popupiphone img{
+   position : absolute;
+   max-height:100%;
+   height:auto;
+   width: auto;
+   z-index:9990;
+}
+
+#gametitle{
+    background-image: url("Title_Launch.png");
+    width:75vw;
+    height:50vw;
+    background-position : center;
+    border : none;
+    background-color : transparent;
+    background-size : contain;
+    margin-top : 5vh;
+    font-family: 'Kaushan Script', cursive;
+    
+}
+
+a-scene{
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -9999;
+}

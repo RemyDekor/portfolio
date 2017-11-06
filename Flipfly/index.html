@@ -1,0 +1,435 @@
+<html>
+  <head>
+      <link rel="stylesheet" media="all and (orientation:portrait)" href="styles/portrait.css">
+      <link rel="stylesheet" media="all and (orientation:landscape)" href="styles/landscape.css">
+      <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Signika+Negative" rel="stylesheet">
+      <script src="libraries/aframe/aframe.min.js"></script>
+      <!--<script src="scripts/aframe-gif-shader.js"></script>--->
+      <script src="libraries/aframe/extras/aframe-extras.min.js"></script>
+      <script src="scripts/aframe-gif-component.min.js"></script>
+      <script src="libraries/rain/aframe-rain.js"></script>
+      <script src="scripts/face-camera.js"></script>
+      <script src="scripts/main-component.js"></script>
+    </head>
+  <body>
+      <div id = "landpage">
+            <style type="text/css">
+              .hiddenPic {display:none;}
+            </style>
+            <!-- trying to force background to load first -->
+            <img src="styles/background.jpg" class="hiddenPic">
+          <div id = "popupiphone" style="display : none;" onclick="hideIphone()">
+              <img src="assets/pictos/iphone.png"/>
+          </div>
+          <did id = "gametitle" class = "topcenter"></div>
+          <button type="button" id="aboutbutton" class = "topright" oncClick="javascript:about()"></button>
+          <div id= "infoloading" class = "loadinfo" href="javascript:;">
+                <output id="loadingstate"></output><br/>
+          </div>
+      </div>
+      <a-scene id="mainscene"
+               rain
+               inspector="url: aframe/custom_inspector.js"
+               keyboard-shortcuts="enterVR: false"
+               vr-mode-ui="enabled: false"
+               embedded
+               fmod
+               visible = "false"
+               main>
+          
+          
+          <a-assets timeout="30000">
+              <a-asset-item id="plane" src="assets/models/PlaneLowPoly.obj"></a-asset-item>
+
+              <a-asset-item id="main-plane" src="assets/models/FuselageEtAiles.obj"></a-asset-item>
+              <a-asset-item id="main-plane-mtl" src="assets/models/FuselageEtAiles.mtl"></a-asset-item>
+
+              <a-asset-item id="helice" src="assets/models/Helice.obj"></a-asset-item>
+              <a-asset-item id="helice-mtl" src="assets/models/Helice.mtl"></a-asset-item>
+
+              <a-asset-item id="perso" src="assets/models/Perso.obj"></a-asset-item>
+              <a-asset-item id="perso-mtl" src="assets/models/Perso.mtl"></a-asset-item>
+
+              <a-asset-item id="roues" src="assets/models/Roues.obj"></a-asset-item>
+              <a-asset-item id="roues-mtl" src="assets/models/Roues.mtl"></a-asset-item>
+
+              <a-asset-item id="structure" src="assets/models/StructureAiles.obj"></a-asset-item>
+              <a-asset-item id="structure-mtl" src="assets/models/StructureAiles.mtl"></a-asset-item>
+
+              <img id='menu' src="assets/backgrounds/Palettes_couleur_menu.jpg"/>
+              <img id='night' src="assets/backgrounds/Palettes_couleurs_nuit.jpg"/>
+              <img id='morning' src= "assets/backgrounds/Palettes_couleurs_matin.jpg"/>
+              <img id='midday' src="assets/backgrounds/Palettes_couleurs_midi.jpg"/>
+              <img id='storm' src="assets/backgrounds/Palettes_couleurs_orage.jpg"/>
+              <img id='sunset' src="assets/backgrounds/Palettes_couleur_crepuscules.jpg"/>
+              <img id='skytuto' src="assets/models/skytable.jpg"/>
+              <img id='ground' src="assets/models/materialtable.jpg"/>
+              <img id='clouds' src="assets/backgrounds/transition_nuage.png"/>
+          </a-assets>
+          
+          
+          
+          <a-sky id="menusky" src="#menu" transparent=true opacity=1 visible=true>
+              <a-animation attribute="rotation" fill="forwards" direction="normal" easing="linear" dur="90000" from="0 0 0" to="0 360 0" repeat="indefinite" >
+                  <a-animation attribute ="dur"
+                               easing = "linear"
+                               dur = "1000"
+                               from="90000"
+                               to="60000"
+                               repeat = "indefinite"
+                               direction="alternate"
+                               >
+                  </a-animation>
+              </a-animation>
+          </a-sky>
+          <a-sky id="morningsky" src="#morning" transparent=true opacity=0 visible=true>
+              <a-animation attribute="rotation" fill="forwards" direction="normal" easing="linear" dur="90000" from="0 0 0" to="0 360 0" repeat="indefinite">
+                  <a-animation attribute ="dur"
+                               easing = "linear"
+                               dur = "1000"
+                               from="90000"
+                               to="60000"
+                               repeat = "indefinite"
+                               direction="alternate"
+                               >
+                  </a-animation>
+              </a-animation>
+          </a-sky>
+          <a-sky id="middaysky" src="#midday" transparent=true opacity=0 visible=true>
+              <a-animation attribute="rotation" fill="forwards" direction="reverse" easing="linear" dur="90000" from="0 0 0" to="0 360 0" repeat="indefinite">
+                  <a-animation attribute ="dur"
+                               easing = "linear"
+                               dur = "1000"
+                               from="90000"
+                               to="60000"
+                               repeat = "indefinite"
+                               direction="alternate"
+                               >
+                  </a-animation>
+              </a-animation>
+          </a-sky>
+          <a-sky id="stormsky" src="#storm" transparent=true opacity=0 visible=true>
+              <a-animation attribute="rotation" fill="forwards" direction="reverse" easing="linear" dur="90000" from="0 0 0" to="0 360 0" repeat="indefinite">
+                  <a-animation attribute ="dur"
+                               easing = "linear"
+                               dur = "1000"
+                               from="90000"
+                               to="60000"
+                               repeat = "indefinite"
+                               direction="alternate"
+                               >
+                  </a-animation>
+              </a-animation>
+          </a-sky>
+          <a-sky id="sunsetsky" src="#sunset" transparent=true opacity=0 visible=true>
+              <a-animation attribute="rotation" fill="forwards" direction="reverse" easing="linear" dur="90000" from="0 0 0" to="0 360 0" repeat="indefinite">
+                  <a-animation attribute ="dur"
+                               easing = "linear"
+                               dur = "1000"
+                               from="90000"
+                               to="60000"
+                               repeat = "indefinite"
+                               direction="alternate"
+                               >
+                  </a-animation>
+              </a-animation>
+          </a-sky>
+          <a-sky id="nightsky" src="#night" transparent=true opacity=0 visible=true>
+              <a-animation attribute="rotation" fill="forwards" direction="reverse" easing="linear" dur="90000" from="0 0 0" to="0 360 0" repeat="indefinite">
+                  <a-animation attribute ="dur"
+                               easing = "linear"
+                               dur = "1000"
+                               from="90000"
+                               to="60000"
+                               repeat = "indefinite"
+                               direction="alternate"
+                               >
+                  </a-animation>
+              </a-animation>
+          </a-sky>
+
+          
+          
+          
+          
+          
+          <a-camera id="camera" look-controls>
+              
+              
+             <a-entity id ="textfield"
+                       text="value: HELLO ; width:1.5; shader: msdf; font:assets/fonts/kaushanscript/KaushanScript-Regular.json; align:right ; anchor:left; transparent:true;"
+                       position="0.3 0.8 -1"
+                       rotation="0 0 -90">
+                       <a-animation  begin="theend"
+                               attribute="text.opacity"
+                               dur="15000"
+                               easing="linear"
+                               fill="forwards"
+                               to="0"
+                               repeat="0">
+                        </a-animation>                 
+             </a-entity>
+              
+              
+              <a-plane id="groundp"
+                       src = "#ground" 
+                       rotation="0 60 0" 
+                       position="-1 0 -1" 
+                       width="5" 
+                       height="10">
+                      <a-animation attribute="position"
+                                    begin="active"
+                                    dur="3000"
+                                    easing="linear"
+                                    fill="forwards"
+                                    to="-5 0 -1"
+                                    repeat="0">
+                      </a-animation>
+              </a-plane>
+              <a-plane id = "skyp"
+                       src = "#skytuto" 
+                       rotation="0 0 -90" 
+                       position="0 0 -5" 
+                       width="50" 
+                       height="50">
+                       <a-animation attribute="position"
+                                    begin="active"
+                                    dur="3000"
+                                    easing="linear"
+                                    fill="forwards"
+                                    to="-40 0 -5"
+                                    repeat="0">
+                        </a-animation>
+              </a-plane>
+              <a-plane id="cloudsp"
+                       src="#clouds"
+                       rotation = "0 0 -90"
+                       position="0 -5 -1"
+                       width = "10"
+                       height="2"
+                       transparent="true"
+                       >
+                       <a-animation attribute="position"
+                                    begin="active"
+                                    dur="3000"
+                                    easing="ease-in-cubic"
+                                    fill="forwards"
+                                    to="0 10 -1"
+                                    repeat="0">
+                        </a-animation>
+              </a-plane>
+
+              
+              <a-entity id="plane" scale="0.175 0.175 0.175" position="-0.15 0.5 -2" rotation="0 -30 270" facecamera="0 0 270">
+                  <!-- Ajouter animation oscillation en hauteur-->
+                  <a-entity id="main-plane" obj-model="obj: #main-plane;  mtl: #main-plane-mtl"></a-entity>
+                  <a-entity id="helice" obj-model="obj: #helice;  mtl: #helice-mtl">
+                      <a-animation attribute="rotation"
+                                   dur="50"
+                                   easing="linear"
+                                   fill="forwards"
+                                   to="360 0 0"
+                                   repeat="indefinite">
+                      </a-animation>
+                  </a-entity>
+                  <a-entity id="perso" obj-model="obj: #perso;  mtl: #perso-mtl"></a-entity>
+                  <a-entity id="roues" obj-model="obj: #roues;  mtl: #roues-mtl"></a-entity>
+                  <a-entity id="structure" obj-model="obj: #structure;  mtl: #structure-mtl"></a-entity>
+                  <a-animation id = "movement1"
+                               attribute="position"
+                               begin="active"
+                               dur="10000"
+                               easing="linear"
+                               fill="forwards"
+                               to="0.15 0.5 -2"
+                               direction="alternate"
+                               end="theend"
+                               repeat="indefinite">
+                  </a-animation>
+                  <a-animation id = "rotate1"
+                               attribute="facecamera"
+                               dur="1000"
+                               begin ='turnover'
+                               fill="forwards"
+                               from="0 0 270"
+                               to="0 150 270"
+                               direction="forwards"
+                               >
+                  </a-animation>
+                  <a-animation id = "theendr"
+                               begin="theend"
+                               attribute="rotation"
+                               dur="5000"
+                               easing="linear"
+                               fill="forwards"
+                               from="0 180 270"
+                               to="-90 180 270"
+                               repeat=0>
+                  </a-animation>
+                  <a-animation id = "theendp"
+                               begin="theend"
+                               attribute="position"
+                               dur="20000"
+                               easing="linear"
+                               fill="forwards"
+                               to="0 0 -100"
+                               repeat="0">
+                  </a-animation>
+                  <!--<a-animation id = "theendv"
+                               begin="theend"
+                               attribute="visible"
+                               dur="20000"
+                               fill="forwards"
+                               to="false"
+                               repeat="0">
+                  </a-animation>-->
+
+              </a-entity>
+              <a-entity id = "instruction"
+                        geometry="primitive: plane; height: 0.22; width: 1.4"
+                        position="-0.3 0 -1"
+                        rotation="0 0 -90"
+                        material="color:white; side: front; shader:gif; src:url(assets/pictos/picto_translation.gif); transparent:true; opacity:1; alphaTest: 0.5;">
+              </a-entity>
+              <a-entity id = "finalscreen"
+                        geometry="primitive: plane; height: 2; width: 3"
+                        position="0 0 -1"
+                        rotation="0 0 90"
+                        text="value : FIN. \n \n \n Flipfly - la traversee du jour. \n \n \n Remy Bonte Duval (Graphismes) - Gabriel Dalmasso (Sons) - LLucile (Developpement) ; width:1.5; align: center; transparent: true; opacity:0"
+                        material="color: black; opacity: 0"
+                        transparent = true;
+                        visible = true
+                        >
+                  <!-- add fmod and aframe logos here-->
+                            <a-animation id = "endpanel"
+                               begin="theend"
+                               attribute="material.opacity"
+                               dur="15000"
+                               easing="linear"
+                               fill="forwards"
+                               to="1"
+                               repeat="0">
+                            </a-animation>
+                            <a-animation id = "endpaneltext"
+                               begin="theend"
+                               attribute="text.opacity"
+                               dur="15000"
+                               easing="linear"
+                               fill="forwards"
+                               to="1"
+                               repeat="0">
+                            </a-animation>
+              </a-entity>
+          </a-camera>
+
+          <a-entity id="camera-entity" camera look-controls>
+          </a-entity>
+      </a-scene>
+      <script type="text/javascript" src="libraries/fmod/fmodstudio.js"></script>
+      <script type="text/javascript" src="scripts/musicpreload.js"></script>
+      <script type="text/javascript">
+          //TODO display loader
+          //When loaded :
+          var musicloaded = false;
+          var assetsloaded = true;
+          var touched = false;
+          var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+          
+          function hideIphone(){
+              var x = document.getElementById("popupiphone");
+              x.style.display = 'none';
+          }
+          
+          
+          window.addEventListener('musicloaded', function (){
+              musicloaded = true;
+              document.querySelector("#loadingstate").value = "";
+              if(assetsloaded){
+                  addstart();
+              }
+          });
+          document.querySelector('a-scene').addEventListener('loaded', function () {
+              console.log("objects have been loaded");
+              assetsloaded = true;
+              if(musicloaded){
+                  addstart();
+              }
+          });
+          function addstart(){
+            console.log("adding start button");
+            var buttonadded= document.createElement('input');
+            buttonadded.id = 'launchbutton';
+            buttonadded.type = 'button';
+            buttonadded.name = 'launchbutton';
+            buttonadded.onclick = startgame;
+            var loaddiv = document.getElementById("infoloading");
+            loaddiv.appendChild(buttonadded);
+          }
+          function about(){
+              alert("this content is not available yet");
+          }
+          
+          function gofullscreen(){
+                            var lockedOrientation = 'portrait';
+                           var orientKey = 'orientation';
+                              if ('mozOrientation' in screen) {
+                                orientKey = 'mozOrientation';
+                              } else if ('msOrientation' in screen) {
+                                orientKey = 'msOrientation';
+                              }
+                           var doc = window.document;
+                           var docEl = doc.documentElement;
+                           console.log(screen[orientKey].lock);
+                           var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+                           if (!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+                             requestFullScreen.call(docEl);
+                           var promise = null;
+                           console.log(this);
+                           console.log(orientKey);
+                           console.log(lockedOrientation);
+                           console.log(screen[orientKey].lock);
+                           if (screen[orientKey].lock) {
+                              promise = screen[orientKey].lock(lockedOrientation);
+                           } else {
+                              promise = screen.lockOrientation(lockedOrientation);
+                           }
+                           }              
+
+          }
+          
+          function startgame(){
+              console.log("touched window and music loaded " + musicloaded + " and assetsloaded " + assetsloaded);
+              if(musicloaded && assetsloaded){
+                       //TODO if iOS and not portrait mode locked request that user toggle on portrait mode
+                       //else if not iOS or iOS and portrait mode locked
+                       if (!iOS){
+                           gofullscreen();
+                           document.getElementById('mainscene').setAttribute('visible', 'true');
+                           document.getElementById('mainscene').style.zIndex = 999;
+                           document.getElementById('landpage').style.visibility='hidden';
+                           document.getElementById('mainscene').components.main.started = true;
+                          //TODO SET A LOT OF DIVS INVISIBLE
+                           document.body.style.backgroundImage = "none";
+                           document.body.style.backgroundColor = "black";
+                           
+                           //allow for document to be reloaded fullscreen
+                           window.addEventListener('touchend', gofullscreen);
+                       }
+                     else{
+                         document.getElementById("popupiphone").style.display = 'block';
+                         if(touched == true){
+                             document.getElementById('mainscene').setAttribute('visible', 'true');
+                             document.getElementById('mainscene').style.zIndex = 1;
+                             document.getElementById('landpage').style.visibility='hidden';
+                             document.getElementById('mainscene').components.main.started = true;
+                             //TODO SET A LOT OF DIVS INVISIBLE
+                             document.body.style.backgroundImage = "none";
+                             document.body.style.backgroundColor = "black";
+                         }
+                         touched = true;
+                     }
+              }
+          };
+      </script>
+  </body>
+</html>
