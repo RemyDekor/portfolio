@@ -379,8 +379,10 @@ AFRAME.registerComponent('main', {
                 /*beTransparent(document.querySelector('a-sky'));
                 beOpaque(document.querySelector('a-sky'));*/
 
-                ////CHANGING LIGHT///////////////////////////////////////////////////
-                document.querySelector('#mainDirLight').setAttribute('color', '#FFF');
+                ////CHANGING LIGHTS///////////////////////////////////////////////////
+                document.querySelector('#mainDirLight').setAttribute('color', '#3385FF');
+                document.querySelector('#mainDirLight').setAttribute('intensity', '1.0');
+                document.querySelector('#mainAmbiantLight').setAttribute('color', '#E6B3B3');
                 ///////////////////////////////////////////////////
                 }, 1000);
             }
@@ -456,6 +458,12 @@ AFRAME.registerComponent('main', {
                 beOpaque(document.querySelector('#middaysky'));
               /*beTransparent(document.querySelector('a-sky'));
               beOpaque(document.querySelector('a-sky'));*/
+
+              ////CHANGING LIGHTS///////////////////////////////////////////////////
+              document.querySelector('#mainDirLight').setAttribute('color', '#3D87F5');
+              document.querySelector('#mainDirLight').setAttribute('intensity', '1.5');
+              document.querySelector('#mainAmbiantLight').setAttribute('color', '#527A76');
+              ///////////////////////////////////////////////////
             }, 2000);
           }
 
@@ -520,6 +528,12 @@ AFRAME.registerComponent('main', {
                 beOpaque(document.querySelector('#stormsky'));
               /*beTransparent(document.querySelector('a-sky'));
               beOpaque(document.querySelector('a-sky'));*/
+
+              ////CHANGING LIGHTS///////////////////////////////////////////////////
+              document.querySelector('#mainDirLight').setAttribute('color', '#303030');
+              document.querySelector('#mainDirLight').setAttribute('intensity', '0.5');
+              document.querySelector('#mainAmbiantLight').setAttribute('color', '#282828');
+              ///////////////////////////////////////////////////
             }, 2000);
           }
 
@@ -580,6 +594,12 @@ AFRAME.registerComponent('main', {
                 beOpaque(document.querySelector('#sunsetsky'));
               /*beTransparent(document.querySelector('a-sky'));
               beOpaque(document.querySelector('a-sky'));*/
+
+              ////CHANGING LIGHTS///////////////////////////////////////////////////
+              document.querySelector('#mainDirLight').setAttribute('color', '#bf73ff');
+              document.querySelector('#mainDirLight').setAttribute('intensity', '1.0');
+              document.querySelector('#mainAmbiantLight').setAttribute('color', '#f9b091');
+              ///////////////////////////////////////////////////
             }, 1600);
           }
 
@@ -632,6 +652,12 @@ AFRAME.registerComponent('main', {
                 beOpaque(document.querySelector('#nightsky'));
               /*beTransparent(document.querySelector('a-sky'));
               beOpaque(document.querySelector('a-sky'));*/
+
+              ////CHANGING LIGHTS///////////////////////////////////////////////////
+              document.querySelector('#mainDirLight').setAttribute('color', '#191a26');
+              document.querySelector('#mainDirLight').setAttribute('intensity', '0.5');
+              document.querySelector('#mainAmbiantLight').setAttribute('color', '#000');
+              ///////////////////////////////////////////////////
             }, 1600);
           }
 
