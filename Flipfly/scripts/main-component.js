@@ -655,7 +655,7 @@ AFRAME.registerComponent('main', {
 
               ////CHANGING LIGHTS///////////////////////////////////////////////////
               document.querySelector('#mainDirLight').setAttribute('color', '#7ea09f');
-              document.querySelector('#mainDirLight').setAttribute('intensity', '0.15');
+              document.querySelector('#mainDirLight').setAttribute('intensity', '0.1');
               document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #100e1b');
               ///////////////////////////////////////////////////
             }, 1600);
