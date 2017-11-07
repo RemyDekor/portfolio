@@ -52,12 +52,12 @@ function incState(){
 function endGame(){
     switched = true;
     c_state = END_GAME;
-    setFMODMusic(7);    
+    setFMODMusic(7);
 }
 
 
 function beTransparent(element) {
-    element.setAttribute('opacity', 0);        
+    element.setAttribute('opacity', 0);
     element.setAttribute('visible', "false");
 }
 
@@ -378,6 +378,9 @@ AFRAME.registerComponent('main', {
                 beOpaque(document.querySelector('#morningsky'));
                 /*beTransparent(document.querySelector('a-sky'));
                 beOpaque(document.querySelector('a-sky'));*/
+
+                ////CHANGING LIGHT///////////////////////////////////////////////////
+                document.querySelector('#mainDirLight').setAttribute('color:#FFF');
                 }, 1000);
             }
           }
@@ -626,7 +629,7 @@ AFRAME.registerComponent('main', {
               //document.querySelector('a-sky').setAttribute('src','#night');
                 beTransparent(document.querySelector('#sunsetsky'));
                 beOpaque(document.querySelector('#nightsky'));
-              /*beTransparent(document.querySelector('a-sky'));              
+              /*beTransparent(document.querySelector('a-sky'));
               beOpaque(document.querySelector('a-sky'));*/
             }, 1600);
           }
