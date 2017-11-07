@@ -379,12 +379,12 @@ AFRAME.registerComponent('main', {
                 /*beTransparent(document.querySelector('a-sky'));
                 beOpaque(document.querySelector('a-sky'));*/
 
-                ////CHANGING LIGHTS///////////////////////////////////////////////////
+                //// Rémy 07/11/2017   CHANGING LIGHTS///////////////////////////////////////////////////
                 document.querySelector('#mainDirLight').setAttribute('color', '#f3cec6');
                 document.querySelector('#mainDirLight').setAttribute('intensity', '0.6');
                 document.querySelector('#directionaltarget').setAttribute('position', '-1 -0.1 1');
                 document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #312980');
-                ///////////////////////////////////////////////////
+                /////////////////////////////////////////////////////////////////////////////////////////
                 }, 1000);
             }
           }
@@ -460,12 +460,12 @@ AFRAME.registerComponent('main', {
               /*beTransparent(document.querySelector('a-sky'));
               beOpaque(document.querySelector('a-sky'));*/
 
-              ////CHANGING LIGHTS///////////////////////////////////////////////////
+              //// Rémy 07/11/2017   CHANGING LIGHTS///////////////////////////////////////////////////
               document.querySelector('#mainDirLight').setAttribute('color', '#e4f9ff');
               document.querySelector('#mainDirLight').setAttribute('intensity', '0.9');
               document.querySelector('#directionaltarget').setAttribute('position', '0 -1 0');
               document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #2d3339');
-              ///////////////////////////////////////////////////
+              /////////////////////////////////////////////////////////////////////////////////////////
             }, 2000);
           }
 
@@ -531,12 +531,12 @@ AFRAME.registerComponent('main', {
               /*beTransparent(document.querySelector('a-sky'));
               beOpaque(document.querySelector('a-sky'));*/
 
-              ////CHANGING LIGHTS///////////////////////////////////////////////////
+              //// Rémy 07/11/2017   CHANGING LIGHTS///////////////////////////////////////////////////
               document.querySelector('#mainDirLight').setAttribute('color', '#535353');
               document.querySelector('#mainDirLight').setAttribute('intensity', '0.2');
               document.querySelector('#directionaltarget').setAttribute('position', '0 -1 0');
               document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #2c2c2c');
-              ///////////////////////////////////////////////////
+              /////////////////////////////////////////////////////////////////////////////////////////
             }, 2000);
           }
 
@@ -598,12 +598,12 @@ AFRAME.registerComponent('main', {
               /*beTransparent(document.querySelector('a-sky'));
               beOpaque(document.querySelector('a-sky'));*/
 
-              ////CHANGING LIGHTS///////////////////////////////////////////////////
+              //// Rémy 07/11/2017   CHANGING LIGHTS///////////////////////////////////////////////////
               document.querySelector('#mainDirLight').setAttribute('color', '#fec168');
               document.querySelector('#mainDirLight').setAttribute('intensity', '0.6');
               document.querySelector('#directionaltarget').setAttribute('position', '-1 -0.1 1');
               document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #663380');
-              ///////////////////////////////////////////////////
+              /////////////////////////////////////////////////////////////////////////////////////////
             }, 1600);
           }
 
@@ -657,12 +657,12 @@ AFRAME.registerComponent('main', {
               /*beTransparent(document.querySelector('a-sky'));
               beOpaque(document.querySelector('a-sky'));*/
 
-              ////CHANGING LIGHTS///////////////////////////////////////////////////
+              //// Rémy 07/11/2017   CHANGING LIGHTS///////////////////////////////////////////////////
               document.querySelector('#mainDirLight').setAttribute('color', '#46a2b9');
               document.querySelector('#mainDirLight').setAttribute('intensity', '0.08');
               document.querySelector('#directionaltarget').setAttribute('position', '0 -1 0');
               document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #100e1b');
-              ///////////////////////////////////////////////////
+              /////////////////////////////////////////////////////////////////////////////////////////
             }, 1600);
           }
 
