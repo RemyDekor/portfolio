@@ -381,7 +381,7 @@ AFRAME.registerComponent('main', {
 
                 ////CHANGING LIGHTS///////////////////////////////////////////////////
                 document.querySelector('#mainDirLight').setAttribute('color', '#f3cec6');
-                document.querySelector('#mainDirLight').setAttribute('intensity', '0.8');
+                document.querySelector('#mainDirLight').setAttribute('intensity', '0.6');
                 document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #312980');
                 ///////////////////////////////////////////////////
                 }, 1000);
@@ -461,8 +461,8 @@ AFRAME.registerComponent('main', {
 
               ////CHANGING LIGHTS///////////////////////////////////////////////////
               document.querySelector('#mainDirLight').setAttribute('color', '#e4f9ff');
-              document.querySelector('#mainDirLight').setAttribute('intensity', '1.2');
-              document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #505b66');
+              document.querySelector('#mainDirLight').setAttribute('intensity', '0.9');
+              document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #2d3339');
               ///////////////////////////////////////////////////
             }, 2000);
           }
@@ -531,8 +531,8 @@ AFRAME.registerComponent('main', {
 
               ////CHANGING LIGHTS///////////////////////////////////////////////////
               document.querySelector('#mainDirLight').setAttribute('color', '#535353');
-              document.querySelector('#mainDirLight').setAttribute('intensity', '0.3');
-              document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #4b4b4b');
+              document.querySelector('#mainDirLight').setAttribute('intensity', '0.2');
+              document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #2c2c2c');
               ///////////////////////////////////////////////////
             }, 2000);
           }
@@ -597,7 +597,7 @@ AFRAME.registerComponent('main', {
 
               ////CHANGING LIGHTS///////////////////////////////////////////////////
               document.querySelector('#mainDirLight').setAttribute('color', '#fec168');
-              document.querySelector('#mainDirLight').setAttribute('intensity', '0.8');
+              document.querySelector('#mainDirLight').setAttribute('intensity', '0.6');
               document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #663380');
               ///////////////////////////////////////////////////
             }, 1600);
@@ -654,9 +654,9 @@ AFRAME.registerComponent('main', {
               beOpaque(document.querySelector('a-sky'));*/
 
               ////CHANGING LIGHTS///////////////////////////////////////////////////
-              document.querySelector('#mainDirLight').setAttribute('color', '#fec168');
-              document.querySelector('#mainDirLight').setAttribute('intensity', '0.1');
-              document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #fec168');
+              document.querySelector('#mainDirLight').setAttribute('color', '#7ea09f');
+              document.querySelector('#mainDirLight').setAttribute('intensity', '0.15');
+              document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #100e1b');
               ///////////////////////////////////////////////////
             }, 1600);
           }
