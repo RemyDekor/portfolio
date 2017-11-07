@@ -382,7 +382,7 @@ AFRAME.registerComponent('main', {
                 ////CHANGING LIGHTS///////////////////////////////////////////////////
                 document.querySelector('#mainDirLight').setAttribute('color', '#f3cec6');
                 document.querySelector('#mainDirLight').setAttribute('intensity', '0.6');
-                document.querySelector('#directionaltarget').setAttribute('position', '-1 0 0');
+                document.querySelector('#directionaltarget').setAttribute('position', '-1 0 0.1');
                 document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #312980');
                 ///////////////////////////////////////////////////
                 }, 1000);
@@ -463,7 +463,7 @@ AFRAME.registerComponent('main', {
               ////CHANGING LIGHTS///////////////////////////////////////////////////
               document.querySelector('#mainDirLight').setAttribute('color', '#e4f9ff');
               document.querySelector('#mainDirLight').setAttribute('intensity', '0.9');
-              document.querySelector('#directionaltarget').setAttribute('position', '-1 0 1');
+              document.querySelector('#directionaltarget').setAttribute('position', '0 0 1');
               document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #2d3339');
               ///////////////////////////////////////////////////
             }, 2000);
@@ -601,7 +601,7 @@ AFRAME.registerComponent('main', {
               ////CHANGING LIGHTS///////////////////////////////////////////////////
               document.querySelector('#mainDirLight').setAttribute('color', '#fec168');
               document.querySelector('#mainDirLight').setAttribute('intensity', '0.6');
-              document.querySelector('#directionaltarget').setAttribute('position', '1 0 0');
+              document.querySelector('#directionaltarget').setAttribute('position', '1 0 0.1');
               document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #663380');
               ///////////////////////////////////////////////////
             }, 1600);
