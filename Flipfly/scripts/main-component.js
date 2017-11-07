@@ -380,9 +380,9 @@ AFRAME.registerComponent('main', {
                 beOpaque(document.querySelector('a-sky'));*/
 
                 ////CHANGING LIGHTS///////////////////////////////////////////////////
-                document.querySelector('#mainDirLight').setAttribute('color', '#3385FF');
+                document.querySelector('#mainDirLight').setAttribute('color', '#E6B3B3');
                 document.querySelector('#mainDirLight').setAttribute('intensity', '1.0');
-                document.querySelector('#mainAmbiantLight').setAttribute('color', '#E6B3B3');
+                document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #3385FF');
                 ///////////////////////////////////////////////////
                 }, 1000);
             }
@@ -460,9 +460,9 @@ AFRAME.registerComponent('main', {
               beOpaque(document.querySelector('a-sky'));*/
 
               ////CHANGING LIGHTS///////////////////////////////////////////////////
-              document.querySelector('#mainDirLight').setAttribute('color', '#3D87F5');
+              document.querySelector('#mainDirLight').setAttribute('color', '#527A76');
               document.querySelector('#mainDirLight').setAttribute('intensity', '1.5');
-              document.querySelector('#mainAmbiantLight').setAttribute('color', '#527A76');
+              document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #3D87F5');
               ///////////////////////////////////////////////////
             }, 2000);
           }
@@ -530,9 +530,9 @@ AFRAME.registerComponent('main', {
               beOpaque(document.querySelector('a-sky'));*/
 
               ////CHANGING LIGHTS///////////////////////////////////////////////////
-              document.querySelector('#mainDirLight').setAttribute('color', '#303030');
+              document.querySelector('#mainDirLight').setAttribute('color', '#282828');
               document.querySelector('#mainDirLight').setAttribute('intensity', '0.5');
-              document.querySelector('#mainAmbiantLight').setAttribute('color', '#282828');
+              document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #303030');
               ///////////////////////////////////////////////////
             }, 2000);
           }
@@ -596,9 +596,9 @@ AFRAME.registerComponent('main', {
               beOpaque(document.querySelector('a-sky'));*/
 
               ////CHANGING LIGHTS///////////////////////////////////////////////////
-              document.querySelector('#mainDirLight').setAttribute('color', '#bf73ff');
+              document.querySelector('#mainDirLight').setAttribute('color', '#f9b091');
               document.querySelector('#mainDirLight').setAttribute('intensity', '1.0');
-              document.querySelector('#mainAmbiantLight').setAttribute('color', '#f9b091');
+              document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #bf73ff');
               ///////////////////////////////////////////////////
             }, 1600);
           }
@@ -656,7 +656,7 @@ AFRAME.registerComponent('main', {
               ////CHANGING LIGHTS///////////////////////////////////////////////////
               document.querySelector('#mainDirLight').setAttribute('color', '#191a26');
               document.querySelector('#mainDirLight').setAttribute('intensity', '0.5');
-              document.querySelector('#mainAmbiantLight').setAttribute('color', '#000');
+              document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #000');
               ///////////////////////////////////////////////////
             }, 1600);
           }
