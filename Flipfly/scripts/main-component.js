@@ -658,8 +658,8 @@ AFRAME.registerComponent('main', {
               beOpaque(document.querySelector('a-sky'));*/
 
               ////CHANGING LIGHTS///////////////////////////////////////////////////
-              document.querySelector('#mainDirLight').setAttribute('color', '#7ea09f');
-              document.querySelector('#mainDirLight').setAttribute('intensity', '0.1');
+              document.querySelector('#mainDirLight').setAttribute('color', '#46a2b9');
+              document.querySelector('#mainDirLight').setAttribute('intensity', '0.08');
               document.querySelector('#directionaltarget').setAttribute('position', '0 -1 0');
               document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #100e1b');
               ///////////////////////////////////////////////////
