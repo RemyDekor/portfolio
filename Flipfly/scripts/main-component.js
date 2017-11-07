@@ -380,7 +380,8 @@ AFRAME.registerComponent('main', {
                 beOpaque(document.querySelector('a-sky'));*/
 
                 ////CHANGING LIGHT///////////////////////////////////////////////////
-                document.querySelector('#mainDirLight').setAttribute('color:#FFF');
+                document.querySelector('#mainDirLight').setAttribute('color', '#FFF');
+                ///////////////////////////////////////////////////
                 }, 1000);
             }
           }
