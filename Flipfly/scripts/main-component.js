@@ -380,9 +380,9 @@ AFRAME.registerComponent('main', {
                 beOpaque(document.querySelector('a-sky'));*/
 
                 ////CHANGING LIGHTS///////////////////////////////////////////////////
-                document.querySelector('#mainDirLight').setAttribute('color', '#E6B3B3');
-                document.querySelector('#mainDirLight').setAttribute('intensity', '1.0');
-                document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #3385FF');
+                document.querySelector('#mainDirLight').setAttribute('color', '#f3cec6');
+                document.querySelector('#mainDirLight').setAttribute('intensity', '0.8');
+                document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #312980');
                 ///////////////////////////////////////////////////
                 }, 1000);
             }
@@ -460,9 +460,9 @@ AFRAME.registerComponent('main', {
               beOpaque(document.querySelector('a-sky'));*/
 
               ////CHANGING LIGHTS///////////////////////////////////////////////////
-              document.querySelector('#mainDirLight').setAttribute('color', '#527A76');
-              document.querySelector('#mainDirLight').setAttribute('intensity', '1.5');
-              document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #3D87F5');
+              document.querySelector('#mainDirLight').setAttribute('color', '#e4f9ff');
+              document.querySelector('#mainDirLight').setAttribute('intensity', '1.2');
+              document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #505b66');
               ///////////////////////////////////////////////////
             }, 2000);
           }
@@ -530,9 +530,9 @@ AFRAME.registerComponent('main', {
               beOpaque(document.querySelector('a-sky'));*/
 
               ////CHANGING LIGHTS///////////////////////////////////////////////////
-              document.querySelector('#mainDirLight').setAttribute('color', '#282828');
-              document.querySelector('#mainDirLight').setAttribute('intensity', '0.5');
-              document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #303030');
+              document.querySelector('#mainDirLight').setAttribute('color', '#535353');
+              document.querySelector('#mainDirLight').setAttribute('intensity', '0.3');
+              document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #4b4b4b');
               ///////////////////////////////////////////////////
             }, 2000);
           }
@@ -596,9 +596,9 @@ AFRAME.registerComponent('main', {
               beOpaque(document.querySelector('a-sky'));*/
 
               ////CHANGING LIGHTS///////////////////////////////////////////////////
-              document.querySelector('#mainDirLight').setAttribute('color', '#f9b091');
-              document.querySelector('#mainDirLight').setAttribute('intensity', '1.0');
-              document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #bf73ff');
+              document.querySelector('#mainDirLight').setAttribute('color', '#fec168');
+              document.querySelector('#mainDirLight').setAttribute('intensity', '0.8');
+              document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #663380');
               ///////////////////////////////////////////////////
             }, 1600);
           }
@@ -654,9 +654,9 @@ AFRAME.registerComponent('main', {
               beOpaque(document.querySelector('a-sky'));*/
 
               ////CHANGING LIGHTS///////////////////////////////////////////////////
-              document.querySelector('#mainDirLight').setAttribute('color', '#191a26');
-              document.querySelector('#mainDirLight').setAttribute('intensity', '0.5');
-              document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #000');
+              document.querySelector('#mainDirLight').setAttribute('color', '#fec168');
+              document.querySelector('#mainDirLight').setAttribute('intensity', '0.1');
+              document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #fec168');
               ///////////////////////////////////////////////////
             }, 1600);
           }
