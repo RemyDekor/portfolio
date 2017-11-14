@@ -87,7 +87,7 @@ body{
    position : absolute;
    height: auto;
    width: auto;
-   margin: 0 50% 0 50%;
+   margin: 0 auto;
 }
 
 #gametitle{
