@@ -76,7 +76,7 @@ body{
 
 #popupiphone {
    position : absolute;
-   background-color: #617093;
+   background-color: rgba(97, 112, 147, 0.85);
    height: 100vh;
    width: 100vw;
    z-index:9990;
