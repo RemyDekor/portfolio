@@ -83,7 +83,7 @@ body{
    margin: 0;
 }
 
-#popupiphone #imgLockIphone{
+#popupiphone img{
    position : absolute;
    height: auto;
    width: auto;
