@@ -92,10 +92,10 @@ body{
 }
 
 #popupiphone .pictoIphone:nth-child(1){
-    -webkit-animation: animateLockIphone 0.9s ease-out infinite;
+    animation: animateLockIphone 0.9s ease-out alternate;
 }
 #popupiphone .pictoIphone:nth-child(2){
-    -webkit-animation: animateLockIphone 0.9s ease-out 0.5s infinite;
+    animation: animateLockIphone 0.9s ease-out 0.5s alternate;
 }
 @keyframes animateLockIphone {
     0%, 50%   {opacity: 100%;}
