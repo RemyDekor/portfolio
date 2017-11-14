@@ -26,11 +26,11 @@
             <img src="styles/charge2.png" class="hiddenPic">
             <img src="styles/charge3.png" class="hiddenPic">
             <img src="styles/charge4.png" class="hiddenPic">
-          
-          
+
+
           <script type="text/javascript">
               var imgstate = 0;
-          
+
               function changeImage(a) {
                 document.getElementById("loadinfo").src=a;
               }
@@ -39,7 +39,7 @@
                   if(imgstate == 0){
                       changeImage("styles/charge1.png");
                       imgstate = imgstate + 1;
-                  } 
+                  }
                   else if(imgstate == 1){
                       changeImage("styles/charge2.png");
                       imgstate = imgstate + 1;
@@ -53,7 +53,7 @@
                       imgstate = 0;
                   }
               }, 3000);
-              
+
               /*function open() {
                     console.log("open that overlay");
                     //document.getElementById("overlay").style.visibility = "visible";
@@ -65,7 +65,7 @@
                     document.getElementById("overlay").style.visibility = "hidden";
                 }
           </script>
-          
+
           <div id="overlay">
               <br>
               Envolee (ou Flipfly) est une application web interactive qui replace dans votre main l'avion-jouet de votre enfance.
@@ -82,15 +82,21 @@
               <a href="#" class="close">
                   <button type="button" id="closebutton" class = "bottomcenter" ></button></a>
           </div>
-          
-          <div id = "popupiphone" style="display : none;" onclick="hideIphone()">
-              <img src="assets/pictos/iphone.png"/>
+
+          <!-- <div id = "popupiphone" style="display : none;" onclick="hideIphone()"> -->
+          <div id = "popupiphone" onclick="hideIphone()">
+            <div id="imgLockIphone">
+              <img src="assets/pictos/lock_iphone1.png"/>
+              <img src="assets/pictos/lock_iphone2.png"/>
+            </div>
+
+
           </div>
           <did id = "gametitle" class = "topcenter"></div>
           <a href="#overlay" id="open-overlay">
           <button type="button" id="aboutbutton" class = "topright" ></button>
           </a>
-          <div id= "infoloading" class = "loadinfo" href="javascript:;">                
+          <div id= "infoloading" class = "loadinfo" href="javascript:;">
                 <img id="loadinfo" src="styles/charge1.png">
           </div>
       </div>
@@ -165,8 +171,8 @@
                   </a-animation>
               </a-animation>
           </a-sky>
-          
-          
+
+
           <a-sky id="morningsky" src="#morning" transparent=true opacity=0 visible=true>
               <a-animation attribute="rotation" fill="forwards" direction="normal" easing="linear" dur="90000" from="0 0 0" to="0 360 0" repeat="indefinite">
                   <a-animation attribute ="dur"
@@ -194,8 +200,8 @@
                   </a-animation>
               </a-animation>
           </a-sky>
-          
-          
+
+
           <a-sky id="stormsky" src="#storm" transparent=true opacity=0 visible=true>
               <a-animation attribute="rotation" fill="forwards" direction="reverse" easing="linear" dur="90000" from="0 0 0" to="0 360 0" repeat="indefinite">
                   <a-animation attribute ="dur"
@@ -209,8 +215,8 @@
                   </a-animation>
               </a-animation>
           </a-sky>
-          
-          
+
+
           <a-sky id="sunsetsky" src="#sunset" transparent=true opacity=0 visible=true>
               <a-animation attribute="rotation" fill="forwards" direction="reverse" easing="linear" dur="90000" from="0 0 0" to="0 360 0" repeat="indefinite">
                   <a-animation attribute ="dur"
@@ -224,8 +230,8 @@
                   </a-animation>
               </a-animation>
           </a-sky>
-          
-          
+
+
           <a-sky id="nightsky" src="#night" transparent=true opacity=0 visible=true>
               <a-animation attribute="rotation" fill="forwards" direction="reverse" easing="linear" dur="90000" from="0 0 0" to="0 360 0" repeat="indefinite">
                   <a-animation attribute ="dur"
@@ -239,8 +245,8 @@
                   </a-animation>
               </a-animation>
           </a-sky>
-          
-          
+
+
           <a-camera id="camera" look-controls>
 
               <a-plane id="groundp"
@@ -358,7 +364,7 @@
 
               </a-entity>
               <!-- rows/cols format-->
-              <a-image src="#translationss" 
+              <a-image src="#translationss"
                          id = "instruction1"
                          width="1.4"
                          height="0.22"
@@ -367,7 +373,7 @@
                          rotation="0 0 -90"
                          opacity = 0>
               </a-image>
-              <a-image src="#turnaroundss" 
+              <a-image src="#turnaroundss"
                          id = "instruction2"
                          width="1.05"
                          height="0.5625"
@@ -376,7 +382,7 @@
                          rotation="0 0 -90"
                          opacity = 0>
               </a-image>
-              <a-image src="#vrilless" 
+              <a-image src="#vrilless"
                          id = "instruction3"
                          width="1.05"
                          height="0.5625"
@@ -385,7 +391,7 @@
                          rotation="0 0 90"
                          opacity = 0>
               </a-image>
-              <a-image src="#loopingss" 
+              <a-image src="#loopingss"
                          id = "instruction4"
                          width="1.05"
                          height="0.5625"
@@ -394,7 +400,7 @@
                          rotation="0 0 90"
                          opacity = 0>
               </a-image>
-              <a-image src="#eightss" 
+              <a-image src="#eightss"
                          id = "instruction5"
                          width="1.05"
                          height="0.5625"
@@ -450,7 +456,7 @@
         tween.chain(tween);
         tween.start();
       </script>
-      
+
       <script type="text/javascript" src="libraries/fmod/fmodstudio.js"></script>
       <script type="text/javascript" src="scripts/musicpreload.js"></script>
       <script type="text/javascript">
@@ -475,7 +481,7 @@
                   setTimeout(addloadbutton, 1500);
               }
           }
-          
+
           setTimeout(
               function(){
                   document.body.style.backgroundImage = "url("+"styles/fond2.jpg"+")";
@@ -483,9 +489,9 @@
                       document.body.style.backgroundImage = "url("+"styles/fond3.jpg"+")";
                       addloadbutton();
                       }, TIMEOUT);
-                  }, 
+                  },
               TIMEOUT);
-          
+
           window.addEventListener('musicloaded', function (){
               musicloaded = true;
           });
@@ -505,7 +511,7 @@
             buttonadded.name = 'launchbutton';
             buttonadded.onclick = startgame;
             var loaddiv = document.getElementById("infoloading");
-            loaddiv.appendChild(buttonadded); 
+            loaddiv.appendChild(buttonadded);
             document.body.style.backgroundImage = "url("+"styles/fond4.jpg"+")";
           }
           function about(){

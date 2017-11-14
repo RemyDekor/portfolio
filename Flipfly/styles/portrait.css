@@ -3,6 +3,7 @@ body{
   background-size:cover;
   background-position : center;
   font-family: 'Signika Negative', sans-serif;
+  transition: 0.5s;
 }
 
 .loadinfo{
@@ -73,14 +74,20 @@ body{
     background-position : center;
 }
 
-#popupiphone img{
+#popupiphone {
    position : absolute;
-   max-hight:100%;
-   height:auto;
+   background-color: #617093;
+   height: 100vh;
+   width: 100vw;
+   z-index:9990;
+   margin: 0;
+}
+
+#popupiphone #imgLockIphone{
+   position : absolute;
+   height: auto;
    width: auto;
-   z-index:9990;  
-   margin-left: 50%;
-   transform: translateX(-50%);
+   margin: 0 50% 0 50%;
 }
 
 #gametitle{
@@ -93,12 +100,12 @@ body{
     background-size : contain;
     margin-top : 5vh;
     font-family: 'Kaushan Script', cursive;
-    
+
 }
 
 #loadinfo {
-    height: auto; 
-    width: auto; 
+    height: auto;
+    width: auto;
     max-height: 40vw;
 }
 
