@@ -92,14 +92,14 @@ body{
 }
 
 #popupiphone .pictoIphone:nth-child(1){
-    animation: animateLockIphone 0.9s ease-out alternate;
+    animation: animateLockIphone 2.2s ease-out infinite alternate;
 }
 #popupiphone .pictoIphone:nth-child(2){
-    animation: animateLockIphone 0.9s ease-out 0.5s alternate;
+    animation: animateLockIphone 2.2s ease-out 0.5s infinite alternate;
 }
 @keyframes animateLockIphone {
-    0%, 50%   {opacity: 100%;}
-    100% {opacity: 0%;}
+    0%, 40%   {opacity: 1;}
+    50%, 100% {opacity: 0;}
 }
 
 #gametitle{
