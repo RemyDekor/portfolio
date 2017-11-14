@@ -85,8 +85,8 @@ body{
 
 #popupiphone .pictoIphone{
    position : absolute;
-   height: auto;
-   width: auto;
+   height: 100px;
+   width: 100px;
    margin: 0 -50% 0 -50%;
 }
 
