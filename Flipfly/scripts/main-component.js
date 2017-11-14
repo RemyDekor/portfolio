@@ -20,10 +20,6 @@ var END_GAME = 13;
 var curRPM = 0;
 
 
-var STATES_NAMES = ['menu', 'menu_gesture (translation)', 'morning', 'morning gesture \n (demi tour)', 'midday', 'midday gesture \n (vrille)', 'storm', 'storm gesture (looping)', 'sunset', 'sunset gesture (huit)', 'night', 'night gesture (none)', 'game over'];
-
-var SENTENCES = ["Je reve de voler dans les airs a nouveau", "Percer les nuages solitaires tout la-haut", "Flottant, aspirant l'infini bleu du ciel", "Tracant dans l'orage le dessein de mes ailes", "Poursuivre sans hate les rayons du soleil", "Les etoiles, la lune....", "...L'horizon du sommeil.", "Fin"];
-
 var c_state = MENU;
 var sentencenum = 0;
 
@@ -35,29 +31,21 @@ var startedmusic = false;
 
 
 
-function displayState(field){
-  console.log("" + STATES_NAMES[c_state]);
-  field.setAttribute('text','value', SENTENCES[sentencenum]);
-  field.setAttribute('visible','true');
-  sentencenum ++;
-}
-
-
 function incState(){
   switched = true;
   c_state++;
-  console.log("switching from " + STATES_NAMES[c_state-1] +" to "+ STATES_NAMES[c_state]);
+  //console.log("switching from " + STATES_NAMES[c_state-1] +" to "+ STATES_NAMES[c_state]);
 }
 
 function endGame(){
     switched = true;
     c_state = END_GAME;
-    setFMODMusic(7);    
+    setFMODMusic(7);
 }
 
 
 function beTransparent(element) {
-    element.setAttribute('opacity', 0);        
+    element.setAttribute('opacity', 0);
     element.setAttribute('visible', "false");
 }
 
@@ -108,7 +96,7 @@ function figureChecker(){
           console.log(this.oldY);
           console.log(diffY);
           var absY = (diffY < 0) ? (diffY * -1) : diffY;
-          if( absY > 80){
+          if( absY > 50){
               this.gesture_succeeded = true;
             }
         }
@@ -249,7 +237,7 @@ function figureChecker(){
 
 
           //console.log("number of checkpoint visited : " + count + "checkpoints " + this.visitedcheckpoint);
-          if(count >= this.visitedcheckpoint.length - 2) this.gesture_succeeded = true;
+          if(count >= this.visitedcheckpoint.length - 3) this.gesture_succeeded = true;
           this.oldZ = currentZ;
       }
   }
@@ -271,8 +259,7 @@ AFRAME.registerComponent('main', {
     this.started = false;
     this.sceneEl = document.querySelector('a-scene');
     this.sceneEl.setAttribute('rain', {count:0});
-    this.textfield = this.sceneEl.querySelector('#textfield');
-    this.instruction = this.sceneEl.querySelector('#instruction');
+    this.instruction = this.sceneEl.querySelector('#instruction1');
     this.gestureChecker = new figureChecker();
     this.currentFigure;
     this.timer = null;
@@ -304,9 +291,8 @@ AFRAME.registerComponent('main', {
           //not implemented in the proto thingy
           //La camera doit être fixe
           if(!startedmusic) {
-            this.instruction.setAttribute('visible','false');
-            displayState(this.textfield);
-            console.log("current state :" + STATES_NAMES[c_state] + " switched :"+ switched);
+            this.instruction.setAttribute('opacity','1');
+            //console.log("current state :" + STATES_NAMES[c_state] + " switched :"+ switched);
             startedmusic = true;
           //TODO check translation gesture
             setTimeout(function(){
@@ -320,8 +306,8 @@ AFRAME.registerComponent('main', {
         case MENU_GESTURE:
           if(switched){
             //change musique
-            this.instruction.setAttribute('visible','true');
-            console.log("current state :" + STATES_NAMES[c_state] + " switched :"+ switched);
+            this.instruction.setAttribute('opacity','1');
+            //console.log("current state :" + STATES_NAMES[c_state] + " switched :"+ switched);
             switched = false;
             this.gestureChecker.oldY = document.querySelector('a-entity[camera]').getAttribute('rotation').y;
             this.currentFigure = this.gestureChecker.translate.bind(this.gestureChecker);
@@ -350,12 +336,11 @@ AFRAME.registerComponent('main', {
 
         case MORNING:
           if(switched){
-            console.log("current state :" + STATES_NAMES[c_state] + " switched :"+ switched);
-            switched = false;
-            //affiche texte figure succès
-            displayState(this.textfield);
-            this.instruction.setAttribute('visible','false');
-            this.instruction.setAttribute('material','color:white; side: front; shader:gif; src:url(assets/pictos/picto_turnaround.gif) ; transparent:true; opacity:1; alphaTest: 0.5;');
+            //console.log("current state :" + STATES_NAMES[c_state] + " switched :"+ switched);
+            switched = false; 
+            this.instruction.setAttribute('opacity','0');
+            INSTRUCTION = '#instruction2';
+            this.instruction = this.sceneEl.querySelector('#instruction2');            
             //reset timer
             setTimeout(incState, SCENE_LENGTH);
             this.timer = setTimeout(endGame, GAME_LENGTH);
@@ -378,6 +363,10 @@ AFRAME.registerComponent('main', {
                 beOpaque(document.querySelector('#morningsky'));
                 /*beTransparent(document.querySelector('a-sky'));
                 beOpaque(document.querySelector('a-sky'));*/
+                document.querySelector('#mainDirLight').setAttribute('color', '#f3cec6');
+                document.querySelector('#mainDirLight').setAttribute('intensity', '0.6');
+                document.querySelector('#directionaltarget').setAttribute('position', '-1 -0.1 1');
+                document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #312980');                
                 }, 1000);
             }
           }
@@ -386,13 +375,9 @@ AFRAME.registerComponent('main', {
 
          case MORNING_GESTURE:
           if(switched){
-            this.instruction.setAttribute('position','0 -0.3 -1');
-            this.instruction.setAttribute('geometry', 'height', '0.75');
-            this.instruction.setAttribute('geometry', 'width', '1.5');
-            this.instruction.setAttribute('visible', 'true');
-            console.log("current state :" + STATES_NAMES[c_state] + " switched :"+ switched);
+            this.instruction.setAttribute('opacity','1');
+            //console.log("current state :" + STATES_NAMES[c_state] + " switched :"+ switched);
             switched = false;
-            this.textfield.setAttribute('visible','false');
             this.gestureChecker.oldZ = document.querySelector('a-entity[camera]').getAttribute('rotation').z;
             this.currentFigure = this.gestureChecker.turnaround.bind(this.gestureChecker);
             document.querySelector('[camera]').addEventListener('componentchanged', this.currentFigure, false);
@@ -419,16 +404,11 @@ AFRAME.registerComponent('main', {
 
         case MIDDAY:
           if(switched){
-            console.log("current state :" + STATES_NAMES[c_state] + " switched :"+ switched);
+            //console.log("current state :" + STATES_NAMES[c_state] + " switched :"+ switched);
             switched = false;
-            displayState(this.textfield);
-            this.textfield.setAttribute('rotation','0 0 90');
-            this.textfield.setAttribute('text','anchor', 'right');
-            this.textfield.setAttribute('text','align', 'left');
-            this.textfield.setAttribute('position','-0.3 0.75 -1');
-            this.instruction.setAttribute('visible','false');
-            this.instruction.setAttribute('material','color:white; side: front; shader:gif; src:url(assets/pictos/picto_vrille.gif) ; transparent:true; opacity:1; alphaTest: 0.5;');
-            this.instruction.setAttribute('rotation','0 0 90');
+            this.instruction.setAttribute('opacity','0');
+            INSTRUCTION = '#instruction3';
+            this.instruction = this.sceneEl.querySelector('#instruction3');
             this.timer = setTimeout(endGame, GAME_LENGTH);
             //this.instruction.setAttribute('material','color:white; side: front; shader:gif; src:url(assets/pictos/picto_vrille.gif) ; transparent:true; opacity:1; alphaTest: 0.5;');
             //change affichage
@@ -452,6 +432,10 @@ AFRAME.registerComponent('main', {
                 beOpaque(document.querySelector('#middaysky'));
               /*beTransparent(document.querySelector('a-sky'));
               beOpaque(document.querySelector('a-sky'));*/
+              document.querySelector('#mainDirLight').setAttribute('color', '#e4f9ff');
+              document.querySelector('#mainDirLight').setAttribute('intensity', '0.9');
+              document.querySelector('#directionaltarget').setAttribute('position', '0 -1 0');
+              document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #2d3339');
             }, 2000);
           }
 
@@ -461,13 +445,9 @@ AFRAME.registerComponent('main', {
 
         case MIDDAY_GESTURE:
           if(switched){
-            console.log("current state :" + STATES_NAMES[c_state] + " switched :"+ switched);
+            //console.log("current state :" + STATES_NAMES[c_state] + " switched :"+ switched);
             switched = false;
-            this.instruction.setAttribute('position','0 -0.3 -1');
-            this.instruction.setAttribute('geometry', 'height', '0.75');
-            this.instruction.setAttribute('geometry', 'width', '1.5');
-            this.instruction.setAttribute('visible', 'true');
-            this.textfield.setAttribute('visible','false');
+            this.instruction.setAttribute('opacity','1');
             this.gestureChecker.oldZ = this.gestureChecker.initOrientation.z;
             this.gestureChecker.oldX = this.gestureChecker.initOrientation.x;
             this.gestureChecker.checkpoint = [25, 70, 65, 35, -25, -65, -65, -25];
@@ -492,12 +472,12 @@ AFRAME.registerComponent('main', {
 
         case STORM:
           if(switched){
-            console.log("current state :" + STATES_NAMES[c_state] + " switched :"+ switched);
+            //console.log("current state :" + STATES_NAMES[c_state] + " switched :"+ switched);
             switched = false;
-            this.sceneEl.setAttribute('rain', {count: 1000});
-            displayState(this.textfield);
-            this.instruction.setAttribute('visible','false');
-            this.instruction.setAttribute('material','color:white; side: front; shader:gif; src:url(assets/pictos/picto_looping.gif) ; transparent:true; opacity:1; alphaTest: 0.5;');
+            this.sceneEl.setAttribute('rain', {count: 3000});
+            this.instruction.setAttribute('opacity','0');
+            INSTRUCTION = '#instruction4';
+            this.instruction = this.sceneEl.querySelector('#instruction4');
             //change affichage
             //affiche texte figure succès
             //reset timer
@@ -516,6 +496,10 @@ AFRAME.registerComponent('main', {
                 beOpaque(document.querySelector('#stormsky'));
               /*beTransparent(document.querySelector('a-sky'));
               beOpaque(document.querySelector('a-sky'));*/
+              document.querySelector('#mainDirLight').setAttribute('color', '#535353');
+              document.querySelector('#mainDirLight').setAttribute('intensity', '0.2');
+              document.querySelector('#directionaltarget').setAttribute('position', '0 -1 0');
+              document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #2c2c2c');  
             }, 2000);
           }
 
@@ -523,13 +507,9 @@ AFRAME.registerComponent('main', {
 
           case STORM_GESTURE:
           if(switched){
-            console.log("current state :" + STATES_NAMES[c_state] + " switched :"+ switched);
-            this.instruction.setAttribute('position','0 -0.3 -1');
-            this.instruction.setAttribute('geometry', 'height', '0.75');
-            this.instruction.setAttribute('geometry', 'width', '1.5');
-            this.instruction.setAttribute('visible', 'true');
+            //console.log("current state :" + STATES_NAMES[c_state] + " switched :"+ switched);
+            this.instruction.setAttribute('opacity','1');
             switched = false;
-            this.textfield.setAttribute('visible','false');
             this.gestureChecker.checkpoint = [-170, -130, -85, -30, 0, 30, 85, 130, 170];
             this.gestureChecker.visitedcheckpoint = ["none", "none", "none", "none", "none", "none", "none", "none", "none"];
             this.gestureChecker.oldZ = this.gestureChecker.initOrientation.z;
@@ -556,10 +536,10 @@ AFRAME.registerComponent('main', {
           if(switched){
             switched = false;
             this.sceneEl.setAttribute('rain', {count:0});
-            this.instruction.setAttribute('visible','false');
-            this.instruction.setAttribute('material','color:white; side: front; shader:gif; src:url(assets/pictos/picto_eight.gif) ; transparent:true; opacity:1; alphaTest: 0.5;');
+            this.instruction.setAttribute('opacity','0');
+            INSTRUCTION = '#instruction5';
+            this.instruction = this.sceneEl.querySelector('#instruction5');
             //change affichage
-            displayState(this.textfield);
             //affiche texte figure succès
             // reset timer
             setTimeout(incState, SCENE_LENGTH);
@@ -584,13 +564,9 @@ AFRAME.registerComponent('main', {
 
         case SUNSET_GESTURE:
           if(switched){
-            console.log("current state :" + STATES_NAMES[c_state] + " switched :"+ switched);
+            //console.log("current state :" + STATES_NAMES[c_state] + " switched :"+ switched);
             switched = false;
-            this.instruction.setAttribute('position','0 -0.3 -1');
-            this.instruction.setAttribute('geometry', 'height', '0.75');
-            this.instruction.setAttribute('geometry', 'width', '1.5');
-            this.instruction.setAttribute('visible', 'true');
-            this.textfield.setAttribute('visible','false');
+            this.instruction.setAttribute('opacity','1');
             this.gestureChecker.oldZ = document.querySelector('a-entity[camera]').getAttribute('rotation').z;
             this.currentFigure = this.gestureChecker.eight.bind(this.gestureChecker);
             document.querySelector('[camera]').addEventListener('componentchanged', this.currentFigure, false);
@@ -612,8 +588,7 @@ AFRAME.registerComponent('main', {
           if(switched){
             switched = false;
             //change affichage
-            displayState(this.textfield);
-            this.instruction.setAttribute('visible','false');
+            this.instruction.setAttribute('opacity','0');
             //affiche texte figure succès
             // reset timer
             setTimeout(incState, SCENE_LENGTH);
@@ -626,8 +601,12 @@ AFRAME.registerComponent('main', {
               //document.querySelector('a-sky').setAttribute('src','#night');
                 beTransparent(document.querySelector('#sunsetsky'));
                 beOpaque(document.querySelector('#nightsky'));
-              /*beTransparent(document.querySelector('a-sky'));              
+              /*beTransparent(document.querySelector('a-sky'));
               beOpaque(document.querySelector('a-sky'));*/
+              document.querySelector('#mainDirLight').setAttribute('color', '#46a2b9');
+              document.querySelector('#mainDirLight').setAttribute('intensity', '0.08');
+              document.querySelector('#directionaltarget').setAttribute('position', '0 -1 0');
+              document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #100e1b');
             }, 1600);
           }
 
@@ -637,7 +616,6 @@ AFRAME.registerComponent('main', {
         case NIGHT_GESTURE:
           if(switched){
             switched = false;
-            this.textfield.setAttribute('visible','false');
             //beTransparent(document.querySelector('a-sky'));
             incState();
           }
@@ -650,10 +628,9 @@ AFRAME.registerComponent('main', {
             //change musique
             setFMODMusic(6);
             switched = false;
-            this.instruction.setAttribute('visible','false');
+           this.instruction.setAttribute('opacity','0');
             //do something cause the game is over now
             // for proto purpose just display gameOver HUD ???
-            displayState(this.textfield);
             var skybox = this.el.sceneEl.querySelector('a-sky');
             skybox.querySelector('a-animation').setAttribute('dur', 0);
             skybox.querySelector('a-animation').setAttribute('repeat', 0);
@@ -661,7 +638,6 @@ AFRAME.registerComponent('main', {
             this.plane.emit('theend', null, false);
             this.sceneEl.querySelector('#finalscreen').emit('theend', null, false);
             this.sceneEl.querySelector('[camera]').removeAttribute('look-controls');
-            this.textfield.emit('theend', null, false);
             this.plane.removeAttribute('facecamera');
             window.removeEventListener('touchend', gofullscreen);
           }
@@ -673,10 +649,9 @@ AFRAME.registerComponent('main', {
             //change musique
             setFMODMusic(6);
             switched = false;
-            this.instruction.setAttribute('visible','false');
+            this.instruction.setAttribute('opacity','0');
             //do something cause the game is over now
             // for proto purpose just display gameOver HUD ???
-            displayState(this.textfield);
             var skybox = this.el.sceneEl.querySelector('a-sky');
             skybox.querySelector('a-animation').setAttribute('dur', 0);
             skybox.querySelector('a-animation').setAttribute('repeat', 0);
@@ -684,7 +659,6 @@ AFRAME.registerComponent('main', {
             this.plane.emit('theend', null, false);
             this.sceneEl.querySelector('#finalscreen').emit('theend', null, false);
             this.sceneEl.querySelector('[camera]').removeAttribute('look-controls');
-            this.textfield.emit('theend', null, false);
             this.plane.removeAttribute('facecamera');
           }
 

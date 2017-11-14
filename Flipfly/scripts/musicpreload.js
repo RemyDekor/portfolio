@@ -27,7 +27,7 @@ function prerun()
     for (var count = 0; count < fileName.length; count++)
     {
         console.log("loading " + fileName[count]);
-        document.querySelector("#loadingstate").value = "Loading " + fileName[count] + "...";
+        //document.querySelector("#loadingstate").value = "Loading " + fileName[count] + "...";
         FMOD.FS_createPreloadedFile(folderName, fileName[count], filePath + fileName[count], true, false);
     }
 
@@ -58,7 +58,7 @@ function setting()
     var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
     if (iOS)
     {
-        alert("WebAudio can only be started if the screen is touched.  Touch the screen when the data has finished loading.");
+        //alert("WebAudio can only be started if the screen is touched.  Touch the screen when the data has finished loading.");
 
         window.addEventListener('touchend', function()
         {
@@ -66,7 +66,8 @@ function setting()
             {
                 result = _SystemLowLevel.setDriver(0);
                 _IOSInitialized = true;
-            }
+                startgame();
+            }            
 
         }, false);
     }

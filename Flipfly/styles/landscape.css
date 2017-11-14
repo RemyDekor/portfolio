@@ -18,7 +18,7 @@ body{
 
 .topcenter{
   position: fixed;
-  width:100vw;
+  width:50vw;
   top: 10%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -51,6 +51,17 @@ body{
     background-position : center;
 }
 
+#closebutton{
+    background-size: contain;
+    width:7.5vw;
+    height: 7.5vw;
+    background-repeat : no-repeat;
+    background-image: url("Close.png");
+    background-color : transparent;
+    border : none;
+    background-position : center;
+}
+
 #launchbutton{
     background-size: contain;
     width:31vw;
@@ -73,8 +84,9 @@ body{
 
 #gametitle{
     background-image: url("Title_Launch.png");
-    width:75vw;
-    height:50vw;
+    width:auto;
+    height:auto;
+    max-height:30vh;
     background-position : center;
     border : none;
     background-color : transparent;
@@ -84,6 +96,13 @@ body{
     
 }
 
+#loadinfo {
+    height: auto; 
+    width: auto; 
+    max-height: 30vh;
+}
+
+
 a-scene{
   width: 100vw;
   height: 100vh;
@@ -92,4 +111,53 @@ a-scene{
   top: 0;
   left: 0;
   z-index: -9999;
+}
+*{margin:0;padding:0;}
+#overlay{ /* we set all of the properties for are overlay */
+    height:80%;
+    width:80%;
+    margin:0 auto;
+    background-color: rgba(43, 31, 96, 0.8);
+    text-align: center;
+    color : white;
+    padding:10px;
+    position:absolute;
+    top:5%;
+    left:10%;
+    z-index:1000;
+    display:none;
+    /* CSS 3 */
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -o-border-radius:10px;
+    border-radius:10px;
+}
+
+#open-overlay{ /* open the overlay */
+    color:white;
+    text-decoration:none;
+    display:inline-block;
+    margin:20px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -o-border-radius:10px;
+    border-radius:10px;
+}
+
+/* use :target to look for a link to the overlay then we find are mask */
+#overlay:target, #overlay:target + #mask{
+    display:block;
+    opacity:1;
+}
+
+
+
+#fmod {
+    height:10%; /* you can use % */
+    width: auto;
+}
+
+#aframe {
+    height:10%; /* you can use % */
+    width: auto;
 }

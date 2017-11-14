@@ -6,10 +6,11 @@
       <script src="libraries/aframe/aframe.min.js"></script>
       <!--<script src="scripts/aframe-gif-shader.js"></script>--->
       <script src="libraries/aframe/extras/aframe-extras.min.js"></script>
-      <script src="scripts/aframe-gif-component.min.js"></script>
+      <!--<script src="scripts/aframe-gif-component.min.js"></script>-->
       <script src="libraries/rain/aframe-rain.js"></script>
       <script src="scripts/face-camera.js"></script>
       <script src="scripts/main-component.js"></script>
+      <script src="libraries/spritesheet/aframe-spritesheet-component.js"></script>
     </head>
   <body>
       <div id = "landpage">
@@ -17,14 +18,80 @@
               .hiddenPic {display:none;}
             </style>
             <!-- trying to force background to load first -->
-            <img src="styles/background.jpg" class="hiddenPic">
+            <img src="styles/fond1.jpg" class="hiddenPic">
+            <img src="styles/fond2.jpg" class="hiddenPic">
+            <img src="styles/fond3.jpg" class="hiddenPic">
+            <img src="styles/fond4.jpg" class="hiddenPic">
+            <img src="styles/charge1.png" class="hiddenPic">
+            <img src="styles/charge2.png" class="hiddenPic">
+            <img src="styles/charge3.png" class="hiddenPic">
+            <img src="styles/charge4.png" class="hiddenPic">
+          
+          
+          <script type="text/javascript">
+              var imgstate = 0;
+          
+              function changeImage(a) {
+                document.getElementById("loadinfo").src=a;
+              }
+
+              var tostop = setInterval(function(){
+                  if(imgstate == 0){
+                      changeImage("styles/charge1.png");
+                      imgstate = imgstate + 1;
+                  } 
+                  else if(imgstate == 1){
+                      changeImage("styles/charge2.png");
+                      imgstate = imgstate + 1;
+                  }
+                  else if(imgstate == 2){
+                      changeImage("styles/charge3.png");
+                      imgstate = imgstate + 1;
+                  }
+                  else if(imgstate == 3){
+                      changeImage("styles/charge4.png");
+                      imgstate = 0;
+                  }
+              }, 3000);
+              
+              /*function open() {
+                    console.log("open that overlay");
+                    //document.getElementById("overlay").style.visibility = "visible";
+                    //document.getElementById("overlay").style.opacity = 1;
+             }*/
+              function close() {
+                    console.log("close that overlay");
+                    document.getElementById("overlay").style.opacity = 0;
+                    document.getElementById("overlay").style.visibility = "hidden";
+                }
+          </script>
+          
+          <div id="overlay">
+              <br>
+              Envolee (ou Flipfly) est une application web interactive qui replace dans votre main l'avion-jouet de votre enfance.
+              <br>
+              <br>
+              Explorez en regardant autour de vous et realisez les figures indiquees en utilisant votre appareil mobile.
+              <br>
+              <br>
+              Developpee avec A-Frame, Fmod Studio et beaucoup d'entousiasme.
+              <br>
+              <br>
+              <img id="fmod" src="assets/logos/fmod.png">  <img id="aframe" src="assets/logos/aframe.png">
+              <br>
+              <a href="#" class="close">
+                  <button type="button" id="closebutton" class = "bottomcenter" ></button></a>
+          </div>
+          
           <div id = "popupiphone" style="display : none;" onclick="hideIphone()">
               <img src="assets/pictos/iphone.png"/>
           </div>
           <did id = "gametitle" class = "topcenter"></div>
-          <button type="button" id="aboutbutton" class = "topright" oncClick="javascript:about()"></button>
-          <div id= "infoloading" class = "loadinfo" href="javascript:;">
-                <output id="loadingstate"></output><br/>
+          <a href="#overlay" id="open-overlay">
+          <button type="button" id="aboutbutton" class = "topright" ></button>
+          </a>
+          <div id= "infoloading" class = "loadinfo" href="javascript:;">                
+                <img id="loadinfo" src="styles/charge1.png">
           </div>
       </div>
       <a-scene id="mainscene"
@@ -36,8 +103,7 @@
                fmod
                visible = "false"
                main>
-          
-          
+
           <a-assets timeout="30000">
               <a-asset-item id="plane" src="assets/models/PlaneLowPoly.obj"></a-asset-item>
 
@@ -65,10 +131,27 @@
               <img id='skytuto' src="assets/models/skytable.jpg"/>
               <img id='ground' src="assets/models/materialtable.jpg"/>
               <img id='clouds' src="assets/backgrounds/transition_nuage.png"/>
+              <img id="translationss" src="assets/pictos/picto_translationo.png"/>
+              <img id="vrilless" src="assets/pictos/picto_vrilleo.png"/>
+              <img id="loopingss" src="assets/pictos/picto_loopingo.png"/>
+              <img id="eightss" src="assets/pictos/picto_eighto.png"/>
+              <img id="turnaroundss" src="assets/pictos/picto_turnaroundo.png"/>
           </a-assets>
-          
-          
-          
+
+
+          <!--<a-light id="mainDirLight" type="directional" color="#F55" intensity="0.5" position="0 0 0" target="#directionaltarget">
+                <a-entity id="directionaltarget" position="0 -1 0"></a-entity>
+                <a-animation attribute ="dur"
+                               easing = "linear"
+                               dur = "1000"
+                               from="90000"
+                               to="60000"
+                               repeat = "indefinite"
+                               direction="alternate"
+                               >
+                  </a-animation>
+              </a-light>
+              <a-entity  id="mainAmbiantLight" light="type: ambient; color: #CCC"></a-entity>-->
           <a-sky id="menusky" src="#menu" transparent=true opacity=1 visible=true>
               <a-animation attribute="rotation" fill="forwards" direction="normal" easing="linear" dur="90000" from="0 0 0" to="0 360 0" repeat="indefinite" >
                   <a-animation attribute ="dur"
@@ -82,6 +165,8 @@
                   </a-animation>
               </a-animation>
           </a-sky>
+          
+          
           <a-sky id="morningsky" src="#morning" transparent=true opacity=0 visible=true>
               <a-animation attribute="rotation" fill="forwards" direction="normal" easing="linear" dur="90000" from="0 0 0" to="0 360 0" repeat="indefinite">
                   <a-animation attribute ="dur"
@@ -95,6 +180,7 @@
                   </a-animation>
               </a-animation>
           </a-sky>
+
           <a-sky id="middaysky" src="#midday" transparent=true opacity=0 visible=true>
               <a-animation attribute="rotation" fill="forwards" direction="reverse" easing="linear" dur="90000" from="0 0 0" to="0 360 0" repeat="indefinite">
                   <a-animation attribute ="dur"
@@ -108,6 +194,8 @@
                   </a-animation>
               </a-animation>
           </a-sky>
+          
+          
           <a-sky id="stormsky" src="#storm" transparent=true opacity=0 visible=true>
               <a-animation attribute="rotation" fill="forwards" direction="reverse" easing="linear" dur="90000" from="0 0 0" to="0 360 0" repeat="indefinite">
                   <a-animation attribute ="dur"
@@ -121,6 +209,8 @@
                   </a-animation>
               </a-animation>
           </a-sky>
+          
+          
           <a-sky id="sunsetsky" src="#sunset" transparent=true opacity=0 visible=true>
               <a-animation attribute="rotation" fill="forwards" direction="reverse" easing="linear" dur="90000" from="0 0 0" to="0 360 0" repeat="indefinite">
                   <a-animation attribute ="dur"
@@ -134,6 +224,8 @@
                   </a-animation>
               </a-animation>
           </a-sky>
+          
+          
           <a-sky id="nightsky" src="#night" transparent=true opacity=0 visible=true>
               <a-animation attribute="rotation" fill="forwards" direction="reverse" easing="linear" dur="90000" from="0 0 0" to="0 360 0" repeat="indefinite">
                   <a-animation attribute ="dur"
@@ -147,35 +239,15 @@
                   </a-animation>
               </a-animation>
           </a-sky>
-
-          
-          
-          
           
           
           <a-camera id="camera" look-controls>
-              
-              
-             <a-entity id ="textfield"
-                       text="value: HELLO ; width:1.5; shader: msdf; font:assets/fonts/kaushanscript/KaushanScript-Regular.json; align:right ; anchor:left; transparent:true;"
-                       position="0.3 0.8 -1"
-                       rotation="0 0 -90">
-                       <a-animation  begin="theend"
-                               attribute="text.opacity"
-                               dur="15000"
-                               easing="linear"
-                               fill="forwards"
-                               to="0"
-                               repeat="0">
-                        </a-animation>                 
-             </a-entity>
-              
-              
+
               <a-plane id="groundp"
-                       src = "#ground" 
-                       rotation="0 60 0" 
-                       position="-1 0 -1" 
-                       width="5" 
+                       src = "#ground"
+                       rotation="0 60 0"
+                       position="-1 0 -2"
+                       width="5"
                        height="10">
                       <a-animation attribute="position"
                                     begin="active"
@@ -187,10 +259,10 @@
                       </a-animation>
               </a-plane>
               <a-plane id = "skyp"
-                       src = "#skytuto" 
-                       rotation="0 0 -90" 
-                       position="0 0 -5" 
-                       width="50" 
+                       src = "#skytuto"
+                       rotation="0 0 -90"
+                       position="0 0 -5"
+                       width="50"
                        height="50">
                        <a-animation attribute="position"
                                     begin="active"
@@ -219,8 +291,8 @@
                         </a-animation>
               </a-plane>
 
-              
-              <a-entity id="plane" scale="0.175 0.175 0.175" position="-0.15 0.5 -2" rotation="0 -30 270" facecamera="0 0 270">
+
+              <a-entity id="plane" scale="0.175 0.175 0.175" position="-0.15 0.5 -3" rotation="0 -30 270" facecamera="0 0 270">
                   <!-- Ajouter animation oscillation en hauteur-->
                   <a-entity id="main-plane" obj-model="obj: #main-plane;  mtl: #main-plane-mtl"></a-entity>
                   <a-entity id="helice" obj-model="obj: #helice;  mtl: #helice-mtl">
@@ -252,7 +324,7 @@
                                begin ='turnover'
                                fill="forwards"
                                from="0 0 270"
-                               to="0 150 270"
+                               to="0 180 270"
                                direction="forwards"
                                >
                   </a-animation>
@@ -285,12 +357,52 @@
                   </a-animation>-->
 
               </a-entity>
-              <a-entity id = "instruction"
-                        geometry="primitive: plane; height: 0.22; width: 1.4"
-                        position="-0.3 0 -1"
-                        rotation="0 0 -90"
-                        material="color:white; side: front; shader:gif; src:url(assets/pictos/picto_translation.gif); transparent:true; opacity:1; alphaTest: 0.5;">
-              </a-entity>
+              <!-- rows/cols format-->
+              <a-image src="#translationss" 
+                         id = "instruction1"
+                         width="1.4"
+                         height="0.22"
+                         sprite-sheet="cols:3;rows:20; progress: 0;"
+                         position="-0.3 0 -1"
+                         rotation="0 0 -90"
+                         opacity = 0>
+              </a-image>
+              <a-image src="#turnaroundss" 
+                         id = "instruction2"
+                         width="1.05"
+                         height="0.5625"
+                         sprite-sheet="cols:7;rows:13; progress: 0;"
+                         position="0 -0.3 -1"
+                         rotation="0 0 -90"
+                         opacity = 0>
+              </a-image>
+              <a-image src="#vrilless" 
+                         id = "instruction3"
+                         width="1.05"
+                         height="0.5625"
+                         sprite-sheet="cols:8;rows:13; progress: 0;"
+                         position="0 -0.3 -1"
+                         rotation="0 0 90"
+                         opacity = 0>
+              </a-image>
+              <a-image src="#loopingss" 
+                         id = "instruction4"
+                         width="1.05"
+                         height="0.5625"
+                         sprite-sheet="cols:8;rows:14; progress: 0;"
+                         position="0 -0.3 -1"
+                         rotation="0 0 90"
+                         opacity = 0>
+              </a-image>
+              <a-image src="#eightss" 
+                         id = "instruction5"
+                         width="1.05"
+                         height="0.5625"
+                         sprite-sheet="cols:8;rows:16; progress: 0;"
+                         position="0 -0.3 -1"
+                         rotation="0 0 90"
+                         opacity = 0>
+              </a-image>
               <a-entity id = "finalscreen"
                         geometry="primitive: plane; height: 2; width: 3"
                         position="0 0 -1"
@@ -325,37 +437,67 @@
           <a-entity id="camera-entity" camera look-controls>
           </a-entity>
       </a-scene>
+      <script type="text/javascript">
+        var INSTRUCTION = '#instruction1';
+        var SPEED = 1500;
+        var animation = { progress: 0 };
+        var tween = new TWEEN.Tween(animation)
+            .to({ progress: 1 }, SPEED)
+            .onUpdate(function(){
+                document.querySelector(INSTRUCTION).setAttribute('sprite-sheet', 'progress', animation.progress);
+            });
+        tween.onComplete(function() { animation.progress = 0; });
+        tween.chain(tween);
+        tween.start();
+      </script>
+      
       <script type="text/javascript" src="libraries/fmod/fmodstudio.js"></script>
       <script type="text/javascript" src="scripts/musicpreload.js"></script>
       <script type="text/javascript">
           //TODO display loader
           //When loaded :
+          var TIMEOUT = 6000;
           var musicloaded = false;
           var assetsloaded = true;
           var touched = false;
           var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-          
+
           function hideIphone(){
               var x = document.getElementById("popupiphone");
               x.style.display = 'none';
           }
+
+          function addloadbutton(){
+                if(musicloaded && assetsloaded){
+                    setTimeout(addstart, TIMEOUT);
+                }
+              else{
+                  setTimeout(addloadbutton, 1500);
+              }
+          }
           
+          setTimeout(
+              function(){
+                  document.body.style.backgroundImage = "url("+"styles/fond2.jpg"+")";
+                  setTimeout(function(){
+                      document.body.style.backgroundImage = "url("+"styles/fond3.jpg"+")";
+                      addloadbutton();
+                      }, TIMEOUT);
+                  }, 
+              TIMEOUT);
           
           window.addEventListener('musicloaded', function (){
               musicloaded = true;
-              document.querySelector("#loadingstate").value = "";
-              if(assetsloaded){
-                  addstart();
-              }
           });
           document.querySelector('a-scene').addEventListener('loaded', function () {
               console.log("objects have been loaded");
               assetsloaded = true;
-              if(musicloaded){
-                  addstart();
-              }
           });
           function addstart(){
+            clearInterval(tostop);
+            var element = document.getElementById("loadinfo");
+            element.outerHTML = "";
+            delete element;
             console.log("adding start button");
             var buttonadded= document.createElement('input');
             buttonadded.id = 'launchbutton';
@@ -363,12 +505,13 @@
             buttonadded.name = 'launchbutton';
             buttonadded.onclick = startgame;
             var loaddiv = document.getElementById("infoloading");
-            loaddiv.appendChild(buttonadded);
+            loaddiv.appendChild(buttonadded); 
+            document.body.style.backgroundImage = "url("+"styles/fond4.jpg"+")";
           }
           function about(){
               alert("this content is not available yet");
           }
-          
+
           function gofullscreen(){
                             var lockedOrientation = 'portrait';
                            var orientKey = 'orientation';
@@ -393,10 +536,10 @@
                            } else {
                               promise = screen.lockOrientation(lockedOrientation);
                            }
-                           }              
+                           }
 
           }
-          
+
           function startgame(){
               console.log("touched window and music loaded " + musicloaded + " and assetsloaded " + assetsloaded);
               if(musicloaded && assetsloaded){
@@ -411,7 +554,7 @@
                           //TODO SET A LOT OF DIVS INVISIBLE
                            document.body.style.backgroundImage = "none";
                            document.body.style.backgroundColor = "black";
-                           
+
                            //allow for document to be reloaded fullscreen
                            window.addEventListener('touchend', gofullscreen);
                        }
