@@ -91,10 +91,10 @@ body{
    margin: 0 40vw 0 40vw;
 }
 
-#popupiphone .pictoIphone:nth-child(1){
+#popupiphone:nth-child(1){
     -webkit-animation: animateLockIphone 0.9s ease-out infinite;
 }
-#popupiphone .pictoIphone:nth-child(2){
+#popupiphone:nth-child(2){
     -webkit-animation: animateLockIphone 0.9s ease-out 0.5s infinite;
 }
 @keyframes animateLockIphone {
