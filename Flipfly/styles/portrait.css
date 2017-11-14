@@ -85,9 +85,9 @@ body{
 
 #popupiphone .pictoIphone{
    position : absolute;
-   height: 100px;
-   width: 100px;
-   margin: 0 -50% 0 -50%;
+   height: 20vw;
+   width: 20vw;
+   margin: 0 40vw 0 40vw;
 }
 
 #gametitle{
