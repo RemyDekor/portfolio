@@ -83,11 +83,11 @@ body{
    margin: 0;
 }
 
-#popupiphone img{
+#popupiphone .pictoIphone{
    position : absolute;
    height: auto;
    width: auto;
-   margin: 0 auto;
+   margin: 0 -50% 0 -50%;
 }
 
 #gametitle{
@@ -120,6 +120,7 @@ a-scene{
 }
 
 *{margin:0;padding:0;}
+
 #overlay{ /* we set all of the properties for are overlay */
     height:80%;
     width:80%;
