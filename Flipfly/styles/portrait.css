@@ -86,20 +86,20 @@ body{
 #popupiphone .pictoIphone{
    position : absolute;
    background-size: cover;
-   height: 20vw;
-   width: 20vw;
-   margin: 0 40vw 0 40vw;
+   height: 28vw;
+   width: 28vw;
+   margin: 18vh 36vw 0 36vw;
 }
 
 #popupiphone .pictoIphone:nth-child(1){
     animation: animateLockIphone 2.2s ease-out infinite alternate;
 }
 #popupiphone .pictoIphone:nth-child(2){
-    animation: animateLockIphone 2.2s ease-out 0.5s infinite alternate;
+    animation: animateLockIphone 2.2s ease-out 0.9s infinite alternate;
 }
 @keyframes animateLockIphone {
-    0%, 40%   {opacity: 1;}
-    50%, 100% {opacity: 0;}
+    0%, 45%   {opacity: 1;}
+    55%, 100% {opacity: 0;}
 }
 
 #gametitle{
