@@ -47,13 +47,13 @@ body{
 }
 @keyframes animatePictoLoading {
   0%   {opacity: 0;}
-  4%, 21%   {opacity: 1;}
-  25%, 100% {opacity: 0;}
+  4%, 19%   {opacity: 1;}
+  23%, 100% {opacity: 0;}
 }
 @-webkit-keyframes animatePictoLoading {
   0%   {opacity: 0;}
-  4%, 21%   {opacity: 1;}
-  25%, 100% {opacity: 0;}
+  4%, 19%   {opacity: 1;}
+  23%, 100% {opacity: 0;}
 }
 
 .topcenter{
