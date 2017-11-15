@@ -83,7 +83,7 @@ body{
    margin: 0;
    color: #FFF;
    text-align: center;
-   font-size: 22px;
+   font-size: 20px;
 }
 
 #popupiphone .pictoIphone{
@@ -95,7 +95,7 @@ body{
 }
 
 #popupiphone p{
-   margin: 47vh 16vw 0 16vw;
+   margin: 47vh 10vw 0 10vw;
 }
 
 #popupiphone .pictoIphone:nth-child(1){
