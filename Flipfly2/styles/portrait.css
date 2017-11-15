@@ -75,14 +75,48 @@ body{
     background-position : center;
 }
 
-#popupiphone img{
+#popupiphone {
    position : absolute;
-   max-hight:100%;
-   height:auto;
-   width: auto;
-   z-index:9990;  
-   margin-left: 50%;
-   transform: translateX(-50%);
+   background-color: rgba(43, 31, 96, 0.91);
+   height: 100%;
+   width: 100%;
+   z-index:9990;
+   margin: 0;
+   padding: 24vh 0 0 0;
+   color: #FFF;
+   text-align: center;
+   font-size: 20px;
+}
+#popupiphone .pictoIphone{
+   position : absolute;
+   display: inline-block;
+   background-size: cover;
+   height: 28vw;
+   width: 28vw;
+   transform: translate(-50%, 0%);
+   -webkit-transform: translate(-50%, 0%);
+   -moz-transform: translate(-50%, 0%);
+   -o-transform: translate(-50%, 0%);
+   -ms-transform: translate(-50%, 0%);
+}
+#popupiphone p{
+   margin: 32vw 10vw 0 10vw;
+}
+#popupiphone .pictoIphone:nth-child(1){
+  animation: animateLockIphone 2.2s ease-out infinite alternate;
+  -webkit-animation: animateLockIphone 2.2s ease-out infinite alternate;
+}
+#popupiphone .pictoIphone:nth-child(2){
+    animation: animateLockIphone 2.2s ease-out 1s infinite alternate;
+    -webkit-animation: animateLockIphone 2.2s ease-out 1s infinite alternate;
+}
+@keyframes animateLockIphone {
+    0%, 45%   {opacity: 1;}
+    55%, 100% {opacity: 0;}
+}
+@-webkit-keyframes animateLockIphone {
+    0%, 45%   {opacity: 1;}
+    55%, 100% {opacity: 0;}
 }
 
 #gametitle{
@@ -95,12 +129,12 @@ body{
     background-size : contain;
     margin-top : 70px;
     font-family: 'Kaushan Script', cursive;
-    
+
 }
 
 #loadinfo {
-    height: auto; 
-    width: auto; 
+    height: auto;
+    width: auto;
     max-height: 40vw;
 }
 
@@ -144,7 +178,7 @@ a-scene{
     -moz-border-radius:10px;
     -o-border-radius:10px;
     border-radius:10px;
-    
+
 }
 
 /* use :target to look for a link to the overlay then we find are mask */
