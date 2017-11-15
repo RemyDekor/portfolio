@@ -146,16 +146,16 @@ body{
   -webkit-animation: animateLockIphone 1.2s ease-out infinite alternate;
 }
 #popupiphone .pictoIphone:nth-child(2){
-    animation: animateLockIphone 1.2. ease-out 0.55s infinite alternate;
-    -webkit-animation: animateLockIphone 1.2s ease-out 0.55s infinite alternate;
+    animation: animateLockIphone 1.2. ease-out 0.6s infinite alternate;
+    -webkit-animation: animateLockIphone 1.2s ease-out 0.6s infinite alternate;
 }
 @keyframes animateLockIphone {
-    0%, 45%   {opacity: 1;}
-    55%, 100% {opacity: 0;}
+    0%, 50%   {opacity: 1;}
+    65%, 100% {opacity: 0;}
 }
 @-webkit-keyframes animateLockIphone {
-    0%, 45%   {opacity: 1;}
-    55%, 100% {opacity: 0;}
+    0%, 50%   {opacity: 1;}
+    65%, 100% {opacity: 0;}
 }
 
 #gametitle{
