@@ -30,30 +30,30 @@ body{
   -ms-transform: translate(-50%, -50%);
 }
 #infoloading #pictoLoadingWrapper .pictoLoading:nth-child(1){
-  animation: animatePictoLoading 6s ease-out infinite;
-  -webkit-animation: animatePictoLoading 6s ease-out infinite;
+  animation: animatePictoLoading 8s ease-out infinite;
+  -webkit-animation: animatePictoLoading 8s ease-out infinite;
 }
 #infoloading #pictoLoadingWrapper .pictoLoading:nth-child(2){
-  animation: animatePictoLoading 6s ease-out 1.5s infinite;
-  -webkit-animation: animatePictoLoading 6s ease-out 1.5s infinite;
+  animation: animatePictoLoading 8s ease-out 2s infinite;
+  -webkit-animation: animatePictoLoading 8s ease-out 2s infinite;
 }
 #infoloading #pictoLoadingWrapper .pictoLoading:nth-child(3){
-  animation: animatePictoLoading 6s ease-out 3s infinite;
-  -webkit-animation: animatePictoLoading 6s ease-out 3s infinite;
+  animation: animatePictoLoading 8s ease-out 4s infinite;
+  -webkit-animation: animatePictoLoading 8s ease-out 4s infinite;
 }
 #infoloading #pictoLoadingWrapper .pictoLoading:nth-child(4){
-  animation: animatePictoLoading 6s ease-out 4.5s infinite;
-  -webkit-animation: animatePictoLoading 6s ease-out 4.5s infinite;
+  animation: animatePictoLoading 8s ease-out 6s infinite;
+  -webkit-animation: animatePictoLoading 8s ease-out 6s infinite;
 }
 @keyframes animatePictoLoading {
   0%   {opacity: 0;}
-  5%, 22%   {opacity: 1;}
-  27%, 100% {opacity: 0;}
+  4%, 21s%   {opacity: 1;}
+  25%, 100% {opacity: 0;}
 }
 @-webkit-keyframes animatePictoLoading {
   0%   {opacity: 0;}
-  5%, 25%   {opacity: 1;}
-  30%, 100% {opacity: 0;}
+  4%, 21s%   {opacity: 1;}
+  25%, 100% {opacity: 0;}
 }
 
 .topcenter{
