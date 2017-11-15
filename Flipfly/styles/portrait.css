@@ -83,6 +83,7 @@ body{
    margin: 0;
    color: #FFF;
    text-align: center;
+   font-size: 22px;
 }
 
 #popupiphone .pictoIphone{
@@ -102,8 +103,8 @@ body{
   -webkit-animation: animateLockIphone 2.2s ease-out infinite alternate;
 }
 #popupiphone .pictoIphone:nth-child(2){
-    animation: animateLockIphone 2.2s ease-out 0.9s infinite alternate;
-    -webkit-animation: animateLockIphone 2.2s ease-out 0.9s infinite alternate;
+    animation: animateLockIphone 2.2s ease-out 1s infinite alternate;
+    -webkit-animation: animateLockIphone 2.2s ease-out 1s infinite alternate;
 }
 @keyframes animateLockIphone {
     0%, 45%   {opacity: 1;}
