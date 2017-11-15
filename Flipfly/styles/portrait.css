@@ -14,8 +14,9 @@ body{
 
 #infoloading #pictoLoadingWrapper .pictoLoading{
   /*position: absolute;*/
-  width: 30px;
-  height: 29px;
+  width: 20vw;
+  height: 20vw;
+  background-size: cover;
 }
 
 
