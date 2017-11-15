@@ -17,6 +17,7 @@ body{
 }
 #infoloading #pictoLoadingWrapper .pictoLoading{
   position: absolute;
+  opacity: 0;
   width: 40vw;
   height: 40vw;
   background-size: contain;
@@ -46,8 +47,8 @@ body{
 }
 @keyframes animatePictoLoading {
   0%   {opacity: 0;}
-  5%, 25%   {opacity: 1;}
-  30%, 100% {opacity: 0;}
+  5%, 22%   {opacity: 1;}
+  27%, 100% {opacity: 0;}
 }
 @-webkit-keyframes animatePictoLoading {
   0%   {opacity: 0;}
