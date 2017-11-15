@@ -130,7 +130,11 @@ body{
    background-size: cover;
    height: 28vw;
    width: 28vw;
-   /*margin: 18vh 36vw 0 36vw;*/
+   transform: translate(-50%, -50%);
+   -webkit-transform: translate(-50%, -50%);
+   -moz-transform: translate(-50%, -50%);
+   -o-transform: translate(-50%, -50%);
+   -ms-transform: translate(-50%, -50%);
 }
 #popupiphone p{
    margin: 47vh 10vw 0 10vw;
