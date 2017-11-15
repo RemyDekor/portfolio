@@ -95,7 +95,7 @@
           <a href="#overlay" id="open-overlay">
             <button type="button" id="aboutbutton" class = "topright" ></button>
           </a>
-            
+
           <div id= "infoloading" class = "loadinfo">
             <div id = "pictoLoadingWrapper">
                 <div class ="pictoLoading" style="background-image: url('styles/charge1.png')"></div>
@@ -510,8 +510,8 @@
               assetsloaded = true;
           });
           function addstart(){
-            clearInterval(tostop);
-            var element = document.getElementById("loadinfo");
+            // clearInterval(tostop);
+            var element = document.getElementById("pictoLoadingWrapper");
             element.outerHTML = "";
             delete element;
             console.log("adding start button");
