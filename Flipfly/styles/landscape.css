@@ -99,15 +99,15 @@ body{
    -ms-transform: translate(-50%, 0%);
 }
 #popupiphone p{
-   margin: 32vh 10vw 0 10vw;
+   margin: 32vh 14vw 0 14vw;
 }
 #popupiphone .pictoIphone:nth-child(1){
-  animation: animateLockIphone 2.2s ease-out infinite alternate;
-  -webkit-animation: animateLockIphone 2.2s ease-out infinite alternate;
+  animation: animateLockIphone 2s ease-out infinite alternate;
+  -webkit-animation: animateLockIphone 2s ease-out infinite alternate;
 }
 #popupiphone .pictoIphone:nth-child(2){
-    animation: animateLockIphone 2.2s ease-out 1s infinite alternate;
-    -webkit-animation: animateLockIphone 2.2s ease-out 1s infinite alternate;
+    animation: animateLockIphone 2. ease-out 0.9s infinite alternate;
+    -webkit-animation: animateLockIphone 2s ease-out 0.9s infinite alternate;
 }
 @keyframes animateLockIphone {
     0%, 45%   {opacity: 1;}
