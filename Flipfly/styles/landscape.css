@@ -3,10 +3,11 @@ body{
   background-size:cover;
   background-position : center;
   font-family: 'Signika Negative', sans-serif;
+  transition: 0.5s;
 }
 
-.loadinfo{
-  position: fixed;
+#infoloading{
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -15,10 +16,48 @@ body{
   -o-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
+#infoloading #pictoLoadingWrapper .pictoLoading{
+  position: absolute;
+  width: 40vw;
+  height: 40vw;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+#infoloading #pictoLoadingWrapper .pictoLoading:nth-child(1){
+  animation: animatePictoLoading 6s ease-out infinite alternate;
+  -webkit-animation: animatePictoLoading 6s ease-out infinite alternate;
+}
+#infoloading #pictoLoadingWrapper .pictoLoading:nth-child(2){
+  animation: animatePictoLoading 6s ease-out 1.5s infinite alternate;
+  -webkit-animation: animatePictoLoading 6s ease-out 1.5s infinite alternate;
+}
+#infoloading #pictoLoadingWrapper .pictoLoading:nth-child(3){
+  animation: animatePictoLoading 6s ease-out 3s infinite alternate;
+  -webkit-animation: animatePictoLoading 6s ease-out 3s infinite alternate;
+}
+#infoloading #pictoLoadingWrapper .pictoLoading:nth-child(4){
+  animation: animatePictoLoading 6s ease-out 4.5s infinite alternate;
+  -webkit-animation: animatePictoLoading 6s ease-out 4.5s infinite alternate;
+}
+@keyframes animatePictoLoading {
+0%, 20   {opacity: 1;}
+25, 100% {opacity: 0;}
+}
+@-webkit-keyframes animatePictoLoading {
+  0%, 20   {opacity: 1;}
+  25, 100% {opacity: 0;}
+}
+
 
 .topcenter{
   position: fixed;
-  width:50vw;
+  width:100vw;
   top: 10%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -73,35 +112,65 @@ body{
     background-position : center;
 }
 
-
-#popupiphone img{
+#popupiphone {
    position : absolute;
-   max-height:100%;
-   height:auto;
-   width: auto;
+   background-color: rgba(97, 112, 147, 0.92);
+   height: 100vh;
+   width: 100vw;
    z-index:9990;
+   margin: 0;
+   color: #FFF;
+   text-align: center;
+   font-size: 20px;
+}
+
+#popupiphone .pictoIphone{
+   position : absolute;
+   background-size: cover;
+   height: 28vw;
+   width: 28vw;
+   margin: 18vh 36vw 0 36vw;
+}
+
+#popupiphone p{
+   margin: 47vh 10vw 0 10vw;
+}
+
+#popupiphone .pictoIphone:nth-child(1){
+  animation: animateLockIphone 2.2s ease-out infinite alternate;
+  -webkit-animation: animateLockIphone 2.2s ease-out infinite alternate;
+}
+#popupiphone .pictoIphone:nth-child(2){
+    animation: animateLockIphone 2.2s ease-out 1s infinite alternate;
+    -webkit-animation: animateLockIphone 2.2s ease-out 1s infinite alternate;
+}
+@keyframes animateLockIphone {
+    0%, 45%   {opacity: 1;}
+    55%, 100% {opacity: 0;}
+}
+@-webkit-keyframes animateLockIphone {
+    0%, 45%   {opacity: 1;}
+    55%, 100% {opacity: 0;}
 }
 
 #gametitle{
     background-image: url("Title_Launch.png");
-    width:auto;
-    height:auto;
-    max-height:30vh;
+    width:75vw;
+    height:50vw;
     background-position : center;
     border : none;
     background-color : transparent;
     background-size : contain;
     margin-top : 5vh;
     font-family: 'Kaushan Script', cursive;
-    
+
 }
 
 #loadinfo {
-    height: auto; 
-    width: auto; 
-    max-height: 30vh;
+    height: auto;
+    width: auto;
+    max-height: 40vw;
 }
-
 
 a-scene{
   width: 100vw;
@@ -112,12 +181,14 @@ a-scene{
   left: 0;
   z-index: -9999;
 }
+
 *{margin:0;padding:0;}
+
 #overlay{ /* we set all of the properties for are overlay */
     height:80%;
     width:80%;
     margin:0 auto;
-    background-color: rgba(43, 31, 96, 0.8);
+    background-color: rgba(43, 31, 96, 0.9);
     text-align: center;
     color : white;
     padding:10px;
