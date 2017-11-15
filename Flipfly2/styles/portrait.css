@@ -45,12 +45,12 @@ body{
   -webkit-animation: animatePictoLoading 6s ease-out 4.5s infinite alternate;
 }
 @keyframes animatePictoLoading {
-0%, 20   {opacity: 1;}
-25, 100% {opacity: 0;}
+0%, 20%   {opacity: 1;}
+25%, 100% {opacity: 0;}
 }
 @-webkit-keyframes animatePictoLoading {
-  0%, 20   {opacity: 1;}
-  25, 100% {opacity: 0;}
+  0%, 20%   {opacity: 1;}
+  25%, 100% {opacity: 0;}
 }
 
 .topcenter{
