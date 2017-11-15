@@ -98,12 +98,18 @@ body{
 }
 
 #popupiphone .pictoIphone:nth-child(1){
-    animation: animateLockIphone 2.2s ease-out infinite alternate;
+  animation: animateLockIphone 2.2s ease-out infinite alternate;
+  -webkit-animation: animateLockIphone 2.2s ease-out infinite alternate;
 }
 #popupiphone .pictoIphone:nth-child(2){
     animation: animateLockIphone 2.2s ease-out 0.9s infinite alternate;
+    -webkit-animation: animateLockIphone 2.2s ease-out 0.9s infinite alternate;
 }
 @keyframes animateLockIphone {
+    0%, 45%   {opacity: 1;}
+    55%, 100% {opacity: 0;}
+}
+@-webkit-keyframes animateLockIphone {
     0%, 45%   {opacity: 1;}
     55%, 100% {opacity: 0;}
 }
