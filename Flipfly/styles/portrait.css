@@ -114,7 +114,7 @@ body{
 
 #popupiphone {
    position : absolute;
-   background-color: rgba(97, 112, 147, 0.92);
+   background-color: rgba(43, 31, 96, 0.91);
    height: 100vh;
    width: 100vw;
    z-index:9990;
@@ -130,14 +130,14 @@ body{
    background-size: cover;
    height: 28vw;
    width: 28vw;
-   transform: translate(-50%, -50%);
-   -webkit-transform: translate(-50%, -50%);
-   -moz-transform: translate(-50%, -50%);
-   -o-transform: translate(-50%, -50%);
-   -ms-transform: translate(-50%, -50%);
+   transform: translate(-50%, 0%);
+   -webkit-transform: translate(-50%, 0%);
+   -moz-transform: translate(-50%, 0%);
+   -o-transform: translate(-50%, 0%);
+   -ms-transform: translate(-50%, 0%);
 }
 #popupiphone p{
-   margin: 47vh 10vw 0 10vw;
+   margin: 32vw 10vw 0 10vw;
 }
 #popupiphone .pictoIphone:nth-child(1){
   animation: animateLockIphone 2.2s ease-out infinite alternate;
@@ -191,7 +191,7 @@ a-scene{
     height:80%;
     width:80%;
     margin:0 auto;
-    background-color: rgba(43, 31, 96, 0.9);
+    background-color: rgba(43, 31, 96, 0.91);
     text-align: center;
     color : white;
     padding:10px;
