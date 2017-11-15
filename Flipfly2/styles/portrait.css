@@ -5,8 +5,8 @@ body{
   font-family: 'Signika Negative', sans-serif;
 }
 
-.loadinfo{
-  position: fixed;
+#infoloading{
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -14,6 +14,43 @@ body{
   -moz-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+}
+#infoloading #pictoLoadingWrapper .pictoLoading{
+  position: absolute;
+  width: 40vw;
+  height: 40vw;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+#infoloading #pictoLoadingWrapper .pictoLoading:nth-child(1){
+  animation: animatePictoLoading 6s ease-out infinite alternate;
+  -webkit-animation: animatePictoLoading 6s ease-out infinite alternate;
+}
+#infoloading #pictoLoadingWrapper .pictoLoading:nth-child(2){
+  animation: animatePictoLoading 6s ease-out 1.5s infinite alternate;
+  -webkit-animation: animatePictoLoading 6s ease-out 1.5s infinite alternate;
+}
+#infoloading #pictoLoadingWrapper .pictoLoading:nth-child(3){
+  animation: animatePictoLoading 6s ease-out 3s infinite alternate;
+  -webkit-animation: animatePictoLoading 6s ease-out 3s infinite alternate;
+}
+#infoloading #pictoLoadingWrapper .pictoLoading:nth-child(4){
+  animation: animatePictoLoading 6s ease-out 4.5s infinite alternate;
+  -webkit-animation: animatePictoLoading 6s ease-out 4.5s infinite alternate;
+}
+@keyframes animatePictoLoading {
+0%, 20   {opacity: 1;}
+25, 100% {opacity: 0;}
+}
+@-webkit-keyframes animatePictoLoading {
+  0%, 20   {opacity: 1;}
+  25, 100% {opacity: 0;}
 }
 
 .topcenter{
