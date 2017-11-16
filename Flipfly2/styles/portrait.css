@@ -128,7 +128,7 @@ body{
    font-size: 20px;
 }
 #popupiphone .pictoIphone{
-   position : absolute;
+   position: absolute;
    display: inline-block;
    background-size: cover;
    height: 28vw;
