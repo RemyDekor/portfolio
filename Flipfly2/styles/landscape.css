@@ -111,11 +111,11 @@ body{
     background-color : transparent;
     border : none;
     background-position : center;
-    animation: launchFadeInOut 2s ease-out 1s infinite alternate;
-    -webkit-animation: launchFadeInOut 2s ease-out 10s infinite alternate;
+    animation: launchFadeInOut 1.6s ease-out 1s infinite alternate;
+    -webkit-animation: launchFadeInOut 1.6s ease-out 1s infinite alternate;
 }
 @keyframes launchFadeInOut {
-    0%, 75%   {opacity: 1;}
+    0%, 60%   {opacity: 1;}
     100% {opacity: 0;}
 }
 
