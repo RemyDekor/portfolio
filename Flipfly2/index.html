@@ -29,6 +29,8 @@
 
 
           <script type="text/javascript">
+
+//---------------/////////////////////////////////REMY: J'ai comment-out la fonction ci-dessous étant donné qu'on anime en CSS maintenant
               // var imgstate = 0;
               //
               // function changeImage(a) {
@@ -84,18 +86,21 @@
             </a>
           </div>
 
+<!-- ///////////////////////////////////REMY: Remplacer cette partie (popup pour lock phone) + bien mettre les fichiers SVGs dans le dossier -->
           <div id = "popupiphone" style="display : none;" onclick="hideIphone()">
           <!-- <div id = "popupiphone" style="display : block;" onclick="hideIphone()"> -->
               <div class ="pictoIphone" style="background-image: url('assets/pictos/lock_iphone1.svg')"></div>
               <div class ="pictoIphone" style="background-image: url('assets/pictos/lock_iphone2.svg')"></div>
               <p>Pour profiter de&nbsp;l'expérience, veuillez&nbsp;verrouiller votre&nbsp;téléphone en&nbsp;mode&nbsp;portrait.</p>
           </div>
+<!-- //////////////////////////////////////////////////////////////////////////////////////// -->
 
           <div id = "gametitle" class = "topcenter"></div>
           <a href="#overlay" id="open-overlay">
             <button type="button" id="aboutbutton" class = "topright" ></button>
           </a>
 
+<!-- ///////////////////////////////////REMY: Remplacer cette partie (pictos pendant le loading) -->
           <div id= "infoloading" class = "loadinfo">
             <div id = "pictoLoadingWrapper">
                 <div class ="pictoLoading" style="background-image: url('styles/charge1.png')"></div>
@@ -104,6 +109,7 @@
                 <div class ="pictoLoading" style="background-image: url('styles/charge4.png')"></div>
               </div>
           </div>
+<!-- ////////////////////////////////////////////////////////////////////////////////////////   -->
       </div>
       <a-scene id="mainscene"
                rain
@@ -511,6 +517,7 @@
           });
           function addstart(){
             // clearInterval(tostop);
+//---------------//////////////////////////////////////////////REMY: ci-dessous j'ai remplacé par "pictoLoadingWrapper" pour que ça corresponde à ma modif du html
             var element = document.getElementById("pictoLoadingWrapper");
             element.outerHTML = "";
             delete element;
