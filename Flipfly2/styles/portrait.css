@@ -5,6 +5,7 @@ body{
   font-family: 'Signika Negative', sans-serif;
 }
 
+/*---------------------------------REMY: Ci dessous la partie ajoutee pour les pictos loading ------------------------------------*/
 #infoloading{
   position: absolute;
   top: 50%;
@@ -55,6 +56,7 @@ body{
   4%, 19%   {opacity: 1;}
   23%, 100% {opacity: 0;}
 }
+/*---------------------------------Fin de la partie ajoutée pour les pictos loading------------------------------------*/
 
 .topcenter{
   position: fixed;
@@ -104,6 +106,7 @@ body{
     background-position : center;
 }
 
+/*---------------------------------REMY: Ci dessous la partie à remplacer pour le bouton de launch ------------------------------------*/
 #launchbutton{
     background-size: contain;
     width:31vw;
@@ -120,7 +123,9 @@ body{
     0%, 40%   {opacity: 1;}
     100% {opacity: 0;}
 }
+/*--------------------------------- Fin de la partie pour le bouton launch ------------------------------------*/
 
+/*---------------------------------REMY: Ci dessous la partie pour le popup iphone ------------------------------------*/
 #popupiphone {
    position: absolute;
    background-color: rgba(43, 31, 96, 0.91);
@@ -164,6 +169,7 @@ body{
     0%, 50%   {opacity: 1;}
     65%, 100% {opacity: 0;}
 }
+/*--------------------------------- Fin de la partie pour le popup iphone ------------------------------------*/
 
 #gametitle{
     background-image: url("Title_Launch.png");
