@@ -62,7 +62,7 @@
 
             var geometry = new THREE.SphereBufferGeometry( 500, 128, 64 );
             geometry.scale( - 1.0, 1.0, 1.0 );
-            var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_v9_matin_3.jpg' );
+            var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_v9_matin_1.jpg' );
             // var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_matin.jpg' );
             colorsForLayersLandscape.magFilter = THREE.LinearFilter;
             colorsForLayersLandscape.minFilter = THREE.LinearFilter;
@@ -77,7 +77,7 @@
               side: THREE.DoubleSide,
               alphaTest: 0.5
             });
-            var alphaMap = new THREE.TextureLoader().load( 'Test3Plans_v9_matin_1.png' );
+            var alphaMap = new THREE.TextureLoader().load( 'alphaMap_1.png' );
             material.alphaMap = alphaMap;
 
             var mesh = new THREE.Mesh( geometry, material );
