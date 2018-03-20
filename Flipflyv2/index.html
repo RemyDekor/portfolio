@@ -85,9 +85,9 @@
             var mesh = new THREE.Mesh( geometry, material );
             scene.add( mesh );
 
-            geometry = new THREE.SphereBufferGeometry( 500, 128, 64 );
+            var geometry = new THREE.SphereBufferGeometry( 500, 128, 64 );
             geometry.scale( - 1.5, 1.5, 1.5 );
-            colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_v9_matin_2.jpg' );
+            var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_v9_matin_2.jpg' );
             // var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_matin.jpg' );
             colorsForLayersLandscape.magFilter = THREE.LinearFilter;
             colorsForLayersLandscape.minFilter = THREE.LinearFilter;
@@ -96,7 +96,7 @@
             //       //color: 0xff00ff,
             //       map: colorsForLayersLandscape
             // } );
-            material = new THREE.MeshStandardMaterial({
+            var material = new THREE.MeshStandardMaterial({
               map: colorsForLayersLandscape,
               roughness: 1,
               transparent: true,
@@ -104,8 +104,23 @@
               alphaTest: 0.5,
               opacity: 1
             });
-            alphaMap = new THREE.TextureLoader().load( 'alphaMap_2.png' );
+            var alphaMap = new THREE.TextureLoader().load( 'alphaMap_2.png' );
             material.alphaMap = alphaMap;
+
+            mesh = new THREE.Mesh( geometry, material );
+            scene.add( mesh );
+
+            var geometry = new THREE.SphereBufferGeometry( 500, 128, 64 );
+            geometry.scale( - 2., 2., 2. );
+            var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_v9_matin_3.jpg' );
+            // var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_matin.jpg' );
+            colorsForLayersLandscape.magFilter = THREE.LinearFilter;
+            colorsForLayersLandscape.minFilter = THREE.LinearFilter;
+            var material = new THREE.MeshBasicMaterial( {
+                  // map: new THREE.TextureLoader().load( 'Test_01.jpg' )
+                  //color: 0xff00ff,
+                  map: colorsForLayersLandscape
+            } );
 
             mesh = new THREE.Mesh( geometry, material );
             scene.add( mesh );
