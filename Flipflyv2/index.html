@@ -131,6 +131,7 @@
             });
             var alphaMap = new THREE.TextureLoader().load( 'alphaMap_3.png' );
             material.alphaMap = alphaMap;
+            material.lightMap = alphaMap;
 
             var mesh = new THREE.Mesh( geometry, material );
             scene.add( mesh );
