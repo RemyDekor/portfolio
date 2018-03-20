@@ -338,11 +338,11 @@ AFRAME.registerComponent('main', {
         case MORNING:
           if(switched){
             //console.log("current state :" + STATES_NAMES[c_state] + " switched :"+ switched);
-            switched = false; 
+            switched = false;
             this.instruction.setAttribute('opacity','0');
             INSTRUCTION = '#instruction2';
             this.instruction.setAttribute('visible','true');
-            this.instruction = this.sceneEl.querySelector('#instruction2');            
+            this.instruction = this.sceneEl.querySelector('#instruction2');
             //reset timer
             setTimeout(incState, SCENE_LENGTH);
             this.timer = setTimeout(endGame, GAME_LENGTH);
@@ -368,7 +368,7 @@ AFRAME.registerComponent('main', {
                 document.querySelector('#mainDirLight').setAttribute('color', '#f3cec6');
                 document.querySelector('#mainDirLight').setAttribute('intensity', '0.6');
                 document.querySelector('#directionaltarget').setAttribute('position', '-1 -0.1 1');
-                document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #312980');                
+                document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #312980');
                 }, 1000);
             }
           }
@@ -507,7 +507,7 @@ AFRAME.registerComponent('main', {
               document.querySelector('#mainDirLight').setAttribute('color', '#535353');
               document.querySelector('#mainDirLight').setAttribute('intensity', '0.2');
               document.querySelector('#directionaltarget').setAttribute('position', '0 -1 0');
-              document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #2c2c2c');  
+              document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #2c2c2c');
             }, 2000);
           }
 
@@ -567,6 +567,10 @@ AFRAME.registerComponent('main', {
                 beOpaque(document.querySelector('#sunsetsky'));
               /*beTransparent(document.querySelector('a-sky'));
               beOpaque(document.querySelector('a-sky'));*/
+              document.querySelector('#mainDirLight').setAttribute('color', '#fdaf65');
+              document.querySelector('#mainDirLight').setAttribute('intensity', '0.65');
+              document.querySelector('#directionaltarget').setAttribute('position', '1 -0.1 -1');
+              document.querySelector('#mainAmbiantLight').setAttribute('light', 'type: ambient; color: #8f53b3');
             }, 1600);
           }
 

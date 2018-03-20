@@ -1,0 +1,33 @@
+#looping {
+  background-color: rgba(20,20,250,0.5);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("../Looping.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+  /*opacity: 0.5;*/
+  animation-name: animLooping;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+
+  -webkit-animation-name: animLooping;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease;
+}
+
+@keyframes animLooping {
+  0% { opacity: 0.0; }
+  50% { opacity: 0.9; }
+  100% { opacity: 0.0; }
+}
+
+@-webkit-keyframes animLooping {
+  0% { opacity: 0.0; }
+  50% { opacity: 0.9; }
+  100% { opacity: 0.0; }
+}
