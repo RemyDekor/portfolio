@@ -71,9 +71,8 @@
             //       //color: 0xff00ff,
             //       map: colorsForLayersLandscape
             // } );
-            var material = new THREE.MeshStandardMaterial({
+            var material = new THREE.MeshBasicMaterial({
               map: colorsForLayersLandscape,
-              roughness: 1,
               transparent: true,
               side: THREE.FrontSide,
               alphaTest: 0.5,
@@ -96,9 +95,8 @@
             //       //color: 0xff00ff,
             //       map: colorsForLayersLandscape
             // } );
-            var material = new THREE.MeshStandardMaterial({
+            var material = new THREE.MeshBasicMaterial({
               map: colorsForLayersLandscape,
-              roughness: 1,
               transparent: true,
               side: THREE.FrontSide,
               alphaTest: 0.5,
@@ -121,9 +119,8 @@
             //       //color: 0xff00ff,
             //       map: colorsForLayersLandscape
             // } );
-            var material = new THREE.MeshStandardMaterial({
+            var material = new THREE.MeshBasicMaterial({
               map: colorsForLayersLandscape,
-              roughness: 1,
               transparent: true,
               side: THREE.FrontSide,
               alphaTest: 0.5,
@@ -131,7 +128,6 @@
             });
             var alphaMap = new THREE.TextureLoader().load( 'alphaMap_3.png' );
             material.alphaMap = alphaMap;
-            material.lightMap = alphaMap;
 
             var mesh = new THREE.Mesh( geometry, material );
             scene.add( mesh );
