@@ -61,7 +61,7 @@
             scene = new THREE.Scene();
 
             var geometry = new THREE.SphereBufferGeometry( 500, 128, 64 );
-            geometry.scale( - 0.85, 0.85, 0.85 );
+            geometry.scale( - 0.9, 0.9, 0.9 );
             var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_v9_matin_1.jpg' );
             // var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_matin.jpg' );
             colorsForLayersLandscape.magFilter = THREE.LinearFilter;
@@ -85,7 +85,7 @@
             scene.add( mesh );
 
             var geometry = new THREE.SphereBufferGeometry( 500, 128, 64 );
-            geometry.scale( - 1, 1, 1 );
+            geometry.scale( - 1.2, 1.2, 1.2 );
             var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_v9_matin_2.jpg' );
             // var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_matin.jpg' );
             colorsForLayersLandscape.magFilter = THREE.LinearFilter;
@@ -109,7 +109,7 @@
             scene.add( mesh );
 
             var geometry = new THREE.SphereBufferGeometry( 500, 128, 64 );
-            geometry.scale( - 1.5, 1.5, 1.5 );
+            geometry.scale( - 1.8, 1.8, 1.8 );
             var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_v9_matin_3.jpg' );
             // var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_matin.jpg' );
             colorsForLayersLandscape.magFilter = THREE.LinearFilter;
@@ -123,6 +123,30 @@
               map: colorsForLayersLandscape,
               transparent: true,
               side: THREE.FrontSide,
+              alphaTest: 0.5,
+              opacity: 1
+            });
+            var alphaMap = new THREE.TextureLoader().load( 'alphaMap_3.png' );
+            material.alphaMap = alphaMap;
+
+            var mesh = new THREE.Mesh( geometry, material );
+            scene.add( mesh );
+
+            var geometry = new THREE.SphereBufferGeometry( 500, 64, 32 );
+            geometry.scale( - 0.25, 0.25, 0.25 );
+            var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Nuages.jpg' );
+            // var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_matin.jpg' );
+            colorsForLayersLandscape.magFilter = THREE.LinearFilter;
+            colorsForLayersLandscape.minFilter = THREE.LinearFilter;
+            // var material = new THREE.MeshBasicMaterial( {
+            //       // map: new THREE.TextureLoader().load( 'Test_01.jpg' )
+            //       //color: 0xff00ff,
+            //       map: colorsForLayersLandscape
+            // } );
+            var material = new THREE.MeshBasicMaterial({
+              map: colorsForLayersLandscape,
+              transparent: true,
+              side: THREE.BackSide,
               alphaTest: 0.5,
               opacity: 1
             });
