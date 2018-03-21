@@ -133,7 +133,7 @@
             scene.add( mesh );
 
             var geometry = new THREE.SphereBufferGeometry( 500, 64, 32 );
-            geometry.scale( - 0.4, 0.4, 0.4 );
+            geometry.scale( - 0.2, 0.2, 0.2 );
             var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Nuages.jpg' );
             // var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_matin.jpg' );
             colorsForLayersLandscape.magFilter = THREE.LinearFilter;
@@ -146,7 +146,7 @@
             var materialNuages = new THREE.MeshBasicMaterial({
               map: colorsForLayersLandscape,
               transparent: true,
-              side: THREE.BackSide,
+              side: THREE.FrontSide,
               alphaTest: 0.5,
               opacity: 0.1
             });
@@ -321,8 +321,9 @@
                 }
 
                 if (materialNuages != null) {
-                    materialNuages.opacity = Math.sin(t*0.05) *0.5+0.5;
+                    materialNuages.opacity = Math.sin(t*0.05) *0.4+0.4;
                     meshNuages.rotation.y += 0.05;
+                    meshNuages.position = camera.position;
                 }
                 t++;
                 renderer.render(scene, camera);
