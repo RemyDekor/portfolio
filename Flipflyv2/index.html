@@ -317,7 +317,7 @@
                     planeGroup.rotation.x   += 0.01;
                     planeGroup.rotation.y   += 0.002;
                     helice.rotation.x   += 1.5;
-                    planeGroup.position.add( wordlToCamDirection.multiplyScalar(-250*sin(t)) );
+                    planeGroup.position.add( wordlToCamDirection.multiplyScalar(-250*Math.sin(t*0.05)) )  ;
                 }
 
                 if (materialNuages != null) {
