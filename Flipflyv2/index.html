@@ -306,9 +306,9 @@
                 controls.update();
 
 
-                var wordlToCamDirection = camera.getWorldDirection();
+                var camToWorldDirection = camera.getWorldDirection();
                 camera.position.set(0,0,0);
-                camera.position.add( wordlToCamDirection.multiplyScalar(-500) );
+                camera.position.add( camToWorldDirection.multiplyScalar(-500) );
 
 
 
@@ -318,7 +318,7 @@
                     planeGroup.rotation.y   += 0.002;
                     helice.rotation.x   += 1.5;
                     planeGroup.position.set(0,0,0);
-                    planeGroup.position.add( wordlToCamDirection.multiplyScalar( 100 ) )  ;
+                    planeGroup.position.add( camToWorldDirection.multiplyScalar( 10 ) )  ;
                     var turbulence = new THREE.Vector3( Math.sin(t*0.12), Math.sin(t*0.09), Math.sin(t*0.06) );
                     planeGroup.position.add( turbulence );
                 }
@@ -327,7 +327,7 @@
                     materialNuages.opacity = Math.sin(t*0.05) * 0.4 + 0.4;
                     meshNuages.rotation.y += 0.05;
                     meshNuages.position.set(0,0,0);
-                    meshNuages.position.add( wordlToCamDirection.multiplyScalar(-500) );
+                    meshNuages.position.add( camToWorldDirection.multiplyScalar(-500) );
                 }
                 t++;
                 renderer.render(scene, camera);
