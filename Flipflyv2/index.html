@@ -255,11 +255,10 @@
             //
 
             dirLight = new THREE.DirectionalLight( 0xffffff, 1.4 );
-            var d = 100;
+            var d = 600;
             // dirLight.color.setHSL( 0.1, 1, 0.95 );
             // dirLight.position.set( -1, 1.75, 1 );
             dirLight.position.set( 0, d, 0 );
-            dirLight.position.multiplyScalar( 50 );
             scene.add( dirLight );
 
             dirLight.castShadow = true;
@@ -274,8 +273,8 @@
 
             // dirLight.shadow.camera.near = -500;
             // dirLight.shadow.camera.far = 1500;
-            dirLight.shadow.camera.near = 0;
-            dirLight.shadow.camera.far = d*2;
+            dirLight.shadow.camera.near = -d;
+            dirLight.shadow.camera.far = d;
             // dirLight.shadow.bias = -0.0001;
 
             var shadowCameraHelper = new THREE.CameraHelper(dirLight.shadow.camera);
