@@ -266,7 +266,7 @@
             dirLight.shadow.mapSize.width = 512;
             dirLight.shadow.mapSize.height = 512;
 
-            var d = 250;
+            var d = 600;
 
             dirLight.shadow.camera.left = -d;
             dirLight.shadow.camera.right = d;
@@ -275,8 +275,8 @@
 
             // dirLight.shadow.camera.near = -500;
             // dirLight.shadow.camera.far = 1500;
-            dirLight.shadow.camera.near = 0.1;
-            dirLight.shadow.camera.far = 300;
+            dirLight.shadow.camera.near = -d;
+            dirLight.shadow.camera.far = d;
             // dirLight.shadow.bias = -0.0001;
 
             var shadowCameraHelper = new THREE.CameraHelper(dirLight.shadow.camera);
