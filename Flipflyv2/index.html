@@ -255,7 +255,7 @@
             //
 
             dirLight = new THREE.DirectionalLight( 0xffffff, 1.4 );
-            var d = 600;
+            var d = 300;
             // dirLight.color.setHSL( 0.1, 1, 0.95 );
             // dirLight.position.set( -1, 1.75, 1 );
             dirLight.position.set( 0, d, 0 );
@@ -266,8 +266,6 @@
 
             dirLight.shadow.mapSize.width = 512;
             dirLight.shadow.mapSize.height = 512;
-
-            var d = 600;
 
             dirLight.shadow.camera.left = -d;
             dirLight.shadow.camera.right = d;
