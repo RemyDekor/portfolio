@@ -63,7 +63,7 @@
             scene = new THREE.Scene();
 
             var geometry = new THREE.SphereBufferGeometry( 500, 128, 64 );
-            geometry.scale( - 0.9, 0.9, 0.9 );
+            geometry.scale( - 0.95, 0.95, 0.95 );
             var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_v9_matin_1.jpg' );
             // var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_matin.jpg' );
             colorsForLayersLandscape.magFilter = THREE.LinearFilter;
@@ -87,7 +87,7 @@
             scene.add( mesh );
 
             var geometry = new THREE.SphereBufferGeometry( 500, 128, 64 );
-            geometry.scale( - 1.2, 1.2, 1.2 );
+            geometry.scale( - 1.25, 1.25, 1.25 );
             var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_v9_matin_2.jpg' );
             // var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_matin.jpg' );
             colorsForLayersLandscape.magFilter = THREE.LinearFilter;
@@ -111,7 +111,7 @@
             scene.add( mesh );
 
             var geometry = new THREE.SphereBufferGeometry( 500, 128, 64 );
-            geometry.scale( - 1.8, 1.8, 1.8 );
+            geometry.scale( - 1.85, 1.85, 1.85 );
             var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_v9_matin_3.jpg' );
             // var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_matin.jpg' );
             colorsForLayersLandscape.magFilter = THREE.LinearFilter;
@@ -231,7 +231,7 @@
 
             } );
             // planeGroup.scale.set(8.5, 8.5, 8.5);
-            planeGroup.scale.set(16, 16, 16);
+            planeGroup.scale.set(14, 14, 14);
             scene.add( planeGroup );
 
             // var geometry = new THREE.BoxBufferGeometry( 100, 100, 100, 3, 3, 3 );
@@ -322,7 +322,7 @@
                     helice.rotation.x   += 1.5;
 
                     planeTarget.copy( camToWorldDirection );
-                    planeTarget.multiplyScalar( -0.8 );
+                    planeTarget.multiplyScalar( -0.75 );
 
                     var d = new THREE.Vector3( );
                     d.copy( planeTarget.sub(planeGroup.position) );
