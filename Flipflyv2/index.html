@@ -326,7 +326,7 @@
 
                     var d = new THREE.Vector3( );
                     d.copy( planeTarget.sub(planeGroup.position) );
-                    d.multiplyScalar(0.2);
+                    d.multiplyScalar(0.1);
 
                     planeGroup.position.add( d );
                     var turbulence = new THREE.Vector3( Math.sin(t*0.12), Math.sin(t*0.09), Math.sin(t*0.06) );
