@@ -320,12 +320,14 @@
                     planeGroup.rotation.x   += 0.01;
                     planeGroup.rotation.y   += 0.002;
                     helice.rotation.x   += 1.5;
+
                     planeTarget.copy( camToWorldDirection );
                     planeTarget.multiplyScalar( -0.8 );
 
                     var d = new THREE.Vector3( );
-                    d.copy( planeTarget.distanceTo(planeGroup.position) );
+                    d.copy( planeTarget.sub(planeGroup.position) );
                     d.multiplyScalar(0.2);
+
                     planeGroup.position.add( d );
                     var turbulence = new THREE.Vector3( Math.sin(t*0.12), Math.sin(t*0.09), Math.sin(t*0.06) );
                     planeGroup.position.add( turbulence );
