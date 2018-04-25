@@ -279,6 +279,9 @@
             dirLight.shadow.camera.far = 800 + sin(t*0.05)*400;
             // dirLight.shadow.bias = -0.0001;
 
+            var shadowCameraHelper = new THREE.CameraHelper(dirLight.shadow.camera);
+            shadowCameraHelper.visible = true;
+
 
 
 
