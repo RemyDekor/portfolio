@@ -40,6 +40,8 @@
             var container, camera, scene, renderer, controls, geometry, mesh, dirLight, hemiLight;
             var t = 0;
 
+            var camToWorldDirection = new THREE.Vector3( );
+            var planeTarget = new THREE.Vector3( );
 
 
             container = document.getElementById( 'container' );
@@ -307,7 +309,7 @@
                 controls.update();
 
 
-                var camToWorldDirection = camera.getWorldDirection();
+                camToWorldDirection = camera.getWorldDirection();
                 camera.position.set(0,0,0);
                 camera.position.add( camToWorldDirection.multiplyScalar(-500) );
 
@@ -318,9 +320,13 @@
                     planeGroup.rotation.x   += 0.01;
                     planeGroup.rotation.y   += 0.002;
                     helice.rotation.x   += 1.5;
-                    //planeGroup.position.set(0,0,0);
-                    planeGroup.position.copy( camToWorldDirection );
-                    planeGroup.position.multiplyScalar( -1 );
+                    planeTarget.copy( camToWorldDirection );
+                    planeTarget.multiplyScalar( -0.8 );
+
+                    var d = new THREE.Vector3( );
+                    d =  planeTarget.distanceTo( planeGroup.position );
+                    d.multiplyScalar(0.2);
+                    planeGroup.position.add( d );
                     var turbulence = new THREE.Vector3( Math.sin(t*0.12), Math.sin(t*0.09), Math.sin(t*0.06) );
                     planeGroup.position.add( turbulence );
                 }
