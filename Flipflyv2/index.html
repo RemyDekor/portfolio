@@ -318,7 +318,7 @@
                     planeGroup.rotation.y   += 0.002;
                     helice.rotation.x   += 1.5;
                     planeGroup.position.set(0,0,0);
-                    //planeGroup.position.add( wordlToCamDirection.multiplyScalar( 0.0 ) )  ;
+                    planeGroup.position.add( wordlToCamDirection.multiplyScalar( 100 ) )  ;
                     var turbulence = new THREE.Vector3( Math.sin(t*0.12), Math.sin(t*0.09), Math.sin(t*0.06) );
                     planeGroup.position.add( turbulence );
                 }
