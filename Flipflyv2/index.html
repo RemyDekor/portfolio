@@ -275,12 +275,13 @@
 
             // dirLight.shadow.camera.near = -500;
             // dirLight.shadow.camera.far = 1500;
-            dirLight.shadow.camera.near = 800;
+            dirLight.shadow.camera.near = 0;
             dirLight.shadow.camera.far = 1000;
             // dirLight.shadow.bias = -0.0001;
 
             var shadowCameraHelper = new THREE.CameraHelper(dirLight.shadow.camera);
             shadowCameraHelper.visible = true;
+            scene.add( shadowCameraHelper );
 
 
 
