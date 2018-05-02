@@ -274,7 +274,7 @@
             // dirLight.shadow.camera.far = 1500;
             dirLight.shadow.camera.near = 1;
             dirLight.shadow.camera.far = d*2;
-            dirLight.shadow.bias = -0.01;
+            dirLight.shadow.bias = -0.005;
             scene.add( dirLight );
 
             var shadowCameraHelper = new THREE.CameraHelper(dirLight.shadow.camera);
@@ -295,6 +295,7 @@
             container.appendChild(renderer.domElement);
 
             renderer.shadowMap.enabled = true;
+            renderer.shadowMap.type = THREE.PCFSoftShadowMap;
             renderer.shadowMap.renderReverseSided = false;
 
             window.addEventListener('resize', function() {
