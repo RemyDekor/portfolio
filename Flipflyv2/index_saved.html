@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+let <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -26,22 +26,22 @@
     (function() {
         "use strict";
 
-        // var stats = new Stats();
+        // let stats = new Stats();
         // stats.showPanel( 0 ); // 0: fps, 1: ms, 2: mb, 3+: custom
         //
-        // // var xPanel = stats.addPanel( new Stats.Panel( 'x', '#ff8', '#221' ) );
-        // // var yPanel = stats.addPanel( new Stats.Panel( 'y', '#f8f', '#212' ) );
+        // // let xPanel = stats.addPanel( new Stats.Panel( 'x', '#ff8', '#221' ) );
+        // // let yPanel = stats.addPanel( new Stats.Panel( 'y', '#f8f', '#212' ) );
         // // stats.showPanel( 3 );
         //
         // document.body.appendChild( stats.dom );
 
         window.addEventListener('load', function() {
 
-            var container, camera, scene, renderer, controls, geometry, mesh, dirLight, hemiLight;
-            var t = 0;
+            let container, camera, scene, renderer, controls, geometry, mesh, dirLight, hemiLight;
+            let t = 0;
 
-            var camToWorldDirection = new THREE.Vector3( );
-            var planeTarget = new THREE.Vector3( );
+            let camToWorldDirection = new THREE.Vector3( );
+            let planeTarget = new THREE.Vector3( );
 
 
             container = document.getElementById( 'container' );
@@ -49,7 +49,7 @@
             // camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 1000);
             // camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 1, 1000 );
 
-            var rapportHL, cameraWidth;
+            let rapportHL, cameraWidth;
             cameraWidth = 175;
             cameraWidth += window.innerWidth;
             cameraWidth /= 3;
@@ -62,112 +62,112 @@
 
             scene = new THREE.Scene();
 
-            var geometry = new THREE.SphereBufferGeometry( 500, 128, 64 );
+            let geometry = new THREE.SphereBufferGeometry( 500, 128, 64 );
             geometry.scale( - 0.95, 0.95, 0.95 );
-            var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_v9_matin_1.jpg' );
-            // var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_matin.jpg' );
+            let colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_v9_matin_1.jpg' );
+            // let colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_matin.jpg' );
             colorsForLayersLandscape.magFilter = THREE.LinearFilter;
             colorsForLayersLandscape.minFilter = THREE.LinearFilter;
-            // var material = new THREE.MeshBasicMaterial( {
+            // let material = new THREE.MeshBasicMaterial( {
             //       // map: new THREE.TextureLoader().load( 'Test_01.jpg' )
             //       //color: 0xff00ff,
             //       map: colorsForLayersLandscape
             // } );
-            var material = new THREE.MeshBasicMaterial({
+            let material = new THREE.MeshBasicMaterial({
               map: colorsForLayersLandscape,
               transparent: true,
               side: THREE.FrontSide,
               alphaTest: 0.5,
               opacity: 1
             });
-            var alphaMap = new THREE.TextureLoader().load( 'alphaMap_1.png' );
+            let alphaMap = new THREE.TextureLoader().load( 'alphaMap_1.png' );
             material.alphaMap = alphaMap;
 
-            var mesh = new THREE.Mesh( geometry, material );
+            let mesh = new THREE.Mesh( geometry, material );
             scene.add( mesh );
 
-            var geometry = new THREE.SphereBufferGeometry( 500, 128, 64 );
+            let geometry = new THREE.SphereBufferGeometry( 500, 128, 64 );
             geometry.scale( - 1.25, 1.25, 1.25 );
-            var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_v9_matin_2.jpg' );
-            // var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_matin.jpg' );
+            let colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_v9_matin_2.jpg' );
+            // let colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_matin.jpg' );
             colorsForLayersLandscape.magFilter = THREE.LinearFilter;
             colorsForLayersLandscape.minFilter = THREE.LinearFilter;
-            // var material = new THREE.MeshBasicMaterial( {
+            // let material = new THREE.MeshBasicMaterial( {
             //       // map: new THREE.TextureLoader().load( 'Test_01.jpg' )
             //       //color: 0xff00ff,
             //       map: colorsForLayersLandscape
             // } );
-            var material = new THREE.MeshBasicMaterial({
+            let material = new THREE.MeshBasicMaterial({
               map: colorsForLayersLandscape,
               transparent: true,
               side: THREE.FrontSide,
               alphaTest: 0.5,
               opacity: 1
             });
-            var alphaMap = new THREE.TextureLoader().load( 'alphaMap_2.png' );
+            let alphaMap = new THREE.TextureLoader().load( 'alphaMap_2.png' );
             material.alphaMap = alphaMap;
 
-            var mesh = new THREE.Mesh( geometry, material );
+            let mesh = new THREE.Mesh( geometry, material );
             scene.add( mesh );
 
-            var geometry = new THREE.SphereBufferGeometry( 500, 128, 64 );
+            let geometry = new THREE.SphereBufferGeometry( 500, 128, 64 );
             geometry.scale( - 1.85, 1.85, 1.85 );
-            var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_v9_matin_3.jpg' );
-            // var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_matin.jpg' );
+            let colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_v9_matin_3.jpg' );
+            // let colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_matin.jpg' );
             colorsForLayersLandscape.magFilter = THREE.LinearFilter;
             colorsForLayersLandscape.minFilter = THREE.LinearFilter;
-            // var material = new THREE.MeshBasicMaterial( {
+            // let material = new THREE.MeshBasicMaterial( {
             //       // map: new THREE.TextureLoader().load( 'Test_01.jpg' )
             //       //color: 0xff00ff,
             //       map: colorsForLayersLandscape
             // } );
-            var material = new THREE.MeshBasicMaterial({
+            let material = new THREE.MeshBasicMaterial({
               map: colorsForLayersLandscape,
               transparent: true,
               side: THREE.FrontSide,
               alphaTest: 0.5,
               opacity: 1
             });
-            var alphaMap = new THREE.TextureLoader().load( 'alphaMap_3.png' );
+            let alphaMap = new THREE.TextureLoader().load( 'alphaMap_3.png' );
             material.alphaMap = alphaMap;
 
-            var mesh = new THREE.Mesh( geometry, material );
+            let mesh = new THREE.Mesh( geometry, material );
             scene.add( mesh );
 
-            var geometry = new THREE.SphereBufferGeometry( 500, 64, 32 );
+            let geometry = new THREE.SphereBufferGeometry( 500, 64, 32 );
             geometry.scale( - 0.25, 0.25, 0.25 );
-            var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Nuages.jpg' );
-            // var colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_matin.jpg' );
+            let colorsForLayersLandscape = new THREE.TextureLoader().load( 'Nuages.jpg' );
+            // let colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_matin.jpg' );
             colorsForLayersLandscape.magFilter = THREE.LinearFilter;
             colorsForLayersLandscape.minFilter = THREE.LinearFilter;
-            // var material = new THREE.MeshBasicMaterial( {
+            // let material = new THREE.MeshBasicMaterial( {
             //       // map: new THREE.TextureLoader().load( 'Test_01.jpg' )
             //       //color: 0xff00ff,
             //       map: colorsForLayersLandscape
             // } );
-            var materialNuages = new THREE.MeshBasicMaterial({
+            let materialNuages = new THREE.MeshBasicMaterial({
               map: colorsForLayersLandscape,
               transparent: true,
               side: THREE.DoubleSide,
               opacity: 0.1
             });
-            var alphaMap = new THREE.TextureLoader().load( 'alphaMap_3.png' );
+            let alphaMap = new THREE.TextureLoader().load( 'alphaMap_3.png' );
             material.alphaMap = alphaMap;
 
-            var meshNuages = new THREE.Mesh( geometry, materialNuages );
+            let meshNuages = new THREE.Mesh( geometry, materialNuages );
             // scene.add( meshNuages );
 
 
 
-            var planeGroup = new THREE.Object3D();
+            let planeGroup = new THREE.Object3D();
 
 
-            var loader = new THREE.JSONLoader();
+            let loader = new THREE.JSONLoader();
 
-            var plane;
+            let plane;
             loader.load( 'PlaneJSON/Plane_Propre_7_Fuselage.json', function( geometry, materials ) {
-                // var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, side: THREE.BackSide, wireframe: true } );
-                // var material = materials[ 0 ];
+                // let material = new THREE.MeshBasicMaterial( { color: 0xff00ff, side: THREE.BackSide, wireframe: true } );
+                // let material = materials[ 0 ];
                 plane = new THREE.Mesh( geometry, materials );
 
                 plane.castShadow = true;
@@ -176,7 +176,7 @@
                 planeGroup.add( plane );
             } );
 
-            var perso;
+            let perso;
             loader.load( 'PlaneJSON/Plane_Propre_7_Perso.json', function( geometry, materials ) {
                 perso = new THREE.Mesh( geometry, materials );
 
@@ -186,7 +186,7 @@
                 planeGroup.add( perso );
             } );
 
-            var roues;
+            let roues;
             loader.load( 'PlaneJSON/Plane_Propre_7_Roues.json', function( geometry, materials ) {
                 roues = new THREE.Mesh( geometry, materials );
 
@@ -196,7 +196,7 @@
                 planeGroup.add( roues );
             } );
 
-            var structure;
+            let structure;
             loader.load( 'PlaneJSON/Plane_Propre_7_Structure.json', function( geometry, materials ) {
                 structure = new THREE.Mesh( geometry, materials );
 
@@ -206,10 +206,10 @@
                 planeGroup.add( structure );
             } );
 
-            var helice;
+            let helice;
             loader.load( 'PlaneJSON/Plane_Propre_7_Helice.json', function( geometry, materials ) {
                 //side: THREE.BackSide
-                // var material = materials[ 0 ];
+                // let material = materials[ 0 ];
                 helice = new THREE.Mesh( geometry, materials );
 
                 //mesh.position.z = -50;
@@ -221,7 +221,7 @@
 
                 geometry = new THREE.CircleBufferGeometry( 1.5, 16 );
                 material = new THREE.MeshStandardMaterial( { color: 0x303030, transparent: true, opacity: 0.25, side: THREE.DoubleSide, wireframe: false } );
-                var circle = new THREE.Mesh( geometry, material );
+                let circle = new THREE.Mesh( geometry, material );
 
                 circle.position.x = +1.72;
                 circle.rotation.y = Math.PI/2;
@@ -234,14 +234,14 @@
             planeGroup.scale.set(14, 14, 14);
             scene.add( planeGroup );
 
-            // var geometry = new THREE.BoxBufferGeometry( 100, 100, 100, 3, 3, 3 );
-            // var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, transparent: true, opacity: 0.07, side: THREE.BackSide, wireframe: true } );
-            // var mesh = new THREE.Mesh( geometry, material );
+            // let geometry = new THREE.BoxBufferGeometry( 100, 100, 100, 3, 3, 3 );
+            // let material = new THREE.MeshBasicMaterial( { color: 0xff00ff, transparent: true, opacity: 0.07, side: THREE.BackSide, wireframe: true } );
+            // let mesh = new THREE.Mesh( geometry, material );
             // scene.add( mesh );
 
             // LIGHTS
 
-            var ambientLight = new THREE.AmbientLight( 0x8888aa );
+            let ambientLight = new THREE.AmbientLight( 0x8888aa );
             scene.add( ambientLight );
 
             //
@@ -255,15 +255,15 @@
             //
 
             dirLight = new THREE.DirectionalLight( 0xffffff, 1.4 );
-            var d = 384;
+            let d = 384;
             // dirLight.color.setHSL( 0.1, 1, 0.95 );
             // dirLight.position.set( -1, 1.75, 1 );
             dirLight.position.set( 0, d, 0 );
 
             dirLight.castShadow = true;
 
-            dirLight.shadow.mapSize.width = 512;
-            dirLight.shadow.mapSize.height = 512;
+            dirLight.shadow.mapSize.width = 1024;
+            dirLight.shadow.mapSize.height = 1024;
 
             dirLight.shadow.camera.left = -d;
             dirLight.shadow.camera.right = d;
@@ -274,10 +274,10 @@
             // dirLight.shadow.camera.far = 1500;
             dirLight.shadow.camera.near = 1;
             dirLight.shadow.camera.far = d*2;
-            dirLight.shadow.bias = -0.005;
+            dirLight.shadow.bias = -0.004;
             scene.add( dirLight );
 
-            var shadowCameraHelper = new THREE.CameraHelper(dirLight.shadow.camera);
+            let shadowCameraHelper = new THREE.CameraHelper(dirLight.shadow.camera);
             shadowCameraHelper.visible = true;
             scene.add( shadowCameraHelper );
 
@@ -306,7 +306,7 @@
 
             }, false);
 
-            var animate = function(){
+            let animate = function(){
 
                 // stats.begin();
 
@@ -329,12 +329,12 @@
                     planeTarget.copy( camToWorldDirection );
                     planeTarget.multiplyScalar( -0.75 );
 
-                    var d = new THREE.Vector3( );
+                    let d = new THREE.Vector3( );
                     d.copy( planeTarget.sub(planeGroup.position) );
                     d.multiplyScalar(0.1);
 
                     planeGroup.position.add( d );
-                    var turbulence = new THREE.Vector3( Math.sin(t*0.12), Math.sin(t*0.09), Math.sin(t*0.06) );
+                    let turbulence = new THREE.Vector3( Math.sin(t*0.12), Math.sin(t*0.09), Math.sin(t*0.06) );
                     planeGroup.position.add( turbulence );
                 }
 
