@@ -62,7 +62,7 @@ let <!DOCTYPE html>
 
             scene = new THREE.Scene();
 
-            let geometry = new THREE.SphereBufferGeometry( 500, 128, 64 );
+            geometry = new THREE.SphereBufferGeometry( 500, 128, 64 );
             geometry.scale( - 0.95, 0.95, 0.95 );
             let colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_v9_matin_1.jpg' );
             // let colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_matin.jpg' );
@@ -83,10 +83,10 @@ let <!DOCTYPE html>
             let alphaMap = new THREE.TextureLoader().load( 'alphaMap_1.png' );
             material.alphaMap = alphaMap;
 
-            let mesh = new THREE.Mesh( geometry, material );
+            mesh = new THREE.Mesh( geometry, material );
             scene.add( mesh );
 
-            let geometry = new THREE.SphereBufferGeometry( 500, 128, 64 );
+            geometry = new THREE.SphereBufferGeometry( 500, 128, 64 );
             geometry.scale( - 1.25, 1.25, 1.25 );
             let colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_v9_matin_2.jpg' );
             // let colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_matin.jpg' );
@@ -107,10 +107,10 @@ let <!DOCTYPE html>
             let alphaMap = new THREE.TextureLoader().load( 'alphaMap_2.png' );
             material.alphaMap = alphaMap;
 
-            let mesh = new THREE.Mesh( geometry, material );
+            mesh = new THREE.Mesh( geometry, material );
             scene.add( mesh );
 
-            let geometry = new THREE.SphereBufferGeometry( 500, 128, 64 );
+            geometry = new THREE.SphereBufferGeometry( 500, 128, 64 );
             geometry.scale( - 1.85, 1.85, 1.85 );
             let colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_v9_matin_3.jpg' );
             // let colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_matin.jpg' );
@@ -121,20 +121,14 @@ let <!DOCTYPE html>
             //       //color: 0xff00ff,
             //       map: colorsForLayersLandscape
             // } );
-            let material = new THREE.MeshBasicMaterial({
-              map: colorsForLayersLandscape,
-              transparent: true,
-              side: THREE.FrontSide,
-              alphaTest: 0.5,
-              opacity: 1
-            });
+
             let alphaMap = new THREE.TextureLoader().load( 'alphaMap_3.png' );
             material.alphaMap = alphaMap;
 
-            let mesh = new THREE.Mesh( geometry, material );
+            mesh = new THREE.Mesh( geometry, material );
             scene.add( mesh );
 
-            let geometry = new THREE.SphereBufferGeometry( 500, 64, 32 );
+            geometry = new THREE.SphereBufferGeometry( 500, 64, 32 );
             geometry.scale( - 0.25, 0.25, 0.25 );
             let colorsForLayersLandscape = new THREE.TextureLoader().load( 'Nuages.jpg' );
             // let colorsForLayersLandscape = new THREE.TextureLoader().load( 'Test3Plans_matin.jpg' );
