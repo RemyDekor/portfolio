@@ -233,6 +233,39 @@ let <!DOCTYPE html>
             // let mesh = new THREE.Mesh( geometry, material );
             // scene.add( mesh );
 
+            // PARTICLES
+
+            // create the particle variables
+            let particleCount = 180,
+                particles = new THREE.Geometry(),
+                pMaterial = new THREE.ParticleBasicMaterial({
+                  color: 0xFFFFFF,
+                  size: 15
+                });
+
+            // now create the individual particles
+            for (let p = 0; p < particleCount; p++) {
+              // create a particle with random
+              // position values, -250 -> 250
+              let pX = Math.random() * 500 - 250,
+                  pY = Math.random() * 500 - 250,
+                  pZ = Math.random() * 500 - 250,
+                  particle = new THREE.Vertex(
+                    new THREE.Vector3(pX, pY, pZ)
+                  );
+              // add it to the geometry
+              particles.vertices.push(particle);
+            }
+
+            // create the particle system
+            var particleSystem = new THREE.ParticleSystem(
+                particles,
+                pMaterial);
+
+            // add it to the scene
+            scene.addChild(particleSystem);
+
+
             // LIGHTS
 
             let ambientLight = new THREE.AmbientLight( 0x8888aa );
@@ -249,26 +282,26 @@ let <!DOCTYPE html>
             //
 
             dirLight = new THREE.DirectionalLight( 0xffffff, 1.4 );
-            let d = 384;
+            let shdwBx = 384;
             // dirLight.color.setHSL( 0.1, 1, 0.95 );
             // dirLight.position.set( -1, 1.75, 1 );
-            dirLight.position.set( 0, d, 0 );
+            dirLight.position.set( 0, shdwBx, 0 );
 
             dirLight.castShadow = true;
 
             dirLight.shadow.mapSize.width = 1024;
             dirLight.shadow.mapSize.height = 1024;
 
-            dirLight.shadow.camera.left = -d;
-            dirLight.shadow.camera.right = d;
-            dirLight.shadow.camera.top = d;
-            dirLight.shadow.camera.bottom = -d;
+            dirLight.shadow.camera.left = -shdwBx;
+            dirLight.shadow.camera.right = shdwBx;
+            dirLight.shadow.camera.top = shdwBx;
+            dirLight.shadow.camera.bottom = -shdwBx;
 
             // dirLight.shadow.camera.near = -500;
             // dirLight.shadow.camera.far = 1500;
             dirLight.shadow.camera.near = 1;
-            dirLight.shadow.camera.far = d*2;
-            dirLight.shadow.bias = -0.004;
+            dirLight.shadow.camera.far = shdwBx*2;
+            dirLight.shadow.bias = -0.003;
             scene.add( dirLight );
 
             let shadowCameraHelper = new THREE.CameraHelper(dirLight.shadow.camera);
