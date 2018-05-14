@@ -131,30 +131,31 @@ window.addEventListener('load', function() {
     let indxToSclRatio;
 
     let textureLoader = new THREE.TextureLoader();
+    // morning
     let texturesMorning = [], texturesNoon = [], texturesStorm = [], texturesSunset = [], texturesNight = [];
     let alphaMaps = [];
 
     // morning
-    for (let i = sphereMeshesCount-1 ; i > 0 ; i--) {
-      sphereGeometries[i] = new THREE.SphereBufferGeometry( s, 128, 64 );
-      indxToSclRatio = i*0.33 + 1;
-      sphereGeometries[i].scale( -indxToSclRatio, indxToSclRatio, indxToSclRatio );
-      texturesMorning[i] = textureLoader.load( 'assets/img/morning_' + i + '.jpg' );
-      alphaMaps[i] = textureLoader.load( 'assets/img/alphaMap_' + i + '.png' );
-      sphereMaterials[i] = new THREE.MeshBasicMaterial({
-        transparent: true,
-        // premultipliedAlpha: true,
-        side: THREE.FrontSide,
-        opacity: 1,
-        map: texturesMorning[i],
-        alphaMap: alphaMaps[i]
-      });
-      sphereMaterials[i].depthWrite = false;
-      sphereMeshes[i] = new THREE.Mesh( sphereGeometries[i], sphereMaterials[i] );
-      scene.add( sphereMeshes[i] );
-    }
+    // for (let i = sphereMeshesCount-1 ; i > 0 ; i--) {
+    //   sphereGeometries[i] = new THREE.SphereBufferGeometry( s, 128, 64 );
+    //   indxToSclRatio = i*0.33 + 1;
+    //   sphereGeometries[i].scale( -indxToSclRatio, indxToSclRatio, indxToSclRatio );
+    //   texturesMorning[i] = textureLoader.load( 'assets/img/morning_' + i + '.jpg' );
+    //   alphaMaps[i] = textureLoader.load( 'assets/img/alphaMap_' + i + '.png' );
+    //   sphereMaterials[i] = new THREE.MeshBasicMaterial({
+    //     transparent: true,
+    //     // premultipliedAlpha: true,
+    //     side: THREE.FrontSide,
+    //     opacity: 1,
+    //     map: texturesMorning[i],
+    //     alphaMap: alphaMaps[i]
+    //   });
+    //   sphereMaterials[i].depthWrite = false;
+    //   sphereMeshes[i] = new THREE.Mesh( sphereGeometries[i], sphereMaterials[i] );
+    //   scene.add( sphereMeshes[i] );
+    // }
 
-    //noon
+    // noon
     // for (let i = sphereMeshesCount-1 ; i > 0 ; i--) {
     //   sphereGeometries[i] = new THREE.SphereBufferGeometry( s, 128, 64 );
     //   indxToSclRatio = i*0.33 + 1;
@@ -175,24 +176,24 @@ window.addEventListener('load', function() {
     // }
 
     // storm TODO : Exception !! ATTENTION AUX INDEX i   > Modifier pour + clair?
-    // for (let i = sphereMeshesCount-2 ; i >= 0 ; i--) {
-    //   sphereGeometries[i] = new THREE.SphereBufferGeometry( s, 128, 64 );
-    //   indxToSclRatio = i*0.33 + 1;
-    //   sphereGeometries[i].scale( -indxToSclRatio, indxToSclRatio, indxToSclRatio );
-    //   texturesStorm[i] = textureLoader.load( 'assets/img/storm_' + i + '.jpg' );
-    //   alphaMaps[i] = textureLoader.load( 'assets/img/alphaMap_' + i + '.png' );
-    //   sphereMaterials[i] = new THREE.MeshBasicMaterial({
-    //     transparent: true,
-    //     // premultipliedAlpha: true,
-    //     side: THREE.FrontSide,
-    //     opacity: 1,
-    //     map: texturesStorm[i],
-    //     alphaMap: alphaMaps[i]
-    //   });
-    //   sphereMaterials[i].depthWrite = false;
-    //   sphereMeshes[i] = new THREE.Mesh( sphereGeometries[i], sphereMaterials[i] );
-    //   scene.add( sphereMeshes[i] );
-    // }
+    for (let i = sphereMeshesCount-2 ; i >= 0 ; i--) {
+      sphereGeometries[i] = new THREE.SphereBufferGeometry( s, 128, 64 );
+      indxToSclRatio = i*0.33 + 1;
+      sphereGeometries[i].scale( -indxToSclRatio, indxToSclRatio, indxToSclRatio );
+      texturesStorm[i] = textureLoader.load( 'assets/img/storm_' + i + '.jpg' );
+      alphaMaps[i] = textureLoader.load( 'assets/img/alphaMap_' + i + '.png' );
+      sphereMaterials[i] = new THREE.MeshBasicMaterial({
+        transparent: true,
+        // premultipliedAlpha: true,
+        side: THREE.FrontSide,
+        opacity: 1,
+        map: texturesStorm[i],
+        alphaMap: alphaMaps[i]
+      });
+      sphereMaterials[i].depthWrite = false;
+      sphereMeshes[i] = new THREE.Mesh( sphereGeometries[i], sphereMaterials[i] );
+      scene.add( sphereMeshes[i] );
+    }
 
     // sunset
     // for (let i = sphereMeshesCount-1 ; i > 0 ; i--) {
@@ -286,7 +287,7 @@ window.addEventListener('load', function() {
         skyParticles,
         skyParticlesMaterial);
     // add it to the scene
-    scene.add( skyParticleSystem );
+    // scene.add( skyParticleSystem );
 
     // create the plane's smoke particles
     let smokeEmitter = new THREE.Vector3();
@@ -340,7 +341,7 @@ window.addEventListener('load', function() {
         rainParticles,
         rainParticlesMaterial);
     // add it to the scene
-    // scene.add( rainParticleSystem );
+    scene.add( rainParticleSystem );
 
 
     //--------------
@@ -351,16 +352,16 @@ window.addEventListener('load', function() {
     hemiLight = new THREE.HemisphereLight( 0x8f5ade, 0x1c2b52, 0.85 );
     dirLight = new THREE.DirectionalLight( 0xf7f1cd, 0.7 );
     dirLight.position.set( -1, 0.2, 1 );
-    // //noon
-    // ambientLight = new THREE.AmbientLight( 0xffffff, 0.1 );
-    // hemiLight = new THREE.HemisphereLight( 0x6bb7f7, 0x426686, 0.8 );
-    // dirLight = new THREE.DirectionalLight( 0xffffff, 1.1 );
-    // dirLight.position.set( 0, 1, 0 );
-    // //storm
-    // ambientLight = new THREE.AmbientLight( 0xffffff, 0.05 );
-    // hemiLight = new THREE.HemisphereLight( 0xafafaf, 0x000000, 0.7 );
-    // dirLight = new THREE.DirectionalLight( 0xffffff, 0.05 ); // DIRECTIONNAL LIGHT CAN BE REMOVED FOR STORM (would be better)
-    // dirLight.position.set( 0, 1, 0 );
+    //noon
+    ambientLight = new THREE.AmbientLight( 0xffffff, 0.1 );
+    hemiLight = new THREE.HemisphereLight( 0x6bb7f7, 0x426686, 0.8 );
+    dirLight = new THREE.DirectionalLight( 0xffffff, 1.1 );
+    dirLight.position.set( 0, 1, 0 );
+    //storm
+    ambientLight = new THREE.AmbientLight( 0xffffff, 0.05 );
+    hemiLight = new THREE.HemisphereLight( 0xafafaf, 0x000000, 0.7 );
+    dirLight = new THREE.DirectionalLight( 0xffffff, 0.05 ); // DIRECTIONNAL LIGHT CAN BE REMOVED FOR STORM (would be better)
+    dirLight.position.set( 0, 1, 0 );
     //sunset
     // ambientLight = new THREE.AmbientLight( 0xffffff, 0.15 );
     // hemiLight = new THREE.HemisphereLight( 0xe2687b, 0x624e99, 0.8 );
@@ -581,22 +582,22 @@ window.addEventListener('load', function() {
         }
 
         // Rain Particles ----------------------------
-        // if (rainParticles != null) {
-        //   let rainParticlesDirection = new THREE.Vector3;
-        //   rainParticlesDirection.copy(particlesDirection);
-        //   rainParticlesDirection.multiplyScalar(0.5);
-        //   rainParticlesDirection.y = -6;
-        //   for (let i = 0; i < rainParticleCount; i++) {
-        //     if (rainParticles.vertices[i].distanceTo(planeGroup.position) < s*2) {
-        //       rainParticles.vertices[i].add(rainParticlesDirection);
-        //     } else {
-        //       rainParticles.vertices[i].x = -particlesDirection.x*20 + Math.random() * s*2 - s;
-        //       rainParticles.vertices[i].y = s -particlesDirection.y*20 + Math.random() * s - s*0.5;
-        //       rainParticles.vertices[i].z = -particlesDirection.z*20 + Math.random() * s*2 - s;
-        //     }
-        //   }
-        //   rainParticles.verticesNeedUpdate  = true;
-        // }
+        if (rainParticles != null) {
+          let rainParticlesDirection = new THREE.Vector3;
+          rainParticlesDirection.copy(particlesDirection);
+          rainParticlesDirection.multiplyScalar(0.5);
+          rainParticlesDirection.y = -6;
+          for (let i = 0; i < rainParticleCount; i++) {
+            if (rainParticles.vertices[i].distanceTo(planeGroup.position) < s*2) {
+              rainParticles.vertices[i].add(rainParticlesDirection);
+            } else {
+              rainParticles.vertices[i].x = -particlesDirection.x*20 + Math.random() * s*2 - s;
+              rainParticles.vertices[i].y = s -particlesDirection.y*20 + Math.random() * s - s*0.5;
+              rainParticles.vertices[i].z = -particlesDirection.z*20 + Math.random() * s*2 - s;
+            }
+          }
+          rainParticles.verticesNeedUpdate  = true;
+        }
 
         // if (materialNuages != null) {
         //     materialNuages.opacity = Math.sin(t*0.05) * 0.4 + 0.4;
