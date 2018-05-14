@@ -181,7 +181,7 @@ window.addEventListener('load', function() {
       indxToSclRatio = i*0.33 + 1;
       sphereGeometries[i].scale( -indxToSclRatio, indxToSclRatio, indxToSclRatio );
       texturesStorm[i] = textureLoader.load( 'assets/img/storm_' + i + '.jpg' );
-      alphaMaps[i] = textureLoader.load( 'assets/img/alphaMap_' + i + '.png' );
+      alphaMaps[i] = textureLoader.load( 'assets/img/alphaMap_' + i == 2 && 3 + '.png' );
       sphereMaterials[i] = new THREE.MeshBasicMaterial({
         transparent: true,
         // premultipliedAlpha: true,
