@@ -177,18 +177,20 @@ window.addEventListener('load', function() {
 
     // storm TODO : Exception !! ATTENTION AUX INDEX i   > Modifier pour + clair?
     for (let i = sphereMeshesCount-2 ; i >= 0 ; i--) {
+      let y = i;
+      if (i == 2) { y = 3; }
       sphereGeometries[i] = new THREE.SphereBufferGeometry( s, 128, 64 );
       indxToSclRatio = i*0.33 + 1;
       sphereGeometries[i].scale( -indxToSclRatio, indxToSclRatio, indxToSclRatio );
       texturesStorm[i] = textureLoader.load( 'assets/img/storm_' + i + '.jpg' );
-      alphaMaps[i] = textureLoader.load( 'assets/img/alphaMap_' + i == 2 && 3 + '.png' );
+      alphaMaps[i] = textureLoader.load( 'assets/img/alphaMap_' + y + '.png' );
       sphereMaterials[i] = new THREE.MeshBasicMaterial({
         transparent: true,
         // premultipliedAlpha: true,
         side: THREE.FrontSide,
         opacity: 1,
         map: texturesStorm[i],
-        alphaMap: alphaMaps[i]
+        alphaMap: alphaMaps[y]
       });
       sphereMaterials[i].depthWrite = false;
       sphereMeshes[i] = new THREE.Mesh( sphereGeometries[i], sphereMaterials[i] );
