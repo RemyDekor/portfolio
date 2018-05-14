@@ -267,9 +267,9 @@ window.addEventListener('load', function() {
     let smokeParticleCount = s*4,
         smokeParticles = new THREE.Geometry(),
         smokeParticlesMaterial = new THREE.PointsMaterial({
-          color: 0xFFFF77,
+          color: 0xFFFFFF,
           transparent: true,
-          opacity: 0.15,
+          opacity: 0.12,
           size: s*0.027
         });
     // now create the individual skyParticles
@@ -392,33 +392,44 @@ window.addEventListener('load', function() {
 
             planeGroup.position.add( d );
 
+            // TODO : Maybe instead of the following (rotate the plane according to the camera's rotation),
+            // add a rotation (differents axis for turns) to the the plane according to the difference between its current position and the targeted [position+rotation]
+            // and compare it between the current and the targeted, and rotate accordingly.
+            // (MAY BE VERY COMPLICATED)
+
             let planeRotTarget = new THREE.Quaternion;
             planeRotTarget.copy(camera.quaternion);
-            // let rotationAwayFromCam = new THREE.Quaternion( 0, 0.5, 0, 0.75 ); // Look RIGHT
-            // let rotationAwayFromCam = new THREE.Quaternion( 0, 0.5, 0, -0.75 ); // Look LEFT
-            // let rotationAwayFromCam = new THREE.Quaternion( 0.5, 0, 0.75, 0 ); // Look RIGHT , head's down
-            // let rotationAwayFromCam = new THREE.Quaternion( 0.5, 0, -0.75, 0 ); // Look LEFT , head's down
-            // let rotationAwayFromCam = new THREE.Quaternion( 0.4156, 0.4156, 0.5721, -0.5721 ); // Look UP
-            let rotationAwayFromCam = new THREE.Quaternion( 0.4156, 0.4156, -0.5721, 0.5721 ); // Look DOWN
 
-            // var a = new THREE.Euler( Math.PI*0.6, Math.PI, Math.PI*0.5, 'XYZ' );
-            // let rotationAwayFromCam = new THREE.Quaternion;
-            // rotationAwayFromCam.setFromEuler(a); _w: -0.5720614028176844 _x: 0.4156269377774535 _y: 0.4156269377774534 _z: 0.5720614028176844
-            // if (test){
-            //   console.log(rotationAwayFromCam);
-            //   test = false;
-            // } //
+            // Use this to look either left or right compared to the camera...
+            let lookLeft = new THREE.Quaternion;
+            let lookRight = new THREE.Quaternion;
+            lookLeft.set( 0.4156, 0.4156, 0.5721, -0.5721 ); // Look UP
+            lookRight.set( 0.4156, 0.4156, -0.5721, 0.5721 ); // Look DOWN
+            lookLeft.normalize();
+            lookRight.normalize();
+            // ------!!!!!!  USE rounded values (0, 0.5 or -0.5) to have the plane go straight perpendicular to the camera
+            // quaternion.set( 0, 0.5, 0, 0.75 ); // Look RIGHT
+            // quaternion.set( 0, 0.5, 0, -0.75 ); // Look LEFT
+            // quaternion.set( 0.5, 0, 0.75, 0 ); // Look RIGHT , head's down
+            // quaternion.set( 0.5, 0, -0.75, 0 ); // Look LEFT , head's down
 
-            // if (t > 180) {
-            //   rotationAwayFromCam = new THREE.Quaternion( 0, 1, 0, 0 );
-            //   if (t > 200) {rotationAwayFromCam = new THREE.Quaternion( 0, 0.5, 0, 0.75 );}
+            planeRotTarget.multiply(lookRight); // Look DOWN
+            //TODO : HAVE THE PLANE MAKE A U-TURN WHEN THE CAMERA IS ROTATING IN THE OPPOSITE DIRECTION
+            // let rotTransitionTarget = new THREE.Quaternion( 0.5, 0.5, 0, 0 ) ; // Transitionnal rotation to make a U-turn withouth facing to the camera (but instead away from it)
+            // if (camera.position.x < 0) {
+            //   planeRotTarget.multiply(rotTransitionTarget);
+            //   if (rotTransitionTarget) {
+            //     planeRotTarget.multiply(lookLeft); // Look UP
+            //   }
+            // } else {
+            //   planeRotTarget.multiply(rotTransitionTarget);
+            //   if (rotTransitionTarget) {
+            //     planeRotTarget.multiply(lookRight); // Look DOWN
+            //   }
             // }
-            rotationAwayFromCam.normalize();
-            planeRotTarget.multiply(rotationAwayFromCam);
 
-            // planeRotTarget.setFromAxisAngle(camera.up, Math.PI*0.5);
-
-            planeGroup.quaternion.slerp(planeRotTarget, 0.03);
+            // planeGroup.quaternion.slerp(planeRotTarget, 0.047);
+            planeGroup.quaternion.slerp(planeRotTarget, 0.053);
 
             //TODO : Use 1D noise instead of 2D... OR USE MULTI-DIMENTIONNAL NOISE EFFICIENTLY ?????
             let turbulenceVforPos = new THREE.Vector3(
