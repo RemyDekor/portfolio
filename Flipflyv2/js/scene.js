@@ -20,7 +20,8 @@ window.addEventListener('load', function() {
     let s = Math.max(window.innerWidth, window.innerHeight) * 0.3;
     let t = 0;
 
-    // let timeOfTheDay = ['morning', 'noon', 'storm', 'sunset', 'night'];
+    let timeOfTheDay = ['morning', 'noon', /*'storm',*/ 'sunset', 'night'];
+    let time = 0;
 
     let camToWorldDirection = new THREE.Vector3( );
     let planeDirection = new THREE.Vector3();
@@ -109,21 +110,6 @@ window.addEventListener('load', function() {
 
     // ADDING THE BACKGROUND SPHERES
 
-    // TODO : Loading management et callback/Promises qui fonctionnent (!!!) pour les textures en fonction de la phase de la journée
-    // let time = 'morning';
-    // switch(timeOfTheDay[time]) {
-    //   case 'morning':
-    //     break;
-    //   case 'noon':
-    //     break;
-    //   case 'storm':
-    //     break;
-    //   case 'sunset':
-    //     break;
-    //   case 'night':
-    //     break;
-    // }
-
     const sphereMeshesCount = 4;
 
     let sphereMeshes = [];
@@ -132,107 +118,177 @@ window.addEventListener('load', function() {
 
     let textureLoader = new THREE.TextureLoader();
     let texturesMorning = [], texturesNoon = [], texturesStorm = [], texturesSunset = [], texturesNight = [];
-    let alphaMaps = [];
+    let alphaMaps = [], stormAlphaMaps = [];
 
     // morning
-    for (let i = sphereMeshesCount-1 ; i > 0 ; i--) {
-      sphereGeometries[i] = new THREE.SphereBufferGeometry( s, 128, 64 );
-      indxToSclRatio = i*0.33 + 1;
-      sphereGeometries[i].scale( -indxToSclRatio, indxToSclRatio, indxToSclRatio );
-      texturesMorning[i] = textureLoader.load( 'assets/img/morning_' + i + '.jpg' );
-      alphaMaps[i] = textureLoader.load( 'assets/img/alphaMap_' + i + '.png' );
-      sphereMaterials[i] = new THREE.MeshBasicMaterial({
-        transparent: true,
-        // premultipliedAlpha: true,
-        side: THREE.FrontSide,
-        opacity: 1,
-        map: texturesMorning[i],
-        alphaMap: alphaMaps[i]
-      });
-      sphereMaterials[i].depthWrite = false;
-      sphereMeshes[i] = new THREE.Mesh( sphereGeometries[i], sphereMaterials[i] );
-      scene.add( sphereMeshes[i] );
+    addInitialSscene();
+    function addInitialSscene() {
+      for (let i = sphereMeshesCount-1 ; i > 0 ; i--) {
+        sphereGeometries[i] = new THREE.SphereBufferGeometry( s, 128, 64 );
+        indxToSclRatio = i*0.33 + 1;
+        sphereGeometries[i].scale( -indxToSclRatio, indxToSclRatio, indxToSclRatio );
+        texturesMorning[i] = textureLoader.load( 'assets/img/morning_' + i + '.jpg' );
+        alphaMaps[i] = textureLoader.load( 'assets/img/alphaMap_' + i + '.png' );
+        sphereMaterials[i] = new THREE.MeshBasicMaterial({
+          transparent: true,
+          // premultipliedAlpha: true,
+          side: THREE.FrontSide,
+          opacity: 1,
+          map: texturesMorning[i],
+          alphaMap: alphaMaps[i]
+        });
+        sphereMaterials[i].depthWrite = false;
+        sphereMeshes[i] = new THREE.Mesh( sphereGeometries[i], sphereMaterials[i] );
+        scene.add( sphereMeshes[i] );
+      }
+      ambientLight = new THREE.AmbientLight( 0xffffff, 0.15 );
+      hemiLight = new THREE.HemisphereLight( 0x8f5ade, 0x1c2b52, 0.85 );
+      dirLight = new THREE.DirectionalLight( 0xf7f1cd, 0.7 );
+      dirLight.position.set( -1, 0.2, 1 );
     }
 
-    //noon
-    // for (let i = sphereMeshesCount-1 ; i > 0 ; i--) {
-    //   sphereGeometries[i] = new THREE.SphereBufferGeometry( s, 128, 64 );
-    //   indxToSclRatio = i*0.33 + 1;
-    //   sphereGeometries[i].scale( -indxToSclRatio, indxToSclRatio, indxToSclRatio );
-    //   texturesNoon[i] = textureLoader.load( 'assets/img/noon_' + i + '.jpg' );
-    //   alphaMaps[i] = textureLoader.load( 'assets/img/alphaMap_' + i + '.png' );
-    //   sphereMaterials[i] = new THREE.MeshBasicMaterial({
-    //     transparent: true,
-    //     // premultipliedAlpha: true,
-    //     side: THREE.FrontSide,
-    //     opacity: 1,
-    //     map: texturesNoon[i],
-    //     alphaMap: alphaMaps[i]
-    //   });
-    //   sphereMaterials[i].depthWrite = false;
-    //   sphereMeshes[i] = new THREE.Mesh( sphereGeometries[i], sphereMaterials[i] );
-    //   scene.add( sphereMeshes[i] );
-    // }
+    loadNoonSpheres();
+    function loadNoonSpheres() {
+      for (let i = sphereMeshesCount-1 ; i > 0 ; i--) {
+        texturesNoon[i] = textureLoader.load( 'assets/img/noon_' + i + '.jpg' );
+      }
+    }
+    loadStormSpheres();
+    function loadStormSpheres() {
+      for (let i = sphereMeshesCount-2 ; i >= 0 ; i--) {
+        let j = i;
+        if (i == 2) { j = 3; }
+        texturesStorm[i] = textureLoader.load( 'assets/img/storm_' + i + '.jpg' );
+        stormAlphaMaps[i] = textureLoader.load( 'assets/img/alphaMap_' + j + '.png' );
+      }
+    }
+    loadSunsetSpheres();
+    function loadSunsetSpheres() {
+      for (let i = sphereMeshesCount-1 ; i > 0 ; i--) {
+        texturesSunset[i] = textureLoader.load( 'assets/img/sunset_' + i + '.jpg' );
+      }
+    }
+    loadNightSpheres();
+    function loadNightSpheres() {
+      for (let i = sphereMeshesCount-1 ; i > 0 ; i--) {
+        texturesNight[i] = textureLoader.load( 'assets/img/night_' + i + '.jpg' );
+      }
+    }
 
-    // storm TODO : Exception !! ATTENTION AUX INDEX i   > Modifier pour + clair?
-    // for (let i = sphereMeshesCount-2 ; i >= 0 ; i--) {
-    //   sphereGeometries[i] = new THREE.SphereBufferGeometry( s, 128, 64 );
-    //   indxToSclRatio = i*0.33 + 1;
-    //   sphereGeometries[i].scale( -indxToSclRatio, indxToSclRatio, indxToSclRatio );
-    //   texturesStorm[i] = textureLoader.load( 'assets/img/storm_' + i + '.jpg' );
-    //   alphaMaps[i] = textureLoader.load( 'assets/img/alphaMap_' + i + '.png' );
-    //   sphereMaterials[i] = new THREE.MeshBasicMaterial({
-    //     transparent: true,
-    //     // premultipliedAlpha: true,
-    //     side: THREE.FrontSide,
-    //     opacity: 1,
-    //     map: texturesStorm[i],
-    //     alphaMap: alphaMaps[i]
-    //   });
-    //   sphereMaterials[i].depthWrite = false;
-    //   sphereMeshes[i] = new THREE.Mesh( sphereGeometries[i], sphereMaterials[i] );
-    //   scene.add( sphereMeshes[i] );
-    // }
+    function changeToMorning() {
+      for (let i = sphereMeshesCount-1 ; i > 0 ; i--) {
+        sphereMeshes[i].material.map = texturesMorning[i];
+        sphereMeshes[i].material.alphaMap = alphaMaps[i];
+        ambientLight.color.setHex( 0xff0000 );
+        ambientLight.intensity = 0.15;
+        hemiLight.color.setHex( 0x8f5ade );
+        hemiLight.groundColor.setHex( 0x1c2b52 );
+        hemiLight.intensity = 0.85;
+        dirLight.color.setHex( 0xf7f1cd );
+        dirLight.intensity = 0.7;
+        dirLight.position.set( -1, 0.2, 1 );
+      }
+    }
+    function changeToNoon() {
+      for (let i = sphereMeshesCount-1 ; i > 0 ; i--) {
+        sphereMeshes[i].material.map = texturesNoon[i];
+        sphereMeshes[i].material.alphaMap = alphaMaps[i];
+        ambientLight.color.setHex( 0xff0000 );
+        ambientLight.intensity = 0.1;
+        hemiLight.color.setHex( 0x6bb7f7 );
+        hemiLight.groundColor.setHex( 0x426686 );
+        hemiLight.intensity = 0.8;
+        dirLight.color.setHex( 0xffffff );
+        dirLight.intensity = 1.1;
+        dirLight.position.set( 0, 1, 0 );
+      }
+    }
+    function changeToStorm() {
+      for (let i = sphereMeshesCount-2 ; i >= 0 ; i--) {
+        let j = i;
+        if (i == 2) { j = 3; }
+        sphereMeshes[i].material.map = texturesStorm[i];
+        sphereMeshes[i].material.alphaMap = alphaMaps[j];
+        ambientLight.color.setHex( 0xffffff );
+        ambientLight.intensity = 0.05;
+        hemiLight.color.setHex( 0xafafaf );
+        hemiLight.groundColor.setHex( 0x000000 );
+        hemiLight.intensity = 0.7;
+        dirLight.color.setHex( 0xffffff );
+        dirLight.intensity = 0.05;
+        dirLight.position.set( 0, 1, 0 );
+      }
+    }
+    function changeToSunset() {
+      for (let i = sphereMeshesCount-1 ; i > 0 ; i--) {
+        sphereMeshes[i].material.map = texturesSunset[i];
+        sphereMeshes[i].material.alphaMap = alphaMaps[i];
+        ambientLight.color.setHex( 0xff0000 );
+        ambientLight.intensity = 0.15;
+        hemiLight.color.setHex( 0xe2687b );
+        hemiLight.groundColor.setHex( 0x624e99 );
+        hemiLight.intensity = 0.8;
+        dirLight.color.setHex( 0xffc27c );
+        dirLight.intensity = 1;
+        dirLight.position.set( 1, 0.3, -1 );
+      }
+    }
+    function changeToNight() {
+      for (let i = sphereMeshesCount-1 ; i > 0 ; i--) {
+        sphereMeshes[i].material.map = texturesNight[i];
+        sphereMeshes[i].material.alphaMap = alphaMaps[i];
+        ambientLight.color.setHex( 0xffffff );
+        ambientLight.intensity = 0.1;
+        hemiLight.color.setHex( 0x313a4f );
+        hemiLight.groundColor.setHex( 0x1f202f );
+        hemiLight.intensity = 1;
+        dirLight.color.setHex( 0x9ee2e0 );
+        dirLight.intensity = 0.3;
+        dirLight.position.set( -1, 1, -1 );
+      }
+    }
 
-    // sunset
-    // for (let i = sphereMeshesCount-1 ; i > 0 ; i--) {
-    //   sphereGeometries[i] = new THREE.SphereBufferGeometry( s, 128, 64 );
-    //   indxToSclRatio = i*0.33 + 1;
-    //   sphereGeometries[i].scale( -indxToSclRatio, indxToSclRatio, indxToSclRatio );
-    //   texturesSunset[i] = textureLoader.load( 'assets/img/sunset_' + i + '.jpg' );
-    //   alphaMaps[i] = textureLoader.load( 'assets/img/alphaMap_' + i + '.png' );
-    //   sphereMaterials[i] = new THREE.MeshBasicMaterial({
-    //     transparent: true,
-    //     // premultipliedAlpha: true,
-    //     side: THREE.FrontSide,
-    //     opacity: 1,
-    //     map: texturesSunset[i],
-    //     alphaMap: alphaMaps[i]
-    //   });
-    //   sphereMaterials[i].depthWrite = false;
-    //   sphereMeshes[i] = new THREE.Mesh( sphereGeometries[i], sphereMaterials[i] );
-    //   scene.add( sphereMeshes[i] );
-    // }
+    document.body.onclick = function() {
+      switch(timeOfTheDay[time]) {
+        case 'morning':
+          changeToNoon();
+          time ++;
+          break;
+        case 'noon':
+          changeToSunset();
+          time ++;
+          break;
+        // case 'storm':
+        //   changeToStorm();
+        //   time ++;
+        //   break;
+        case 'sunset':
+          changeToNight();
+          time ++;
+          break;
+        case 'night':
+          changeToMorning();
+          time ++;
+          break;
+      }
+      if (time >= timeOfTheDay.length) {time = 0;}
+      console.log(time);
+    };
 
-    //night
-    // for (let i = sphereMeshesCount-1 ; i > 0 ; i--) {
-    //   sphereGeometries[i] = new THREE.SphereBufferGeometry( s, 128, 64 );
-    //   indxToSclRatio = i*0.33 + 1;
-    //   sphereGeometries[i].scale( -indxToSclRatio, indxToSclRatio, indxToSclRatio );
-    //   texturesNight[i] = textureLoader.load( 'assets/img/night_' + i + '.jpg' );
-    //   alphaMaps[i] = textureLoader.load( 'assets/img/alphaMap_' + i + '.png' );
-    //   sphereMaterials[i] = new THREE.MeshBasicMaterial({
-    //     transparent: true,
-    //     // premultipliedAlpha: true,
-    //     side: THREE.FrontSide,
-    //     opacity: 1,
-    //     map: texturesNight[i],
-    //     alphaMap: alphaMaps[i]
-    //   });
-    //   sphereMaterials[i].depthWrite = false;
-    //   sphereMeshes[i] = new THREE.Mesh( sphereGeometries[i], sphereMaterials[i] );
-    //   scene.add( sphereMeshes[i] );
-    // }
+    document.body.addEventListener('touchstart', function() {
+      for (let i = sphereMeshesCount-1 ; i > 0 ; i--) {
+        sphereMeshes[i].material.map = texturesNight[i];
+        sphereMeshes[i].material.alphaMap = alphaMaps[i];
+      }
+      console.log('executed');
+    }, false);
+
+
+
+
+
+
+
 
 
     // geometry = new THREE.SphereBufferGeometry( 500, 64, 32 );
@@ -344,33 +400,7 @@ window.addEventListener('load', function() {
 
 
     //--------------
-    // LIGHTS
-
-    //morning
-    ambientLight = new THREE.AmbientLight( 0xffffff, 0.15 );
-    hemiLight = new THREE.HemisphereLight( 0x8f5ade, 0x1c2b52, 0.85 );
-    dirLight = new THREE.DirectionalLight( 0xf7f1cd, 0.7 );
-    dirLight.position.set( -1, 0.2, 1 );
-    // //noon
-    // ambientLight = new THREE.AmbientLight( 0xffffff, 0.1 );
-    // hemiLight = new THREE.HemisphereLight( 0x6bb7f7, 0x426686, 0.8 );
-    // dirLight = new THREE.DirectionalLight( 0xffffff, 1.1 );
-    // dirLight.position.set( 0, 1, 0 );
-    // //storm
-    // ambientLight = new THREE.AmbientLight( 0xffffff, 0.05 );
-    // hemiLight = new THREE.HemisphereLight( 0xafafaf, 0x000000, 0.7 );
-    // dirLight = new THREE.DirectionalLight( 0xffffff, 0.05 ); // DIRECTIONNAL LIGHT CAN BE REMOVED FOR STORM (would be better)
-    // dirLight.position.set( 0, 1, 0 );
-    //sunset
-    // ambientLight = new THREE.AmbientLight( 0xffffff, 0.15 );
-    // hemiLight = new THREE.HemisphereLight( 0xe2687b, 0x624e99, 0.8 );
-    // dirLight = new THREE.DirectionalLight( 0xffc27c, 1 );
-    // dirLight.position.set( 1, 0.3, -1 );
-    //night
-    // ambientLight = new THREE.AmbientLight( 0xffffff, 0.01 );
-    // hemiLight = new THREE.HemisphereLight( 0x313a4f, 0x1f202f, 1 );
-    // dirLight = new THREE.DirectionalLight( 0x9ee2e0, 0.5 );
-    // dirLight.position.set( -1, 1, -1 );
+    // DIRECTIONAL LIGHT PROPERTIES
 
     dirLight.castShadow = true;
 
@@ -396,9 +426,6 @@ window.addEventListener('load', function() {
     // shadowCameraHelper.visible = true;
     // scene.add( shadowCameraHelper );
 
-
-
-
     //--------------
     // RENDERER
 
@@ -411,7 +438,6 @@ window.addEventListener('load', function() {
 
     renderer.shadowMap.enabled = true;
     // renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-
 
     //--------------
     // CAMERA
@@ -608,12 +634,17 @@ window.addEventListener('load', function() {
         t++;
         // shadowCameraHelper.update();
         renderer.render(scene, camera);
-
         stats.end();
-
-
     };
 
     window.requestAnimationFrame( animate );
+
+    // document.body.onclick = function() {
+    //   // DO STUFF
+    // };
+    //
+    // document.body.addEventListener('touchstart', function() {
+    //   // DO STUFF
+    // }, false);
 
     }, false);
