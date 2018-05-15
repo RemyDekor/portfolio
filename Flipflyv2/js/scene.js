@@ -272,7 +272,7 @@ window.addEventListener('load', function() {
           break;
       }
       if (time >= timeOfTheDay.length) {time = 0;}
-      console.log(time);
+      // console.log(time);
     };
 
     document.body.addEventListener('touchstart', function() {
@@ -280,16 +280,8 @@ window.addEventListener('load', function() {
         sphereMeshes[i].material.map = texturesNight[i];
         sphereMeshes[i].material.alphaMap = alphaMaps[i];
       }
-      console.log('executed');
+      // console.log('executed');
     }, false);
-
-
-
-
-
-
-
-
 
     // geometry = new THREE.SphereBufferGeometry( 500, 64, 32 );
     // geometry.scale( - 0.25, 0.25, 0.25 );
@@ -313,8 +305,6 @@ window.addEventListener('load', function() {
 
     // let meshNuages = new THREE.Mesh( geometry, materialNuages );
     // scene.add( meshNuages );
-
-
 
     //--------------
     // PARTICLES
@@ -397,7 +387,6 @@ window.addEventListener('load', function() {
         rainParticlesMaterial);
     // add it to the scene
     // scene.add( rainParticleSystem );
-
 
     //--------------
     // DIRECTIONAL LIGHT PROPERTIES
