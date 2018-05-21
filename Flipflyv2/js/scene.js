@@ -252,36 +252,32 @@ window.addEventListener('load', function() {
       switch(timeOfTheDay[time]) {
         case 'morning':
           changeToNoon();
-          time ++;
           break;
         case 'noon':
           changeToSunset();
-          time ++;
           break;
         // case 'storm':
         //   changeToStorm();
-        //   time ++;
         //   break;
         case 'sunset':
           changeToNight();
-          time ++;
           break;
         case 'night':
           changeToMorning();
-          time ++;
           break;
       }
+      time ++;
       if (time >= timeOfTheDay.length) {time = 0;}
       // console.log(time);
     };
 
-    document.body.addEventListener('touchstart', function() {
-      for (let i = sphereMeshesCount-1 ; i > 0 ; i--) {
-        sphereMeshes[i].material.map = texturesNight[i];
-        sphereMeshes[i].material.alphaMap = alphaMaps[i];
-      }
-      // console.log('executed');
-    }, false);
+    // document.body.addEventListener('touchstart', function() {
+    //   for (let i = sphereMeshesCount-1 ; i > 0 ; i--) {
+    //     sphereMeshes[i].material.map = texturesNight[i];
+    //     sphereMeshes[i].material.alphaMap = alphaMaps[i];
+    //   }
+    //   // console.log('executed');
+    // }, false);
 
     // geometry = new THREE.SphereBufferGeometry( 500, 64, 32 );
     // geometry.scale( - 0.25, 0.25, 0.25 );
@@ -587,9 +583,9 @@ window.addEventListener('load', function() {
             if (skyParticles.vertices[i].distanceTo(planeGroup.position) < s) {
               skyParticles.vertices[i].add(particlesDirection);
             } else {
-              skyParticles.vertices[i].x = -particlesDirection.x*20 + Math.random() * s - s*0.5;
-              skyParticles.vertices[i].y = -particlesDirection.y*20 + Math.random() * s - s*0.5;
-              skyParticles.vertices[i].z = -particlesDirection.z*20 + Math.random() * s - s*0.5;
+              skyParticles.vertices[i].x = -particlesDirection.x*25 + Math.random() * s - s*0.5;
+              skyParticles.vertices[i].y = -particlesDirection.y*25 + Math.random() * s - s*0.5;
+              skyParticles.vertices[i].z = -particlesDirection.z*25 + Math.random() * s - s*0.5;
             }
           }
           skyParticles.verticesNeedUpdate  = true;
