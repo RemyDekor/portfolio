@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Your page title here :)</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Kanit:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Source+Code+Pro:200,300,400,500,600,700,900&subset=latin-ext" rel="stylesheet">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- JS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+
+
+
+
+
+</head>
+<!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="ppp">
+  <div class="ppp-container" id="ngipage">
+    <div id="scanner">
+      <h2>NGI</h2>
+      <h4>Conception d'un logotype</h4>
+      <p>Conception du logotype du&nbsp;groupe&nbsp;<a href="http://www.ngigroup.fr/" target="_blank">NGI</a>,
+         <br class="hiddenOnMobile" />issu&nbsp;de la&nbsp;fusion de&nbsp;Numerix et&nbsp;Global&nbsp;Imaging.</br>
+        Travail au sein de l'agence&nbsp;Memory, chargée&nbsp;de&nbsp;créer
+        l'<a href="http://agencememory.com/portfolio/ngi-02/" target="_blank">identité&nbsp;graphique</a>.</p>
+    </div>
+
+    <div class="img-container" style="background-color:#4ac1ec;">
+      <img src="images/ngi/ngi_logo_square.png" />
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // Create cross browser requestAnimationFrame method:
+  window.requestAnimationFrame = window.requestAnimationFrame
+   || window.mozRequestAnimationFrame
+   || window.webkitRequestAnimationFrame
+   || window.msRequestAnimationFrame
+   || function(f){setTimeout(f, 1000/60)};
+
+  var scannerBg = document.getElementById('scanner');
+
+  var scrollheight = document.body.scrollHeight; // height of entire document
+  var windowheight = window.innerHeight; // height of browser window
+
+  function parallaxscanner(){
+   var scrolltop = window.pageYOffset // get number of pixels document has scrolled vertically
+   var scrollamount = (scrolltop / (scrollheight-windowheight)) * 100 // get amount scrolled (in %)
+   scannerBg.style.backgroundPosition = '50% ' + Math.min(scrolltop*100/80, 100) + '%' // move bubble1 at 20% of scroll rate
+   console.log(scrolltop);
+  }
+
+
+  window.addEventListener('scroll', function(){ // on page scroll
+   requestAnimationFrame(parallaxscanner); // call parallaxscanner() on next available screen paint
+  }, false);
+
+
+  window.addEventListener('resize', function(){ // on window resize
+   var scrolltop = window.pageYOffset // get number of pixels document has scrolled vertically
+   var scrollamount = (scrolltop / (scrollheight-windowheight)) * 100 // get amount scrolled (in %)
+  }, false);
+</script>
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</html>
