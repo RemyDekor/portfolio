@@ -4,7 +4,7 @@ html {
 }
 
 body {
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(237, 237, 237);
     font-family: "Slabo 27px", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -55,7 +55,18 @@ h6 {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: rgb(195, 155, 0);
+    background:
+      radial-gradient(ellipse at 0% 0%,
+        rgba(250, 200, 20, 0.3) 25%,
+        rgba(250, 200, 20, 0.0) 50%),
+      radial-gradient(ellipse at 100% 100%,
+        rgba(160, 100, 0, 0.6) 25%,
+        rgba(160, 100, 0, 0.0) 50%),
+      linear-gradient(0.5turn,
+        rgba(200, 150, 20, 1.0) 0%,
+        rgba(200, 150, 20, 0.9) 50%,
+        rgba(000, 000, 00, 0.2) 100%),
+      rgb(200, 150, 20);
     display: inline-block;
     margin: 10px 10px 4px 10px;
 }
@@ -92,7 +103,7 @@ h6 {
     color: #222;
 }
 
-.categories div p, .categories div p::selection, .categories div p:active {
+.categories div p, .categories div p:active, .categories div p:focus, .categories div p:focus {
     /*background-color: #F0F;*/
     transition: 0.35s;
     margin: 0 auto;
@@ -100,15 +111,14 @@ h6 {
     color: #222;
 }
 
-.categories div p:hover {
-    transition: 0.1s;
-    color: rgba(225, 225, 225, 1);
-
-    cursor: pointer;
-}
+  .categories div p:hover {
+      transition: 0.1s;
+      color: rgba(220, 170, 30, 1);
+      cursor: pointer;
+  }
 
 .activ {
-    text-shadow: 0px 0px 9px #000, 0px 2px 4px #000 !important;
+    text-shadow: 0px 0px 15px rgba(220, 170, 30, 1), 0px 1px 8px rgba(220, 170, 30, 1) !important;
     color: #fff !important;
     /*animation: selectedmenu;
   keyframes: ;*/
@@ -118,12 +128,28 @@ h6 {
     margin: 10px 3.0% 20px 3.0%;
     display: inline-block;
     transition: .3s;
-    width: 132px;
-    height: 132px;
-    background-color: rgba(198, 150, 20, 1);
+    width: 140px;
+    height: 140px;
+    background:
+      radial-gradient(ellipse at 0% 0%,
+        rgba(250, 200, 20, 0.4) 25%,
+        rgba(250, 200, 20, 0.0) 50%),
+      radial-gradient(ellipse at 50% 50%,
+        rgba(250, 200, 20, 0.0) 65%,
+        rgba(100, 0, 0, 0.1) 70%),
+      radial-gradient(ellipse at 100% 100%,
+        rgba(160, 100, 0, 0.7) 25%,
+        rgba(160, 100, 0, 0.0) 50%),
+      linear-gradient(0.5turn,
+        rgba(200, 150, 20, 1.0) 0%,
+        rgba(200, 150, 20, 0.9) 50%,
+        rgba(000, 000, 00, 0.2) 100%),
+      rgb(200, 150, 20);
     border-radius: 100%;
     outline: none;
     -webkit-tap-highlight-color: transparent;
+
+    cursor: pointer;
 }
 
 .projectButton:active, .thumbnail:focus, .thumbnail.active {
@@ -137,8 +163,8 @@ h6 {
 .projectButton:hover .thumbnail {
     opacity: 1;
     transition: .3s;
-    transform: scale(1.25);
-    background-size: 130px 130px;
+    transform: scale(1.3);
+    box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.4);
     background-position: center;
 }
 
@@ -149,21 +175,23 @@ h6 {
 .thumbnail {
     display: inline-block;
     transition: .8s;
-    width: 115px;
-    height: 115px;
+    width: 84%;
+    height: 84%;
     border-radius: 100%;
-    box-shadow: 0 0 10px -5px rgba(0, 0, 0, 0.2);
-    background-size: 115px 115px;
+    box-shadow: 0 0 12px -2px rgba(0, 0, 0, 0.5) inset;
+    background-size: 100% 100%;
     background-position: center;
     /*background-color: rgb(198,150,20);*/
     position: relative;
-    top: 8.5px;
+    top: 8%;
 }
 
 .nb {
     position: relative;
+    height: 100%;
+    width: 100%;
     top: 0;
-    opacity: 0.97;
+    opacity: 0.9;
     transition: .2s;
 }
 
@@ -172,12 +200,24 @@ h6 {
 }
 
 .hidden {
-    opacity: 0;
+    opacity: 0.2;
     transition: .25s;
+    box-shadow: none;
 }
 
 .hidden.nb {
-    opacity: 0.87;
+    opacity: 0.8;
+    transition: .25s;
+    background-image: none !important;
+    background: radial-gradient(ellipse at 50%,
+      rgba(200, 150, 20, 0) 0%,
+      rgba(200, 150, 20, 1.0) 80%) !important;
+    background-size: 100% 100%;
+    background-position: center;
+    // TODO: Mettre un dégardé au lieu dun fond uni noir
+}
+.activ.nb {
+    opacity: 0.45;
     transition: .25s;
 }
 
