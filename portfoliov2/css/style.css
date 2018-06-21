@@ -23,7 +23,12 @@ a {
 }
 @media (min-width: 522px) {
 	.wrapper {
-		grid-template-columns: 5fr 124px 47px 180px 47px 124px 5fr;
+		grid-template-columns:
+		minmax(14px, 5fr)
+		minmax(110px, 124px)
+		47px 180px 47px
+		minmax(110px, 124px)
+		minmax(14px, 5fr);
 	}
 }
 
