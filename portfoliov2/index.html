@@ -27,7 +27,7 @@
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
+  <!-- <link rel="stylesheet" href="css/skeleton.css"> -->
   <link rel="stylesheet" href="css/magnific-popup.css">
   <link rel="stylesheet" href="css/style.css">
 
@@ -42,9 +42,6 @@
   <!-- <script type="text/javascript" src="libraries/jquery.magnific-popup.min.js"></script> -->
   <script type="text/javascript" src="libraries/jquery.magnific-popup.js"></script>
   <script type="text/javascript" src="libraries/jquery.easing.1.3.js"></script>
-
-  <!-- History.js: https://github.com/browserstate/history.js -->
-  <script type="text/javascript" src="libraries/jquery.history.js"></script>
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -67,18 +64,14 @@
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
+  <div class="wrapper">
 
     <div id="logo">
       <div></div>
     </div>
-
-
-
-    <!-- <p style="position: relative; top: -275px;">...Site en travaux...</p> -->
     <a href="#logo" id="rectListener"></a>
 
-    <!-- <div class="row languages">
+    <!-- <div class="languages">
       <div class="french">
       </div>
       <span>/</span>
@@ -89,7 +82,7 @@
 
     <h6>Rémy&nbsp;Bonté-Duval</h6>
 
-    <div class="row contacts">
+    <div class="contacts">
       <a  href="images/remybonteduval_cv2018.pdf" target="_blank" id='CV'>CV</a>
       <a href="https://twitter.com/RemyDekor" target="_blank" id='twitter'>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 1 30 20" style="overflow:visible;"><defs><style>.a{fill:#efefef;}</style></defs><title>@RemyDekor</title><path class="a" d="M12.62,23H11.48l-0.67-.06a9.41,9.41,0,0,1-1.15-.19,10.81,10.81,0,0,1-3.4-1.41l0,0a7.89,7.89,0,0,0,2,0,7.59,7.59,0,0,0,1.92-.54,7.43,7.43,0,0,0,1.71-1A3.85,3.85,0,0,1,8.29,17,3.77,3.77,0,0,0,10,17a3.82,3.82,0,0,1-2.2-1.35,3.77,3.77,0,0,1-.85-2.45,3.86,3.86,0,0,0,1.73.48,3.83,3.83,0,0,1-1.19-5.1A10.9,10.9,0,0,0,11,11.38a10.78,10.78,0,0,0,4.36,1.16,0.15,0.15,0,0,0,0,0c0-.19-0.06-0.37-0.08-0.56a3.48,3.48,0,0,1,.06-1,3.83,3.83,0,0,1,3.41-3.06l0.18,0h0.38c0.2,0,.4,0,0.59.08A3.72,3.72,0,0,1,21.8,9,0.21,0.21,0,0,0,22,9a7.78,7.78,0,0,0,2.24-.87l0.05,0a3.87,3.87,0,0,1-1.67,2.11,7.63,7.63,0,0,0,2.16-.58v0a7.51,7.51,0,0,1-1.24,1.42c-0.2.17-.4,0.33-0.61,0.49a0.08,0.08,0,0,0,0,.06,11.06,11.06,0,0,1,0,1.46q-0.05.51-.15,1a11.35,11.35,0,0,1-2.83,5.57,10.3,10.3,0,0,1-2.83,2.13,10.41,10.41,0,0,1-2.46.88,10.8,10.8,0,0,1-1.11.19L12.84,23l-0.22,0"/></svg>
@@ -99,21 +92,21 @@
       </a>
     </div>
 
-    <div class="row categories">
-      <div>
+    <div class="categories">
+      <div class="categoriesName">
         <p class="illus">illustration</p>
       </div>
-      <span>/</span>
-      <div>
-        <p class="design">design graphique</p>
+      <span class="categoriesSeparator"></span>
+      <div class="categoriesName">
+        <p class="design">graphic&nbsp;design</p>
       </div>
-      <span>/</span>
-      <div>
-        <p class="code">coding</p>
+      <span class="categoriesSeparator"></span>
+      <div class="categoriesName">
+        <p class="code"> creative&nbsp;code</p>
       </div>
     </div>
 
-    <div class="row works">
+    <div class="works">
       <a class="projectButton"><div class="thumbnail design" href="subutex.html" id="subutex"><div class="thumbnail nb"></div></div></a>
       <a class="projectButton"><div class="thumbnail design" href="ngi.html" id="ngi"><div class="thumbnail nb"></div></div></a>
       <a class="projectButton desktop" id="thisdesktop" href="#logo"><div class="thumbnail this code"><div class="thumbnail this nb"></div></div></a>
@@ -123,12 +116,8 @@
       <a class="projectButton"><div class="thumbnail design" href="os.html" id="os"><div class="thumbnail nb"></div></div></a>
       <a class="projectButton"><div class="thumbnail illus design" href="perrault.html" id="perrault"><div class="thumbnail nb"></div></div></a>
       <a class="projectButton"><div class="thumbnail design" href="dm.html" id="dm"><div class="thumbnail nb"></div></div></a>
-      <!-- <div class="thumbnail design code"href="ritz.html" id="ritz"></div> -->
       <a class="projectButton"><div class="thumbnail design" href="echolocal.html" id="echolocal"><div class="thumbnail nb"></div></div></a>
       <a class="projectButton tablet" id="thistablet" href="#logo"><div class="thumbnail this code"><div class="thumbnail this nb"></div></div></a>
-
-
-
     </div>
 
   </div>
@@ -137,7 +126,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script type="text/javascript" src="js/script.js"></script>
   <script type="text/javascript" src="js/sketch.js" ></script>
-  <script type="text/javascript" src="js/magnific-popup.history.js"></script>
+  <!-- <script type="text/javascript" src="js/magnific-popup.history.js"></script> -->
   <script type="text/javascript" src="js/magnific-popup.open-item.js"></script>
 
 

@@ -13,18 +13,8 @@ a {
 }
 
 .wrapper {
-	margin: 0 auto;
 	text-align: center;
 	max-width: 1100px;
-	display: grid;
-	grid-template-rows: auto;
-
-	grid-template-columns: 0 1fr 47px 180px 47px 1fr 0;
-}
-@media (min-width: 522px) {
-	.wrapper {
-		grid-template-columns: 5fr 124px 47px 180px 47px 124px 5fr;
-	}
 }
 
 #rectListener {
@@ -45,14 +35,6 @@ a {
 	height: 298px;
 	overflow: hidden;
 	background-color: rgb(240, 240, 240);
-
-	grid-column: 3 / 6;
-}
-@media (min-width: 522px) {
-	#logo {
-		width: 275px;
-		height: 298px;
-	}
 }
 
 #logo div {
@@ -61,19 +43,12 @@ a {
 
 h6 {
 	font-family: 'Kanit', sans-serif;
-	font-size: 1.24em;
+	font-size: 1.33em;
 	font-weight: 500;
 	letter-spacing: 0.3px;
-	margin-bottom: -0.2em;
-	margin-top: 0;
+	margin-bottom: -0.2rem;
 	position: relative;
 	top: -6px;
-
-	grid-column: 4 / 5;
-}
-
-.contacts {
-	grid-column: 4 / 5;
 }
 
 .contacts a {
@@ -106,59 +81,37 @@ h6 {
 
 .categories {
 	font-family: 'Kanit', sans-serif;
-	font-size: 1.1em;
+	font-size: 1.2em;
 	font-weight: 400;
-
-  line-height: 1.4em;
-	margin: 15px auto 13px;
-
-	display: grid;
-	grid-column: 2 / 7;
-	grid-template: 1fr 1fr 1fr 1fr 1fr / auto;
+	margin-top: -5px;
 }
-.categoriesSeparator::before {
-	position: relative;
-	top: -2px;
-	line-height: 0.1em;
-	font-size: 2.4em;
+
+.categories span {
+	font-size: 1.85em;
 	font-weight: 300;
 	vertical-align: middle;
-	content: '-';
-}
-@media (min-width: 522px) {
-	.categories {
-		margin: 15px 0;
-	  line-height: 1.9em;
-		font-size: 1.2em;
-		grid-template: auto / 8fr 1fr 10fr 1fr 8fr;
-	}
-	.categoriesSeparator::before {
-		font-size: 1.85em;
-		content: '|';
-	}
 }
 
-.categoriesName {
+.categories div {
 	/*background-color: #F00;*/
 	min-width: 10%;
 	height: auto;
 	display: inline-block;
-	/* margin: 25px auto; */
+	margin: 25px auto;
 	padding: 0 2.1%;
 	color: #222;
-	z-index: 999;
 }
 
-.categoriesName p, .categoriesName p:active, .categoriesName p:focus, .categoriesName p:focus {
+.categories div p, .categories div p:active, .categories div p:focus, .categories div p:focus {
 	/*background-color: #F0F;*/
-	transition: color 0.35s;
+	transition: 0.35s;
 	margin: 0 auto;
 	cursor: pointer;
 	color: #222;
 }
 
-.categoriesName p:hover {
-	transition: color 0.1s;
+.categories div p:hover {
+	transition: 0.1s;
 	color: rgba(220, 170, 30, 1);
 	cursor: pointer;
 }
@@ -170,19 +123,7 @@ h6 {
   keyframes: ;*/
 }
 
-.works {
-	grid-column: 1 / -1;
-
-	padding: 0 2.7vw;
-
-	/* display: grid;
-	grid-template-columns: repeat( auto-fill, 140px);
-	grid-template-rows: repeat( auto, 140px);
-	grid-gap: 4vw; */
-}
-
 .projectButton {
-	margin: 0;
 	margin: 10px 3.0% 20px 3.0%;
 	display: inline-block;
 	transition: .3s;
@@ -336,6 +277,10 @@ h6 {
 #ink .nb {
 	background-image: url("../images/thumb_ink_nb.png");
 }
+
+
+/*#ritz {background-image: url("../images/thumb_ritz.png");}
+#ritz .nb {background-image: url("../images/thumb_ritz_nb.png");}*/
 
 #lh {
 	background-image: url("../images/thumb_lh.png");
@@ -511,6 +456,16 @@ margin: 0 -40% 0 -60%;
 	}
 	.ppp p {
 		padding: 0px 20px;
+	}
+	.categories div {
+		margin: 0px auto;
+		padding: 0 2%;
+	}
+	/**/
+	.categories {
+		margin-top: 15px;
+		margin-bottom: 15px;
+		line-height: 1.9em;
 	}
 	/**/
 	.dmpage .img-container {
