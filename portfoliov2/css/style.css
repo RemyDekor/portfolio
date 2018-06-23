@@ -81,7 +81,7 @@ h6 {
 	grid-column: 4 / 5;
 }
 
-.contacts a {
+.contactIcon {
 	width: 30px;
 	height: 30px;
 	border-radius: 50%;
@@ -97,7 +97,7 @@ h6 {
 	rgba(000, 000, 00, 0.2) 100%),
 	rgb(200, 150, 20);
 	display: inline-block;
-	margin: 10px 10px 4px 10px;
+	margin: 1.5vh 10px 0.5vh 10px;
 }
 
 #CV {
@@ -178,12 +178,13 @@ h6 {
 .works {
 	grid-column: 1 / -1;
 
-	padding: 0 2.7vw;
+	padding: 0 2.5vw;
 
 	/* display: grid;
 	grid-template-columns: repeat( auto-fill, 140px);
 	grid-template-rows: repeat( auto, 140px);
-	grid-gap: 4vw; */
+	grid-gap: 3vw;
+	justify-content: center*/
 }
 
 .projectButton {
