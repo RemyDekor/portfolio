@@ -188,7 +188,7 @@ h6 {
 }
 
 .projectButton {
-	margin: 1.6vw;
+	margin: 2%;
 	min-width: 8px;
 	min-height: 8px;
 	width: 45vw;
@@ -231,6 +231,9 @@ h6 {
 		max-width: 154px;
 		max-height: 154px;
 	}
+}
+@media (min-width: 1920px) {
+	.projectButton { margin: 1.2vw; }
 }
 
 .projectButton:active, .thumbnail:focus, .thumbnail.active {
@@ -561,7 +564,7 @@ margin: 0 -40% 0 -60%;
 	}
 }
 
-@media (max-width: 657px) {
+@media (max-width: 680px) {
 	#thistablet {
 		display: inline-flex;
 	}
@@ -573,7 +576,7 @@ margin: 0 -40% 0 -60%;
   }*/
 }
 
-@media (min-width: 658px) {
+@media (min-width: 681px) {
 	.hiddenOnDesktop {
 		display: none;
 	}
