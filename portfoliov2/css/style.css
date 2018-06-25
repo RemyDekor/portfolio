@@ -1,3 +1,9 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
 html {
 	/*background-color: rgb(57, 57, 57);  IS USED TO POORLY FIX THE SCROLLING + POPUP BG ISSUE ON MOBILE*/
 	overflow: visible;
@@ -21,13 +27,13 @@ a {
 
 	grid-template-columns: 0 1fr 47px 180px 47px 1fr 0;
 }
-@media (min-width: 522px) {
+@media (min-width: 480px) {
 	.wrapper {
 		grid-template-columns:
 		minmax(14px, 5fr)
-		minmax(110px, 124px)
+		minmax(89px, 124px)
 		47px 180px 47px
-		minmax(110px, 124px)
+		minmax(89px, 124px)
 		minmax(14px, 5fr);
 	}
 }
@@ -53,12 +59,12 @@ a {
 
 	grid-column: 3 / 6;
 }
-@media (min-width: 522px) {
+/* @media (min-width: 480px) {
 	#logo {
 		width: 275px;
 		height: 298px;
 	}
-}
+} */
 
 #logo div {
 	border-radius: 50%;
@@ -130,7 +136,7 @@ h6 {
 	vertical-align: middle;
 	content: '-';
 }
-@media (min-width: 522px) {
+@media (min-width: 480px) {
 	.categories {
 		margin: 15px 0;
 	  line-height: 1.9em;
@@ -178,7 +184,7 @@ h6 {
 .works {
 	grid-column: 1 / -1;
 
-	padding: 0 2.5vw;
+	padding: 0 1vw;
 
 	/* display: grid;
 	grid-template-columns: repeat( auto-fill, 140px);
@@ -188,12 +194,15 @@ h6 {
 }
 
 .projectButton {
-	margin: 0;
-	margin: 10px 3.0% 20px 3.0%;
+	/* margin: 1.6vw;
+	min-width: 140px;
+	min-height: 140px;
+	width: 10.5vw;
+	height: 10.5vw;
+	max-width: 154px;
+	max-height: 154px; */
 	display: inline-block;
 	transition: .3s;
-	width: 140px;
-	height: 140px;
 	background: radial-gradient(ellipse at 0% 0%,
 	rgba(250, 200, 20, 0.4) 25%,
 	rgba(250, 200, 20, 0.0) 50%),
@@ -213,6 +222,17 @@ h6 {
 	-webkit-tap-highlight-color: transparent;
 
 	cursor: pointer;
+}
+@media (min-width: 480px) {
+	.projectButton {
+		margin: 1.6vw;
+		min-width: 140px;
+		min-height: 140px;
+		width: 10.5vw;
+		height: 10.5vw;
+		max-width: 154px;
+		max-height: 154px;
+	}
 }
 
 .projectButton:active, .thumbnail:focus, .thumbnail.active {
