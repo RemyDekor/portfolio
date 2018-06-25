@@ -188,7 +188,7 @@ h6 {
 }
 
 .projectButton {
-	margin: 2%;
+	margin: 1.6vw;
 	min-width: 8px;
 	min-height: 8px;
 	width: 45vw;
@@ -223,7 +223,7 @@ h6 {
 }
 @media (min-width: 480px) {
 	.projectButton {
-		margin: 1.6vw;
+		margin: 2%;
 		min-width: 140px;
 		min-height: 140px;
 		width: 14vw;
