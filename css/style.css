@@ -550,7 +550,7 @@ margin: 0 -40% 0 -60%;
 	}
 }
 
-@media (max-width: 480px) {
+@media (max-width: 657px) {
 	#thistablet {
 		display: inline-flex;
 	}
@@ -562,7 +562,7 @@ margin: 0 -40% 0 -60%;
   }*/
 }
 
-@media (min-width: 480px) {
+@media (min-width: 658px) {
 	.hiddenOnDesktop {
 		display: none;
 	}
