@@ -1,5 +1,10 @@
 (() => { 	// simple arrow function (from top to bottom)
 					//to avoid working in the global scope
+
+
+	// This function "clean" avoids having empty DOM nodes "#text"
+	// (caused by tabs and returns in html file),
+	// and thus avoids selectable empty strings in the page
 	function clean(node) {
 		for(var n = 0; n < node.childNodes.length; n++) {
 			var child = node.childNodes[n];
@@ -14,9 +19,6 @@
 			}
 		}
 	}
-	// This function "clean" avoids having empty DOM nodes "#text"
-	// (caused by tabs and returns in html file),
-	// and thus avoids selectable empty strings in the page
 	clean(document.body);
 
 
@@ -85,7 +87,12 @@
 			fixedContentPos: true,
 
 			callbacks: {
+				resize: function() {
+					console.log('Popup resized');
+					// resize event triggers only when height is changed or layout forced
+				},
 				open: function() {
+					console.log('Popup is opened');
 					location.href = location.href.split('#')[0] + "#";
 				},
 				close: function() {

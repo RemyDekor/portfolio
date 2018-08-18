@@ -1,4 +1,3 @@
-
 var logo = [];
 var rdmLogo;
 var lastRdmLogo = [];
@@ -154,7 +153,7 @@ function roll() {
 
 
 
-    rectListener.style("top", String(85+y)+"px");
+    rectListener.style("top", String(82+y)+"px");
 
     rotateX(Math.easeInCubic(t,0,6,160)*rdmX);
     rotateY(Math.easeInCubic(t,0,6,160)*rdmY);

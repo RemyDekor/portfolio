@@ -27,5 +27,8 @@
     "gfx",
     "generative"
   ],
-  "homepage": "https://github.com/RemyDekor/portfolio#readme"
+  "homepage": "https://github.com/RemyDekor/portfolio#readme",
+  "devDependencies": {
+    "eslint-config-p5js": "^1.0.1"
+  }
 }

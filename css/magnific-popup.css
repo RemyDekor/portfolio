@@ -24,12 +24,12 @@
 
 .mfp-container {
   text-align: center;
-  position: absolute;
+  /* position: absolute; */
   width: 100%;
   height: 100%;
   left: 0;
   top: 0;
-  padding: 0 8px;
+  /* padding: 0 8px; */
   box-sizing: border-box; }
 
 .mfp-container:before {
@@ -38,13 +38,14 @@
   height: 100%;
   vertical-align: middle; }
 
-.mfp-align-top .mfp-container:before {
+.mfp-alignmfp-top .mfp-container:before {
   display: none; }
 
 .mfp-content {
-  position: relative;
-  display: inline-block;
+  /* position: relative; */
+  display: inline-flex;
   vertical-align: middle;
+  height: 100%;
   margin: 0 auto;
   text-align: left;
   z-index: 1045;
@@ -125,7 +126,7 @@ button.mfp-close,
 button.mfp-arrow {
   overflow: visible;
   cursor: pointer;
-  background: transparent;
+  background: rgba(0,0,0,0.4);
   border: 0;
   -webkit-appearance: none;
   display: block;
@@ -140,14 +141,15 @@ button::-moz-focus-inner {
   border: 0; }
 
 .mfp-close {
-  width: 44px;
-  height: 44px;
-  line-height: 44px;
-  position: absolute;
-  right: 0;
-  top: 0;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  position: fixed;
+  right: 5px;
+  top: 5px;
   text-decoration: none;
   text-align: center;
+  border-radius: 50%;
   opacity: 0.65;
   padding: 0 0 18px 10px;
   color: #FFF;
@@ -161,7 +163,7 @@ button::-moz-focus-inner {
     top: 1px; }
 
 .mfp-close-btn-in .mfp-close {
-  color: #333; }
+  color: #FFF; }
 
 .mfp-image-holder .mfp-close,
 .mfp-iframe-holder .mfp-close {
@@ -363,6 +365,6 @@ img.mfp-img {
   .mfp-arrow-right {
     -webkit-transform-origin: 100%;
     transform-origin: 100%; }
-  .mfp-container {
+  /* .mfp-container {
     padding-left: 6px;
-    padding-right: 6px; } }
+    padding-right: 6px; } } */

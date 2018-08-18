@@ -67,7 +67,7 @@
   <div class="wrapper">
 
     <div id="logo">
-      <div></div>
+      <!-- sketch.js introduces a canvas here -->
     </div>
     <a href="#logo" id="rectListener"></a>
 
@@ -93,31 +93,92 @@
     </div>
 
     <div class="categories">
-      <div class="categoriesName">
-        <p class="illus">illustration</p>
-      </div>
+      <p class="categoriesName illus">illustration</p>
       <span class="categoriesSeparator"></span>
-      <div class="categoriesName">
-        <p class="design">design&nbsp;graphique</p>
-      </div>
+      <p class="categoriesName design">design&nbsp;graphique</p>
       <span class="categoriesSeparator"></span>
-      <div class="categoriesName">
-        <p class="code"> creative&nbsp;code</p>
-      </div>
+      <p class="categoriesName code"> creative&nbsp;code</p>
     </div>
 
     <div class="works">
-      <a class="projectButton"><div class="thumbnail design" href="subutex.html" id="subutex"><div class="thumbnail nb"></div></div></a>
-      <a class="projectButton"><div class="thumbnail design" href="ngi.html" id="ngi"><div class="thumbnail nb"></div></div></a>
-      <a class="projectButton desktop" id="thisdesktop" href="#logo"><div class="thumbnail this code"><div class="thumbnail this nb"></div></div></a>
-      <a class="projectButton"><div class="thumbnail illus design" href="lh.html" id="lh"><div class="thumbnail nb"></div></div></a>
-      <a class="projectButton"><div class="thumbnail illus design code" href="irl.html" id="irl"><div class="thumbnail nb"></div></div></a>
-      <a class="projectButton"><div class="thumbnail illus"href="ink.html" id="ink"><div class="thumbnail nb"></div></div></a>
-      <a class="projectButton"><div class="thumbnail design" href="os.html" id="os"><div class="thumbnail nb"></div></div></a>
-      <a class="projectButton"><div class="thumbnail illus design" href="perrault.html" id="perrault"><div class="thumbnail nb"></div></div></a>
-      <a class="projectButton"><div class="thumbnail design" href="dm.html" id="dm"><div class="thumbnail nb"></div></div></a>
-      <a class="projectButton"><div class="thumbnail design" href="echolocal.html" id="echolocal"><div class="thumbnail nb"></div></div></a>
-      <a class="projectButton tablet" id="thistablet" href="#logo"><div class="thumbnail this code"><div class="thumbnail this nb"></div></div></a>
+      <svg style="width:0; height:0;">
+        <defs>
+          <filter id="nb-filter">
+            <feColorMatrix type="luminanceToAlpha" result="L2A"></feColorMatrix>
+            <feFlood flood-color="rgba(200, 150, 20, 1.0)" result="colorfield"></feFlood>
+            <feBlend mode="multiply" in="L2A" in2="colorfield"></feBlend>
+            <feComposite operator="in" in2="SourceGraphic"></feComposite>
+          </filter>
+
+          <filter id="blur-filter">
+            <feColorMatrix type="luminanceToAlpha" result="L2A"></feColorMatrix>
+            <feFlood flood-color="rgba(200, 150, 20, 1.0)" result="colorfield"></feFlood>
+            <feBlend mode="multiply" in="L2A" in2="colorfield"></feBlend>
+            <feComposite operator="in" in2="SourceGraphic"></feComposite>
+          </filter>
+        </defs>
+      </svg>
+
+      <!-- <a class="projectButton"><div class="thumbnail design" href="subutex.html" id="subutex"><div class="thumbnail nb"></div></div></a> -->
+      <a class="projectButton">
+        <div class="thumbnail illus" id="ink" href="ink.html">
+          <img class="thumbnail nb" src="images/thumb_ink.png" alt="Inktober 2016"/>
+        </div>
+      </a>
+      <a class="projectButton">
+        <div class="thumbnail design" id="subutex" href="subutex.html">
+          <img class="thumbnail nb" src="images/thumb_subutex.png" alt="Vernon Subutex"/>
+        </div>
+      </a>
+      <a class="projectButton" id="thisdesktop">
+        <div class="thumbnail this code" href="#logo">
+          <img class="thumbnail this nb" src="images/thumb_this.png" alt=".this"/>
+        </div>
+      </a>
+      <a class="projectButton">
+        <div class="thumbnail illus design" id="lh" href="lh.html">
+          <img class="thumbnail nb" src="images/thumb_lh.png" alt="La Lettre du Hérisson"/>
+        </div>
+      </a>
+      <a class="projectButton">
+        <div class="thumbnail illus design code" id="irl" href="irl.html">
+          <img class="thumbnail nb" src="images/thumb_irl.png" alt="Espaces IRL"/>
+        </div>
+      </a>
+      <a class="projectButton">
+        <div class="thumbnail illus design" id="perrault"  href="perrault.html">
+          <img class="thumbnail nb" src="images/thumb_perrault.png" alt="Les contes de Perrault"/>
+        </div>
+      </a>
+      <a class="projectButton">
+        <div class="thumbnail design" id="dm"  href="dm.html">
+          <img class="thumbnail nb" src="images/thumb_dm.png" alt="Depeche Mode"/>
+        </div>
+      </a>
+
+      <a class="projectButton">
+        <div class="thumbnail design illus code" id="flipfly"  href="flipfly.html">
+          <img class="thumbnail nb" src="images/thumb_flipfly.png" alt="Flipfly"/>
+        </div>
+      </a>
+
+      <a class="projectButton">
+        <div class="thumbnail design illus" id="gamejams"  href="gamejams.html">
+          <img class="thumbnail nb" src="images/thumb_gamejams.png" alt=""/>
+        </div>
+      </a>
+
+      <a class="projectButton tablet" id="thistablet">
+        <div class="thumbnail this code" href="#logo">
+          <img class="thumbnail this nb" src="images/thumb_this.png" alt=".this"/>
+        </div>
+      </a>
+
+      <a class="projectButton">
+        <div class="thumbnail design" id="echolocal"  href="echolocal.html">
+          <img class="thumbnail nb" src="images/thumb_echolocal.png" alt="Packaging &#201;cholocal"/>
+        </div>
+      </a>
     </div>
 
   </div>
