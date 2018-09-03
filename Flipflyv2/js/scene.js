@@ -4,13 +4,13 @@
 'use strict';
 
 let stats = new Stats();
-// stats.showPanel( 0 ); // 0: fps, 1: ms, 2: mb, 3+: custom
+stats.showPanel( 0 ); // 0: fps, 1: ms, 2: mb, 3+: custom
 
 // let xPanel = stats.addPanel( new Stats.Panel( 'x', '#ff8', '#221' ) );
 // let yPanel = stats.addPanel( new Stats.Panel( 'y', '#f8f', '#212' ) );
 // stats.showPanel( 3 );
 
-document.body.appendChild( stats.dom );
+// document.body.appendChild( stats.dom );   // Uncomment to show Stats
 
 window.addEventListener('load', function() {
 
