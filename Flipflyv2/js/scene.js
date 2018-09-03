@@ -442,7 +442,7 @@ window.addEventListener('load', function() {
 
     let animate = function(){
 
-        stats.begin();
+        // stats.begin();
 
         window.requestAnimationFrame( animate );
         controls.update();
@@ -619,7 +619,7 @@ window.addEventListener('load', function() {
         t++;
         // shadowCameraHelper.update();
         renderer.render(scene, camera);
-        stats.end();
+        // stats.end();
     };
 
     window.requestAnimationFrame( animate );
