@@ -4,7 +4,7 @@
 'use strict';
 
 let stats = new Stats();
-stats.showPanel( 0 ); // 0: fps, 1: ms, 2: mb, 3+: custom
+// stats.showPanel( 0 ); // 0: fps, 1: ms, 2: mb, 3+: custom
 
 // let xPanel = stats.addPanel( new Stats.Panel( 'x', '#ff8', '#221' ) );
 // let yPanel = stats.addPanel( new Stats.Panel( 'y', '#f8f', '#212' ) );
@@ -442,7 +442,7 @@ window.addEventListener('load', function() {
 
     let animate = function(){
 
-        // stats.begin();
+        stats.begin();
 
         window.requestAnimationFrame( animate );
         controls.update();
@@ -619,7 +619,7 @@ window.addEventListener('load', function() {
         t++;
         // shadowCameraHelper.update();
         renderer.render(scene, camera);
-        // stats.end();
+        stats.end();
     };
 
     window.requestAnimationFrame( animate );
