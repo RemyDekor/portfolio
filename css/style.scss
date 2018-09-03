@@ -509,9 +509,6 @@ h6 {
 	.ppp .irlpage {
 		background-size: 25%;
 	}
-	.hiddenOnMobile {
-		display: none;
-	}
 }
 
 @media (max-width: 680px) {
@@ -519,6 +516,9 @@ h6 {
 		display: inline-flex;
 	}
 	#thisdesktop {
+		display: none;
+	}
+	.hiddenOnMobile {
 		display: none;
 	}
 	/*.hiddenOnTablet {

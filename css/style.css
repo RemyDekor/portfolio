@@ -387,14 +387,14 @@ h6 {
   .dmpage .img-container {
     padding-bottom: 14px; }
   .ppp .irlpage {
-    background-size: 25%; }
-  .hiddenOnMobile {
-    display: none; } }
+    background-size: 25%; } }
 
 @media (max-width: 680px) {
   #thistablet {
     display: inline-flex; }
   #thisdesktop {
+    display: none; }
+  .hiddenOnMobile {
     display: none; }
   /*.hiddenOnTablet {
     display: none;
