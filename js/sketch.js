@@ -59,7 +59,8 @@ function setup(){
   visible = -1; // -1 = non visible, 0 = visible
   animate = false;
 
-
+  clear();
+  background(237);
   rollLogo();
 
   /*CODE TO MAKE THE CUBE FALL FROM THE SKY AT OPENING*/
@@ -69,13 +70,12 @@ function setup(){
     rdmX = -2;
     rdmY = -2;
     rdmZ = 1.5;
-
   /*****************************************************/
 
 }
 
 function draw(){
-  // clear();
+  clear();
   background(237);
   ambientMaterial(0);
   ambientLight(21,16,15);
@@ -150,7 +150,6 @@ function roll() {
       t=0;
       animate = false;
     }
-
 
 
     rectListener.style("top", String(82+y)+"px");
