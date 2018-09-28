@@ -7,7 +7,7 @@ let urbanTotal = [];
 let elecAccessPercent = [];
 
 let blueElec = 0x052dff;
-let backgroundBlue = 0x0b0924;
+let backgroundBlue = 0x150f2f;
 let getXmaxCoord = () => {
   return (window.innerWidth / window.innerHeight) * 1.3 + 0.6;
 };
@@ -29,7 +29,7 @@ let renderer = new THREE.WebGLRenderer({
   antialias: true
   // alpha: true
 });
-renderer.setClearColor(backgroundBlue, 0.5);
+renderer.setClearColor(backgroundBlue, 1);
 renderer.setPixelRatio(window.devicePixelRatio);
 
 let frameCount = 0;
@@ -96,6 +96,7 @@ sphereGroup.add(sphere);
 var transpSphereGeo = new THREE.SphereGeometry(1.8, 32, 64);
 var transpSphereMat = new THREE.MeshStandardMaterial({
   opacity: 0.25,
+  color: 0xffffff,
   transparent: true
 });
 var transpSphere1 = new THREE.Mesh(transpSphereGeo, transpSphereMat);
@@ -117,6 +118,10 @@ sphereGroup.add(smallPointLight);
 
 // scene.scale.set(1.2, 1.2, 1.2);
 scene.add(sphereGroup);
+
+/* AMBIANT LIGHT */
+var light = new THREE.AmbientLight( backgroundBlue, 1.5 ); // soft white light
+scene.add( light );
 
 /*--Lines--*/
 

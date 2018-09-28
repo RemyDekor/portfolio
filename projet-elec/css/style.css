@@ -39,6 +39,7 @@ video {
   height: 52px;
   width: 52px;
   z-index: 1000;
+  outline: none;
 }
 #startbutton:hover {
   cursor: pointer;

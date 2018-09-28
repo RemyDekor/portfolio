@@ -18,6 +18,11 @@ function onStartClick(e) {
     // startButton.parentNode.style.display = "none";
 }
 
+setInterval(function() {
+    startButton.style.opacity
+},1)
+
+
 
 function hilightLine(lineGroup) {
     lineGroup.children[0].material.color =[0.9,0.95,1];
