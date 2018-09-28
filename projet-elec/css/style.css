@@ -79,7 +79,7 @@ video {
   font-weight: 700;
 }
 .hoverdata:hover{
-  text-shadow: #FFFFFF 0 0 5px,#FFFFFF 0 0 5px,#FFFFFF 0 0 5px ;
+  text-shadow: #052dff 0 0 40px, #FFFFFF 0 0 30px,#FFFFFF 0 0 40px;
 }
 #controller {
   font-size: 50px;
