@@ -19,7 +19,7 @@ function preload() {
   }
 }
 
-function rollLogo() {
+function rollLogo() { 
   rdmLogo = logo[floor(random(4.999))];
 
   for (i = 0 ; i <= 3 ; i++) {
