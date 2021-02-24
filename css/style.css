@@ -74,6 +74,10 @@ h6 {
   grid-column: 4 / 5;
 }
 
+.essay {
+  display: none;
+}
+
 .contactIcon {
   width: 30px;
   height: 30px;
