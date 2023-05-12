@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/blood.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+    <link rel="stylesheet" href="css/customStyles.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+
+### **prefers-reduced-motion**
+</script></section><section  data-markdown><script type="text/template">
+**prefers-reduced-motion** is a **[media feature](https://developer.mozilla.org/en-US/docs/Web/CSS/@media#media_features)**, and one of the many options for adapting the behavior of the website according to  
+the user's **preferences** or **disabilities**.
+</script></section><section  data-markdown><script type="text/template">
+The user's browser detects setting(s) set at the OS level,  
+and toggles **prefers-reduced-motion** accordingly
+ 
+<div class="block">
+
+<p style="line-height: 0" class="reset-paragraph image-paragraph"><img src="attachments/Screenshot 2023-05-12 at 11.47.27.png" alt="" style="height: 50vh"></img></p>
+
+<p style="line-height: 0" class="reset-paragraph image-paragraph"><img src="attachments/Screenshot 2023-05-12 at 11.45.24.png" alt="" style="height: 40vh; width: 100%"></img></p>
+
+</div>
+
+ <!-- .element: style="display: flex; align-items: center" -->
+</script></section><section  data-markdown><script type="text/template">
+It can be used in CSS 
+```css
+@media (prefers-reduced-motion) {
+  /* applied only if the user's settings are set to reduced motion */
+} 
+```
+or Javascript
+```javascript
+if (window.matchMedia(`(prefers-reduced-motion: reduce)`) === true) {
+  // ...
+}
+```
+</script></section><section  data-markdown><script type="text/template">
+When a user is **sensitive to motion**, they tend to perceive **unexpected/unwanted motion** as **disturbing/agressive**.
+<p style="line-height: 0" class="reset-paragraph image-paragraph"><img src="https://y.yarn.co/94d2312f-582b-4e8e-8961-e443df5f599d_text.gif" alt="YARN | I told you, I get sea sick. | The Pest (1997) | Video clips by  quotes | 94d2312f | 紗" style="width: I told you, I get sea sick. px"></img></p>
+</script></section><section  data-markdown><script type="text/template">
+<p style="line-height: 0" class="reset-paragraph image-paragraph"><img src="images/jaws.gif" alt="" ></img></p>
+
+<p style="line-height: 0" class="reset-paragraph image-paragraph"><img src="images/vertigo.gif" alt="" ></img></p>
+
+###### (examples of the Dolly-Zoom effect in movies)
+</script></section><section  data-markdown><script type="text/template">
+Motion-related sickness or discomfort is not only relevant in VR.   
+ 
+Here are examples of websites that spent money to have very **impactful** or **original motion**, and may make you feel **dizzy**  
+(view on desktop for the "full" experience)
+- various parallax speeds & sudden change in scroll direction ("scrolljacking"):
+  https://bryhel.com/  
+  
+- 3D immersive tunnel with lots of parallax effects:
+  https://www.audemarspiguet.com/com/en/watch/code-1159-universelle.html
+  
+- Full-screen autoplay video, various unexpected effects:
+  https://www.lacoste.com/fr/netflix.html#/</script></section><section  data-markdown><script type="text/template">
+Some users might enjoy the ride, but some others will not.
+
+<p style="line-height: 0" class="reset-paragraph image-paragraph"><img src="https://media.tenor.com/I9R3q_1dEJEAAAAd/sling-shot-ride-this-is-happening.gif" alt="Sling Shot Ride This Is Happening GIF - Sling Shot Ride This Is Happening Amusement  Park - Discover & Share GIFs" ></img></p>
+
+</script></section><section  data-markdown><script type="text/template">
+#### Most common **vestibular system disorders**
+- Benign paroxysmal positional vertigo (BPPV)
+- Vestibular migraine
+- Labyrinthitis or vestibular neuritis
+- Ménière’s disease
+- **Age-related dizziness & imbalance**
+- Vestibular damage due to **head injury**
+- Secondary endolymphatic hydrops
+- Perilymph fistula
+- and more...
+</script></section><section  data-markdown><script type="text/template">
+Even if they were interested in the website's content (e.g. the products they could buy) disturbed users might just **close the website altogether**, instead of having to endure more.
+
+For this reason, similarly to the **[progressive enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancementx)** mindset, **animation/motion should be degradable**.
+</script></section><section  data-markdown><script type="text/template">
+While working on a new Pop-Up (hiding the content of the page) that displays a large autoplay video (for skincare launch), I thought it was relevant to add prefers-reduced-motion, to display a **static image** instead of the video for the relevant users.
+
+That's why I decided to add it to our **AutoPlayVideo** component.
+</script></section><section  data-markdown><script type="text/template">
+> "The **curb cut effect** is the phenomenon of **disability-friendly features** being used and **appreciated by a larger group** than the people they were designed for."
+
+###### (I would love to make a presentation dedicated to this topic, btw)
+</script></section><section  data-markdown><script type="text/template">
+In our case, the related **beneficial side-effect** would be having a "poster" image while the video is loading.
+
+Thus **improving the UX** for **slow or discontinuous connections**  
+(e.g. mobile users in the NY subway).
+</script></section><section  data-markdown><script type="text/template">
+To test **prefers-reduced-motion**  
+without having to update your own settings:
+- open the browser devtools ("inspect" the page)
+- press **Ctrl/Cmd + Shift + P** (or Ctrl/Cmd + Shift + K in Firefox)
+- search for **prefers-reduced-motion** and toggle it accordingly
+- you might need to refresh the page (if it's driven by Javascript)
+</script></section><section  data-markdown><script type="text/template">
+[live example of implementation (subtle vertical parallax effect)](https://codepen.io/hexagoncircle/full/JjRYaZw)
+</script></section><section  data-markdown><script type="text/template">
+It does not mean we should get rid of animations altogether.  
+When used properly, animations can aid accessibility by helping [address cognitive accessibility concerns](http://webaim.org/articles/cognitive/). ([example](https://svelte.dev/tutorial/animate))
+
+Ideally, if an animation **does not add meaning** to the content/interactions,   
+it should be **optional**.
+</script></section><section  data-markdown><script type="text/template">
+Thank you!
+
+<p style="line-height: 0" class="reset-paragraph image-paragraph"><img src="https://i.gifer.com/DV9s.gif" alt="Discovery image stabilization GIF - Find on GIFER" ></img></p>
+
+
+If you want to go further
+- A very good article: [Designing Safer Web Animation For Motion Sensitivity](http://alistapart.com/article/designing-safer-web-animation-for-motion-sensitivity/) (actually written prior to implementation of prefers-reduced-motion in browsers)
+</script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+	if(isLight(bgColor)){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		customcontrols: {
+			controls: [
+			]
+		},
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":960,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":false,"transition":"slide","transitionSpeed":"default"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
