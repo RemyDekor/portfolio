@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/blood.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+    <link rel="stylesheet" href="css/customStyles.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+> Tech demo
+## improving our
+# **Toast**
+## system
+</script></section><section  data-markdown><script type="text/template">
+The code we'll see here is slightly **simplified**  
+but is a **good representation** of what we actually have in the codebase.
+</script></section><section  data-markdown><script type="text/template"><!-- .slide: data-auto-animate="true" -->
+### **The existing Toast**
+
+<video src="dist/Screen Recording 2023-07-18 at 12.40.48.mp4" playsinline autoplay loop muted controls width="80%" ></video>
+
+Displays **a single message**, once, and closes after 5 seconds.
+</script></section><section  data-markdown><script type="text/template"><!-- .slide: data-auto-animate class="minor-h3-title" -->
+### The existing Toast
+**Nelly** and **Benoit** already made the usage of the Toast **pretty simple**  
+for developers, enabling us to **open it from anywhere in the codebase** (thanks! ✨), like so:
+
+```javascript
+openToast({ content: "This is a Toast" });
+```
+
+- - -
+
+The Toast would schedule an instruction to **close itself after 5 seconds**.
+```javascript
+closeToast();
+```
+</script></section><section  data-markdown><script type="text/template">### **A new case** 
+
+This edge-case, related to relatively quick UI interactions,  
+was kind of **hard to apprehend with the mocks only**.  
+But **once I started coding it**, it was **obvious** this was an issue.
+
+The Toast**s** would be triggered by more event**s** than usual,  
+and could potentially **overlap**.  
+</script></section><section  data-markdown><script type="text/template">When using the existing function naively:
+```
+toggleToast(TRUE, { content: "Your offer is applied!" });
+```
+...3 seconds later...
+```
+toggleToast(TRUE, { content: "Do XXX to get the offer!" });
+```
+...would not work properly 😭
+</script></section><section  data-markdown><script type="text/template">### The problem(s)
+
+- The last overlapping Toast would **replace the content** of the previous Toast **instantly**, with **no transition**,
+
+- and it would **close** according to the duration of the **first** Toast.
+
+We needed to fix both, because the **user** would have **most likely missed that the Toast updated**, or simply would **not be able to read** the content.
+</script></section><section  data-markdown><script type="text/template">
+So, a **new need** was identified:
+
+Display **several Toasts messages** in a **short timeframe** (less then 5 seconds), giving **immediate feedback** to user's interactions on a single page (relatively **quick interactions**).
+</script></section><section  data-markdown><script type="text/template">### The fix
+
+- Use **CSS transition** instead of **keyframes** to turn the animation into a more flexible one (actual **duration** of visible state is **not known in advance**).
+
+- Handle the **edge-case** of the **animate-out** Toast with a little workaround (we could use a library if we have multiple cases like this), e.g. making sure the **content** of the Toast **stays consistent**.
+
+- **Abstract away** (hide the controls) of the **closing** function call.   
+  Renaming **toggleToast(..)** function to **setToast(..)** helped with this.
+</script></section><section  data-markdown><script type="text/template">### **The Result**
+
+<video src="dist/Screen Recording 2023-07-18 at 14.15.15.mp4"  playsinline autoplay loop muted controls width="80%" ></video>
+
+We still need to wait for the network call when clicking, but once the Cart is updated, it immediatly replaces the Toast if necessary.
+</script></section><section  data-markdown><script type="text/template">### Looking further 🔭
+
+These are some leads for improving the Toasts even further:
+
+- Enable passing a **custom "max" duration** for a Toast (right now they all share a 5 seconds duration, when not interrupted)
+
+- Change how the Toasts "overlap" visually to see **several simultaneously**   
+  (e.g. by **stacking** them)
+
+- Look into using a **library** to enable this type of **animations/transitions**  
+  in more places.
+  </script></section><section  data-markdown><script type="text/template">### **Thank you**
+
+Feel free to ask any **question** 🙏</script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+	if(isLight(bgColor)){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		customcontrols: {
+			controls: [
+			]
+		},
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":960,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":false,"transition":"slide","transitionSpeed":"default"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
