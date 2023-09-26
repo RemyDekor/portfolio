@@ -1,0 +1,31 @@
+:root {
+	--r-link-color: #ffdd42;
+	--r-link-color-dark: #ffdd42;
+	--r-link-color-hover: #ffae42;
+	--r-selection-background-color: #ff7f42;
+}
+
+.reveal {
+	font-size: 28px;
+}
+
+strong {
+	color: orange;
+}
+
+.reveal ul {
+	width: 100%;
+}
+
+.reveal code {
+	font-size: 20px;
+	line-height: 1.15em;
+}
+
+.reveal li pre {
+	width: 100%;
+}
+
+.reveal .minor-h3-title h3 {
+	opacity: 0.28;
+}

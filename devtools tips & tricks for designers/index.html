@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/blood.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+    <link rel="stylesheet" href="css/customStyles.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+## **devtools** tips & tricks for&nbsp;**designers**</script></section><section  data-markdown><script type="text/template">
+As a designer, when working inside tools such as Figma or Sketch, it's **hard to apprehend everything** that is actually expected for the **design to "live" properly** inside the user's **browser**.
+
+Here are a few tips and tricks to help us understand **how the actual UI behave**, and so, how our designs live in various scenarii.
+</script></section><section  data-markdown><script type="text/template">#### Opening **devtools**
+
+right-click on the page and then click "**inspect**"
+or use the keyboard shortcut (**CMD + OPT + i** on Mac OS)
+</script></section><section  data-markdown><script type="text/template"><!-- .slide: data-auto-animate="true" -->
+##### Selecting an **element**
+Then you can **select an element** using the HTML code or selecting it using this icon (or similar) in the upper-left corner of the devtools.
+
+<p style="line-height: 0" class="reset-paragraph image-paragraph"><img src="attachments/Screenshot 2023-09-25 at 16.16.05.png" alt="" ></img></p>
+
+<!-- .element: style="max-height: 40vh; object-fit: contain" -->
+</script></section><section  data-markdown><script type="text/template"><!-- .slide: data-auto-animate="true" -->
+##### Selecting an **element**
+You can also use the **arrow keys** to **navigate faster** in the HTML code:
+- Left for closing an element in the HTML or selecting its parent
+- Right for opening an element or selecting its first child
+- Up and Down to move similarly as in a text editor
+
+You can also click on HTML code and push CMD + F  
+for searching in the HTML code.
+</script></section><section  data-markdown><script type="text/template"><!-- .slide: data-auto-animate="true" -->
+#### Inspecting the CSS values
+
+##### **CSS rules**
+
+- CSS rules are the set of **rules** we define **in the code** for **applying styles**.  
+  (sizes can be in any supported unit here)
+  
+<p style="line-height: 0" class="reset-paragraph image-paragraph"><img src="attachments/Screenshot 2023-09-25 at 16.21.40.png" alt="" style="max-height: 57vh; object-fit: contain"></img></p>
+
+</script></section><section  data-markdown><script type="text/template"><!-- .slide: data-auto-animate="true" -->
+#### Inspecting the CSS values
+##### **CSS Computed values**
+
+- CSS Computed values are the **actual values** (e.g. for a specific screen width).  
+  (sizes are always in CSS pixels (**px**) here)
+  
+<p style="line-height: 0" class="reset-paragraph image-paragraph"><img src="attachments/Screenshot 2023-09-25 at 16.21.47.png" alt="" style="max-height: 52vh; object-fit: contain"></img></p>
+
+
+</script></section><section  data-markdown><script type="text/template">#### Using **designMode** to experiment with text content
+
+Go into the "Console" tab, then click in the text input and type (or paste) this:
+**document.designMode='on'** then press Return.
+<p style="line-height: 0" class="reset-paragraph image-paragraph"><img src="attachments/Screenshot 2023-09-25 at 16.42.25.png" alt="" style="max-height: 40vh; object-fit: contain"></img></p>
+
+Alternatively, you can update the content in the HTML, but that might require more knowledge.
+</script></section><section  data-markdown><script type="text/template"><!-- .slide: data-auto-animate="true" -->
+#### Screen sizes
+
+Using this icon shows the options for responsive parameters, such as:  
+- Dimensions (or screen size) in CSS pixels  
+  (please note that native UI is not accounted for, more on that later)
+
+- Pointer type(s) (mouse/touch, or both)
+
+- Zoom level  
+  (useful for mimicking bigger screens, or for people with poor vision who actually need bigger texts)
+<p style="line-height: 0" class="reset-paragraph image-paragraph"><img src="attachments/Screenshot 2023-09-25 at 17.04.44.png" alt="" ></img></p>
+</script></section><section  data-markdown><script type="text/template"><!-- .slide: data-auto-animate="true" -->
+#### Screen sizes
+
+**Slowly resizing** the viewport can help understand how the UI **behave**.
+
+For example, given a specific **spacing** value, we can understand a lot:  
+- Is the value **static**?
+- does it changes with **breakpoints**? (not always what one would expect)
+- is it **fluid**? if so, what is it based on? (viewport, other content, etc.)
+- does it make **something else happen** in the page?
+
+Look at the viewports sizes **around** or **in-between** the breakpoints,  
+and see what happens.
+
+----
+##### Disclaimer:
+Please **refresh** the page if you see something breaking.
+The current code does not expect the user to resize the website much at all, and we don't recalculate everything on-resize.
+If it is still broken after the refresh, **consider the viewport size and try to understand if it's an actual use-case before flagging it**.
+<!-- .element: style="font-size: 0.9em; line-height: 1.35" -->
+</script></section><section  data-markdown><script type="text/template">#### Things that can**not** be simulated in the browser devtools
+<!-- .slide: data-auto-animate="true" -->
+
+A lot of things that **depend on the OS** or the device itself  
+can**not** be simulated in the browser devtools.  
+
+Just to give a few examples, let's look at **scrollars** and **native UI** elements.
+</script></section><section  data-markdown><script type="text/template">##### Not in browser devtools: **scrollbars**
+Scrollbars **take-up different amount of space** based on whether they are always displayed or only when interacted with.
+
+- on most Mobile devices, they are hidden when the scrollable content is not interacted with, and they appear **on top** of the content whenever a scroll is triggered
+- on Desktop, on MacOS, it depends on the OS settings and the type of pointing device (e.g. mouse)
+<p style="line-height: 0" class="reset-paragraph image-paragraph"><img src="attachments/Screenshot 2023-09-25 at 15.40.45.png" alt="" style="margin-top: -0.5em"></img></p>
+
+- on Desktop, on Windows, they are **always showing**  
+  (if not removed with some CSS hacks)
+</script></section><section  data-markdown><script type="text/template"><!-- .slide: data-auto-animate="true" -->
+##### Not in browser devtools: **Native UI**
+
+Having sizes relative to the viewport height can be difficult, notably because of the Native UI. On both Android and iOS devices, these bars may vary in sizes and behaviours.
+<div class="block">
+
+<p style="line-height: 0" class="reset-paragraph image-paragraph"><img src="attachments/Pasted image 20230926175135.png" alt="" ></img></p>
+
+<p style="line-height: 0" class="reset-paragraph image-paragraph"><img src="attachments/Screenshot 2023-09-26 at 15.56.50 1.png" alt="" ></img></p>
+
+</div>
+
+<!-- .element: style="display: flex; height: 58vh; justify-content: center; margin-block: -35px" -->
+</script></section><section  data-markdown><script type="text/template">##### Not in browser devtools: **Native UI**
+
+Here is the "same" device (iPhone SE)  
+in **devtools** and the **MacOS Simulator app**.
+
+<p style="line-height: 0" class="reset-paragraph image-paragraph"><img src="attachments/Screenshot 2023-09-26 at 17.20.13.png" alt="" style="height: 57vh; object-fit: contain; margin-block: 0"></img></p>
+
+</script></section><section  data-markdown><script type="text/template"><!-- .slide: data-auto-animate="true" -->
+##### Not in browser devtools: **Native UI**
+
+New CSS units will help with this, such as **svh** / **dvh** / **lvh**.
+
+But we need to experiment out of the Chrome devtools (which is our primary tool when working on the dev) to see the actual behaviour.
+</script></section><section  data-markdown><script type="text/template">There are a lot **more ways to display and navigate a website**  
+(tablet orientation, keyboard navigation, screenreaders,  with prefers-contrast settings, prefers-reduced-motion, etc.).
+
+Some of them can be previewed with the **browser devtools**,  
+but some need **specific OS settings**, or **the actual device**,  
+to be **experienced the same way as our users**.</script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+	if(isLight(bgColor)){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		customcontrols: {
+			controls: [
+			]
+		},
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":960,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":false,"transition":"slide","transitionSpeed":"default"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
